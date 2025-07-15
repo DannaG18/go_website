@@ -14,6 +14,10 @@ import { VlogPage } from './pages/Vlog';
 import { AlgoritmoClosetPage } from './pages/AlgoritmoCloset';
 import { SobreMiPage } from './pages/SobreMi';
 import { ContactoPage } from './pages/Contacto';
+import { ConsultoriaImagenPage } from './pages/ConsultoriaImagen';
+import { ConsultoriaMarcasPage } from './pages/ConsultoriaMarcas';
+import { CharlasCapacitacionesPage } from './pages/CharlasCapacitaciones';
+import { ColaboracionesPage } from './pages/Colaboraciones';
 
 // Home page component
 const HomePage: React.FC = () => (
@@ -40,6 +44,10 @@ function App() {
       <Route path="/algoritmo-closet" element={<AlgoritmoClosetPage />} />
       <Route path="/sobre-mi" element={<SobreMiPage />} />
       <Route path="/contactame" element={<ContactoPage />} />
+      <Route path="/consultoria-imagen" element={<ConsultoriaImagenPage />} />
+      <Route path="/consultoria-marcas" element={<ConsultoriaMarcasPage />} />
+      <Route path="/charlas-capacitaciones" element={<CharlasCapacitacionesPage />} />
+      <Route path="/colaboraciones" element={<ColaboracionesPage />} />
     </Routes>
   );
 }
