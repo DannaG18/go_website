@@ -9,10 +9,10 @@ export const AboutPreview: React.FC = () => {
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="font-serif text-4xl lg:text-5xl text-charcoal-800 leading-tight">
+              <h2 className="font-serif text-4xl lg:text-5xl leading-tight text-custom-brown">
                 Sobre Mí
               </h2>
-              <p className="text-lg text-charcoal-600 leading-relaxed">
+              <p className="text-lg text-charcoal-600 leading-relaxed text-custom-brown">
                 Creo en el poder de la moda como herramienta de cambio. Cada elección que hacemos 
                 es una oportunidad para honrar a la naturaleza y construir un futuro más consciente.
               </p>
@@ -22,19 +22,19 @@ export const AboutPreview: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm">
                 <Leaf className="w-6 h-6 text-sage-600" />
-                <span className="text-sm font-medium text-charcoal-700">Sostenibilidad</span>
+                <span className="text-sm font-medium text-custom-brown">Sostenibilidad</span>
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm">
                 <Heart className="w-6 h-6 text-terracotta-600" />
-                <span className="text-sm font-medium text-charcoal-700">Autenticidad</span>
+                <span className="text-sm font-medium text-custom-brown">Autenticidad</span>
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm">
                 <Sparkles className="w-6 h-6 text-gold-600" />
-                <span className="text-sm font-medium text-charcoal-700">Atemporalidad</span>
+                <span className="text-sm font-medium text-custom-brown">Atemporalidad</span>
               </div>
               <div className="flex items-center space-x-3 p-4 bg-white/60 backdrop-blur-sm">
                 <Users className="w-6 h-6 text-sage-600" />
-                <span className="text-sm font-medium text-charcoal-700">Empoderamiento</span>
+                <span className="text-sm font-medium text-custom-brown">Empoderamiento</span>
               </div>
             </div>
 
@@ -51,7 +51,7 @@ export const AboutPreview: React.FC = () => {
           <div className="relative">
             <div className="aspect-[4/5] bg-gradient-to-br from-sage-200 to-cream-200 overflow-hidden shadow-xl">
               <img
-                src="https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="public/about-me-preview.png"
                 alt="Gabriela Ortiz - Consultora de Imagen"
                 className="w-full h-full object-cover"
               />

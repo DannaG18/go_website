@@ -18,7 +18,7 @@ export const ServicesPreview: React.FC = () => {
       {/* Background con Verde Eucalipto */}
       <div 
         className="absolute inset-0"
-        style={{ backgroundColor: '#7c865aff' }}
+        style={{ backgroundColor: '#6e8157e8' }}
       />
       
       {/* Textura vintage de lino */}
@@ -30,7 +30,7 @@ export const ServicesPreview: React.FC = () => {
             Servicios
           </h2>
           <div className="w-24 h-0.5 mx-auto mb-8" style={{ backgroundColor: '#CBB186' }} />
-          <p className="text-lg max-w-3xl mx-auto leading-relaxed opacity-90" style={{ color: '#C8BAAA' }}>
+          <p className="text-lg max-w-3xl mx-auto leading-relaxed opacity-90" style={{ color: '#EDDCC3' }}>
             Cada servicio está diseñado para potenciar tu esencia única y crear una imagen 
             auténtica que refleje tu personalidad y valores más profundos.
           </p>

@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { ContactFormData } from '../../types';
@@ -87,7 +87,7 @@ export function ContactPreview() {
               </div>
             </Card>
 
-            <Card className="p-8" style={{ backgroundColor: '#565021', border: 'none' }}>
+            <Card className="p-8" style={{ backgroundColor: '#8B8D79', border: 'none' }}>
               <h3 className="text-xl font-medium mb-6" style={{ color: '#EDDCC3' }}>
                 Sígueme en redes
               </h3>
@@ -107,6 +107,14 @@ export function ContactPreview() {
                   className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
                 >
                   <Linkedin className="w-6 h-6" style={{ color: '#EDDCC3' }} />
+                </a>
+                                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
+                >
+                  <Youtube className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                 </a>
               </div>
             </Card>

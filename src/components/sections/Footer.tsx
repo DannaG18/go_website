@@ -1,17 +1,18 @@
 import { Instagram, Linkedin, Mail, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const menuItems = [
-    { id: 'marca-personal', label: 'Marca Personal' },
-    { id: 'servicios', label: 'Servicios' },
-    { id: 'vlog', label: 'Vlog' },
-    { id: 'algoritmo-closet', label: 'El Algoritmo de tu Closet' },
-    { id: 'sobre-mi', label: 'Sobre Mí' },
-    { id: 'contactame', label: 'Contáctame' }
+    { path: '/marca-personal', label: 'MARCA PERSONAL' },
+    { path: '/servicios', label: 'SERVICIOS' },
+    { path: '/vlog', label: 'VLOG' },
+    { path: '/algoritmo-closet', label: 'EL ALGORITMO DE TU CLOSET' },
+    { path: '/sobre-mi', label: 'SOBRE MÍ' },
+    { path: '/contactame', label: 'CONTÁCTAME' }
   ];
 
   return (
-    <footer className="py-16" style={{ backgroundColor: '#565021' }}>
+    <footer className="py-16" style={{ backgroundColor: '#565521ff' }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -23,7 +24,7 @@ export const Footer: React.FC = () => {
               Diseñadora de modas consciente, especializada en crear experiencias visuales auténticas 
               que trascienden tendencias y conectan con la esencia personal más profunda.
             </p>
-            <div className="w-12 h-0.5" style={{ backgroundColor: '#8B8D79' }} />
+            {/* <div className="w-32 h-0.5" style={{ backgroundColor: '#8B8D79' }} /> */}
           </div>
 
           {/* Quick Links */}
@@ -32,18 +33,15 @@ export const Footer: React.FC = () => {
               Navegación
             </h4>
             <ul className="space-y-2 text-sm">
-              {menuItems.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById(link.id);
-                      if (element) element.scrollIntoView({ behavior: 'smooth' });
-                    }}
+              {menuItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
                     className="hover:opacity-100 transition-opacity duration-200 opacity-70"
                     style={{ color: '#EDDCC3' }}
                   >
-                    {link.label}
-                  </button>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
