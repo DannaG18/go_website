@@ -1,13 +1,19 @@
 import React from 'react';
-import { Leaf, Eye, CheckCircle, Users, ArrowRight, Heart, Star, Target, Recycle, TrendingUp, Award } from 'lucide-react';
+import { Leaf, Eye, CheckCircle, Users, ArrowRight, Heart, Star, Target, Recycle, TrendingUp, Award, RotateCw } from 'lucide-react';
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { AnimatedPage } from '../common/AnimationPage';
+import { useState } from 'react';
 
 export const ConsultoriaMarcas: React.FC = () => {
-  const { isVisible, elementRef } = useScrollAnimation();
+  // const { isVisible, elementRef } = useScrollAnimation();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleIndex = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   const metodologia = [
     {
@@ -189,52 +195,98 @@ export const ConsultoriaMarcas: React.FC = () => {
           <div className="mb-20">
             <div className="text-center mb-16">
               <h3 className="text-4xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
-                METODOLOGÍA DE TRABAJO
+                METODOLOGÍA DE TRABAJO 
               </h3>
               <p className="text-lg opacity-80" style={{ color: '#CBB186' }}>
                 Enfoque centrado en el cliente
               </p>
             </div>
 
-            <div
-              ref={elementRef}
-              className={`space-y-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-            >
-              {metodologia.map((etapa, index) => (
-                <Card
-                  key={etapa.numero}
-                  className="p-10 vintage-shadow"
-                  style={{ backgroundColor: '#EDDCC3' }}
-                >
-                  <div className="flex items-start mb-8">
+            <div className="space-y-6">
+              {metodologia.map((etapa, index) => {
+                const isExpanded = activeIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="vintage-shadow overflow-hidden transition-all duration-300"
+                    style={{ backgroundColor: '#EDDCC3' }} 
+                  >
+                    {/* Header - Always visible */}
                     <div
-                      className="w-16 h-16 flex items-center justify-center text-white font-bold text-2xl mr-8 flex-shrink-0"
-                      style={{ backgroundColor: '#4D1A09' }}
+                      className="p-6 cursor-pointer hover:bg-opacity-90 transition-all duration-200"
+                      style={{ backgroundColor: '#EDDCC3' }}
+                      onClick={() => setActiveIndex(isExpanded ? null : index)}
                     >
-                      {etapa.numero}
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold mb-6" style={{ color: '#291509' }}>
-                        {etapa.titulo}
-                      </h4>
-
-                      <div className="space-y-6">
-                        {etapa.items.map((item, itemIndex) => (
-                          <div key={itemIndex} className="space-y-3">
-                            <h5 className="text-lg font-semibold" style={{ color: '#565021' }}>
-                              {item.subtitulo}:
-                            </h5>
-                            <p className="text-base leading-relaxed opacity-80" style={{ color: '#524354' }}>
-                              {item.descripcion}
-                            </p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                          <div
+                            className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl mr-6 rounded-full"
+                            style={{ backgroundColor: '#4D1A09' }}
+                          >
+                            {etapa.numero}
                           </div>
-                        ))}
+                          <h4 className="text-xl font-bold" style={{ color: '#291509' }}>
+                            {etapa.titulo}
+                          </h4>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm opacity-60" style={{ color: '#524354' }}>
+                            {isExpanded ? 'Ocultar' : 'Ver detalles'}
+                          </span>
+                          <div
+                            className={`transition-transform duration-300 ${
+                              isExpanded ? 'rotate-180' : 'rotate-0'
+                            }`}
+                          >
+                            <ArrowRight className="w-5 h-5" style={{ color: '#4D1A09' }} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content - Expandable */}
+                    <div
+                      className={`transition-all duration-500 ease-in-out ${
+                        isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      } overflow-hidden`}
+                    >
+                      <div className="px-6 pb-6">
+                        <div
+                          className="h-px mb-6 mx-12"
+                          style={{ backgroundColor: '#8B8D79' }}
+                        />
+                        <div className="space-y-6 ml-18">
+                          {etapa.items.map((item, i) => (
+                            <div
+                              key={i}
+                              className="group hover:bg-opacity-50 hover:bg-white p-4 rounded-lg transition-all duration-200"
+                            >
+                              <div className="flex items-start">
+                                <div className="flex-shrink-0 mr-4 mt-1">
+                                  <div
+                                    className="w-3 h-3 rounded-full"
+                                    style={{ backgroundColor: '#565021' }}
+                                  />
+                                </div>
+                                <div className="flex-1">
+                                  <h5 className="text-lg font-semibold mb-2 group-hover:text-opacity-90 transition-all duration-200" 
+                                      style={{ color: '#4D1A09' }}>
+                                    {item.subtitulo}
+                                  </h5>
+                                  <p className="text-base leading-relaxed opacity-80" 
+                                     style={{ color: '#524354' }}>
+                                    {item.descripcion}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </Card>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -250,14 +302,20 @@ export const ConsultoriaMarcas: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <a
+                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                 <Button
                   size="lg"
                   onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   ¿Hablamos?
                 </Button>
+                </a>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   size="lg"
                   onClick={() => window.location.href = '/servicios'}
                 >

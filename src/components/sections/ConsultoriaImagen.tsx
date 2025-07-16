@@ -1,13 +1,17 @@
-import React from 'react';
-import { Leaf, Eye, CheckCircle, Users, ArrowRight, Heart, Star, Target } from 'lucide-react';
+import { Leaf, Heart, Star, Target, ArrowRight, CheckCircle } from 'lucide-react';
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { AnimatedPage } from '../common/AnimationPage';
+import { useState } from 'react';
+import '../../index.css';
 
 export const ConsultoriaImagen: React.FC = () => {
-  const { isVisible, elementRef } = useScrollAnimation();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const toggleIndex = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   const metodologia = [
     {
@@ -16,7 +20,8 @@ export const ConsultoriaImagen: React.FC = () => {
       items: [
         {
           subtitulo: 'Cuestionario de estilo',
-          descripcion: 'Analizo tus rutinas, preferencias y nivel de compromiso con la moda consciente ¿Prefieres marcas locales?'
+          descripcion:
+            'Analizo tus rutinas, preferencias y nivel de compromiso con la moda consciente ¿Prefieres marcas locales?'
         },
         {
           subtitulo: 'Auditoría de armario',
@@ -35,11 +40,13 @@ export const ConsultoriaImagen: React.FC = () => {
       items: [
         {
           subtitulo: 'Paleta de color y siluetas',
-          descripcion: 'Basada en tu morfología, estilo de vida y valores (ej: tonos neutros para versatilidad, tejidos orgánicos).'
+          descripcion:
+            'Basada en tu morfología, estilo de vida y valores (ej: tonos neutros para versatilidad, tejidos orgánicos).'
         },
         {
           subtitulo: 'Lista de piezas cápsula priorizando',
-          descripcion: 'Materiales duraderos (algodón orgánico, lana ética, lino). Marcas transparentes (con certificaciones sostenibles, marcas locales, etc).'
+          descripcion:
+            'Materiales duraderos (algodón orgánico, lana ética, lino). Marcas transparentes (con certificaciones sostenibles, marcas locales, etc).'
         }
       ]
     },
@@ -49,7 +56,8 @@ export const ConsultoriaImagen: React.FC = () => {
       items: [
         {
           subtitulo: 'Guía de compras consciente',
-          descripcion: 'Te enviaré un dossier con alternativas sostenibles a las piezas que necesites y combinaciones reales para tu día a día (trabajo, ocio, eventos) usando lo que ya tienes + nuevas adquisiciones estratégicas.'
+          descripcion:
+            'Te enviaré un dossier con alternativas sostenibles a las piezas que necesites y combinaciones reales para tu día a día (trabajo, ocio, eventos) usando lo que ya tienes + nuevas adquisiciones estratégicas.'
         }
       ]
     },
@@ -59,7 +67,8 @@ export const ConsultoriaImagen: React.FC = () => {
       items: [
         {
           subtitulo: 'Check-in a los 3 meses',
-          descripcion: 'Evaluamos el funcionamiento del armario y ajustamos según cambios de temporada o necesidades.'
+          descripcion:
+            'Evaluamos el funcionamiento del armario y ajustamos según cambios de temporada o necesidades.'
         }
       ]
     }
@@ -91,16 +100,11 @@ export const ConsultoriaImagen: React.FC = () => {
   return (
     <AnimatedPage>
       <Section id="consultoria-imagen" className="py-24">
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: '#C8BAAA' }}
-        />
-
-        {/* Textura vintage de papel */}
+        <div className="absolute inset-0" style={{ backgroundColor: '#C8BAAA' }} />
         <div className="absolute inset-0 vintage-texture-paper opacity-30" />
-
         <div className="container relative z-10">
-          {/* Hero Section */}
+
+          {/* Hero */}
           <div className="text-center mb-20">
             <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight" style={{ color: '#291509' }}>
               CONSULTORÍA DE
@@ -110,25 +114,20 @@ export const ConsultoriaImagen: React.FC = () => {
             <div className="w-24 h-0.5 mx-auto mb-12" style={{ backgroundColor: '#8B8D79' }} />
           </div>
 
-          {/* Filosofía Principal */}
+          {/* Filosofía */}
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
             <div className="space-y-8">
               <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
                   Armarios cápsula con esencia sostenible
                 </h2>
-
                 <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#524354' }}>
                   <p>
-                    Creo que la verdadera elegancia nace de la coherencia entre lo que
-                    vestimos y lo que valoramos.
+                    Creo que la verdadera elegancia nace de la coherencia entre lo que vestimos y lo que valoramos.
                   </p>
-
                   <p>
-                    Mi enfoque no se limita a crear armarios funcionales, sino a curar
-                    prendas que reflejen tu identidad mientras minimizan el impacto ambiental.
+                    Mi enfoque no se limita a crear armarios funcionales, sino a curar prendas que reflejen tu identidad mientras minimizan el impacto ambiental.
                   </p>
-
                   <div className="p-6 vintage-border" style={{ backgroundColor: '#565021' }}>
                     <p className="text-xl font-medium text-center" style={{ color: '#EDDCC3' }}>
                       Menos es más, pero solo cuando cada pieza suma.
@@ -159,7 +158,7 @@ export const ConsultoriaImagen: React.FC = () => {
                       <h4 className="text-lg font-semibold mb-2" style={{ color: '#EDDCC3' }}>
                         {beneficio.titulo}
                       </h4>
-                      <p className="text-sm leading-relaxed opacity-90" style={{ color: '#C8BAAA' }}>
+                      <p className="text-sm leading-relaxed opacity-90" style={{ color: '#EDDCC3' }}>
                         {beneficio.descripcion}
                       </p>
                     </div>
@@ -180,64 +179,103 @@ export const ConsultoriaImagen: React.FC = () => {
               </p>
             </div>
 
-            <div
-              ref={elementRef}
-              className={`space-y-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-            >
-              {metodologia.map((etapa, index) => (
-                <Card
-                  key={etapa.numero}
-                  className="p-10 vintage-shadow"
-                  style={{ backgroundColor: '#EDDCC3' }}
-                >
-                  <div className="flex items-start mb-8">
+            <div className="space-y-6">
+              {metodologia.map((etapa, index) => {
+                const isExpanded = activeIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="vintage-shadow overflow-hidden transition-all duration-300"
+                    style={{ backgroundColor: '#EDDCC3' }}
+                  >
                     <div
-                      className="w-16 h-16 flex items-center justify-center text-white font-bold text-2xl mr-8 flex-shrink-0"
-                      style={{ backgroundColor: '#4D1A09' }}
+                      className="p-6 cursor-pointer hover:bg-opacity-90 transition-all duration-200"
+                      style={{ backgroundColor: '#EDDCC3' }}
+                      onClick={() => toggleIndex(index)}
                     >
-                      {etapa.numero}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                          <div
+                            className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl mr-6 rounded-full"
+                            style={{ backgroundColor: '#4D1A09' }}
+                          >
+                            {etapa.numero}
+                          </div>
+                          <h4 className="text-xl font-bold" style={{ color: '#291509' }}>
+                            {etapa.titulo}
+                          </h4>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm opacity-60" style={{ color: '#524354' }}>
+                            {isExpanded ? 'Ocultar' : 'Ver detalles'}
+                          </span>
+                          <div
+                            className={`transition-transform duration-300 ${
+                              isExpanded ? 'rotate-180' : 'rotate-0'
+                            }`}
+                          >
+                            <ArrowRight className="w-5 h-5" style={{ color: '#4D1A09' }} />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold mb-6" style={{ color: '#291509' }}>
-                        {etapa.titulo}
-                      </h4>
 
-                      <div className="space-y-6">
-                        {etapa.items.map((item, itemIndex) => (
-                          <div key={itemIndex} className="space-y-3">
-                            <h5 className="text-lg font-semibold" style={{ color: '#565021' }}>
-                              {item.subtitulo}:
-                            </h5>
-                            <p className="text-base leading-relaxed opacity-80" style={{ color: '#524354' }}>
-                              {item.descripcion}
-                            </p>
-                          </div>
-                        ))}
-
-                        {etapa.identifico && (
-                          <div className="mt-6 p-6 vintage-border" style={{ backgroundColor: '#C8BAAA' }}>
-                            <h5 className="text-lg font-semibold mb-4" style={{ color: '#291509' }}>
-                              Identifico:
-                            </h5>
-                            <ul className="space-y-2">
-                              {etapa.identifico.map((item, itemIndex) => (
-                                <li key={itemIndex} className="flex items-start text-sm">
-                                  <CheckCircle
-                                    className="w-4 h-4 mr-3 mt-0.5 flex-shrink-0"
-                                    style={{ color: '#565021' }}
+                    <div
+                      className={`transition-all duration-500 ease-in-out ${
+                        isExpanded ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
+                      } overflow-hidden`}
+                    >
+                      <div className="px-6 pb-6">
+                        <div className="h-px mb-6 mx-12" style={{ backgroundColor: '#8B8D79' }} />
+                        <div className="space-y-6 ml-18">
+                          {etapa.items.map((item, i) => (
+                            <div
+                              key={i}
+                              className="group hover:bg-opacity-50 hover:bg-white p-4 rounded-lg transition-all duration-200"
+                            >
+                              <div className="flex items-start">
+                                <div className="flex-shrink-0 mr-4 mt-1">
+                                  <div
+                                    className="w-3 h-3 rounded-full"
+                                    style={{ backgroundColor: '#565021' }}
                                   />
-                                  <span style={{ color: '#524354' }}>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
+                                </div>
+                                <div className="flex-1">
+                                  <h5
+                                    className="text-lg font-semibold mb-2 group-hover:text-opacity-90 transition-all duration-200"
+                                    style={{ color: '#4D1A09' }}
+                                  >
+                                    {item.subtitulo}
+                                  </h5>
+                                  <p className="text-base leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                                    {item.descripcion}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+
+                          {etapa.identifico && (
+                            <div className="mt-4 space-y-2">
+                              <p className="font-semibold mb-2" style={{ color: '#291509' }}>
+                                Identifico:
+                              </p>
+                              <ul className="space-y-1">
+                                {etapa.identifico.map((item, j) => (
+                                  <li key={j} className="flex items-start text-sm">
+                                    <CheckCircle className="w-4 h-4 mr-2 flex-shrink-0" style={{ color: '#565021' }} />
+                                    <span style={{ color: '#524354' }}>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </Card>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -251,18 +289,25 @@ export const ConsultoriaImagen: React.FC = () => {
                 Trabajemos juntas para construir un guardarropa que refleje tu esencia,
                 respete el planeta y te haga sentir auténticamente tú.
               </p>
-
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  size="lg"
-                  onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                <a
+                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Solicitar consulta
-                </Button>
+                  <Button
+                    size="lg"
+                    onClick={() =>
+                      document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  >
+                    Solicitar consulta
+                  </Button>
+                </a>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   size="lg"
-                  onClick={() => window.location.href = '/servicios'}
+                  onClick={() => (window.location.href = '/servicios')}
                 >
                   Ver otros servicios
                 </Button>

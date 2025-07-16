@@ -257,14 +257,21 @@ export const CharlasCapacitaciones: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Button
-                  size="lg"
-                  onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                <a
+                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Solicitar charla
-                </Button>
+                  <Button
+                    size="lg"
+                    onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Solicitar charla
+                  </Button>
+                </a>
+
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   size="lg"
                   onClick={() => window.location.href = '/servicios'}
                 >
