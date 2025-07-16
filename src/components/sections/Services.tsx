@@ -1,4 +1,5 @@
 import { User, Briefcase, Users, Camera, ArrowRight } from 'lucide-react';
+import { AnimatedPage } from '../common/AnimationPage'; 
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
@@ -13,6 +14,7 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
+    <AnimatedPage>
     <Section id="servicios" className="py-24">
       <div 
         className="absolute inset-0"
@@ -77,7 +79,19 @@ export const Services: React.FC = () => {
                   size="md" 
                   icon={ArrowRight}
                   className="group-hover:vintage-shadow-lg transition-shadow duration-300"
-                  onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => {
+                    if (service.id === 'consultoria-imagen-personal') {
+                      window.location.href = '/consultoria-imagen';
+                  } else if (service.id === 'consultoria-marca') {
+                      window.location.href = '/consultoria-marcas';
+                  } else if (service.id === 'charlas-capacitaciones') {
+                    window.location.href = '/charlas-capacitaciones';
+                  } else if (service.id === 'colaboraciones') {
+                      window.location.href = '/colaboraciones';
+                  } else {
+                    document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
                 >
                   Solicitar información
                 </Button>
@@ -105,5 +119,6 @@ export const Services: React.FC = () => {
         </div>
       </div>
     </Section>
+    </AnimatedPage>
   );
 };

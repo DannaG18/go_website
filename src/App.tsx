@@ -6,7 +6,8 @@ import { ServicesPreview } from './components/sections/ServicesPreview';
 import { AboutPreview } from './components/sections/AboutPreview';
 import { ContactPreview } from './components/sections/ContactPreview';
 import { Footer } from './components/sections/Footer';
-
+import { ScrollToTop } from './components/common/ScrollToTop';
+import { AnimatePresence } from 'framer-motion';
 // Import page components
 import { MarcaPersonalPage } from './pages/MarcaPersonal';
 import { ServiciosPage } from './pages/Servicios';
@@ -36,19 +37,24 @@ const HomePage: React.FC = () => (
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/marca-personal" element={<MarcaPersonalPage />} />
-      <Route path="/servicios" element={<ServiciosPage />} />
-      <Route path="/vlog" element={<VlogPage />} />
-      <Route path="/algoritmo-closet" element={<AlgoritmoClosetPage />} />
-      <Route path="/sobre-mi" element={<SobreMiPage />} />
-      <Route path="/contactame" element={<ContactoPage />} />
-      <Route path="/consultoria-imagen" element={<ConsultoriaImagenPage />} />
-      <Route path="/consultoria-marcas" element={<ConsultoriaMarcasPage />} />
-      <Route path="/charlas-capacitaciones" element={<CharlasCapacitacionesPage />} />
-      <Route path="/colaboraciones" element={<ColaboracionesPage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/marca-personal" element={<MarcaPersonalPage />} />
+          <Route path="/servicios" element={<ServiciosPage />} />
+          <Route path="/vlog" element={<VlogPage />} />
+          <Route path="/algoritmo-closet" element={<AlgoritmoClosetPage />} />
+          <Route path="/sobre-mi" element={<SobreMiPage />} />
+          <Route path="/contactame" element={<ContactoPage />} />
+          <Route path="/consultoria-imagen" element={<ConsultoriaImagenPage />} />
+          <Route path="/consultoria-marcas" element={<ConsultoriaMarcasPage />} />
+          <Route path="/charlas-capacitaciones" element={<CharlasCapacitacionesPage />} />
+          <Route path="/colaboraciones" element={<ColaboracionesPage />} />
+        </Routes>
+      </AnimatePresence>
+    </>
   );
 }
 

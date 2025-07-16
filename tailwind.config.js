@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         glacial: ['Glacial', 'sans-serif'],
       },
+      animation: {
+        'bounce-slow': 'bounce 1.5s infinite', // más lento que el default (1s)
+      }
     },
   },
   plugins: [],

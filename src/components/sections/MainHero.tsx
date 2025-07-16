@@ -89,7 +89,7 @@ export const MainHero: React.FC = () => {
           <div className="space-y-10">
             <div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal mb-6 mt-6 leading-tight">
-                <span style={{ color: '#421919ff' }}>Gabriela Ortiz</span>
+                <span style={{ color: '#421919ff' }}>Gabriela Ortiz</span> {/* #291509 */}
                 {/* <br /> */}
                 {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
               </h1>

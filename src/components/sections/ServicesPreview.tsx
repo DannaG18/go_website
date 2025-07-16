@@ -72,7 +72,13 @@ export const ServicesPreview: React.FC = () => {
                   ))}
                 </div>
 
-                <Link to="/servicios">
+                <Link to={
+                  service.id === 'consultoria-imagen-personal' ? '/consultoria-imagen' :
+                  service.id === 'consultoria-marca' ? '/consultoria-marcas' :
+                  service.id === 'charlas-capacitaciones' ? '/charlas-capacitaciones' :
+                  service.id === 'colaboraciones' ? '/colaboraciones' :
+                  '/servicios'
+                }>
                   <Button 
                     variant="outline" 
                     size="sm" 
