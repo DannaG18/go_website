@@ -12,13 +12,13 @@ export const PurchasePromise: React.FC = () => {
       />
       
       {/* Textura de madera natural */}
-      <div className="absolute inset-0 opacity-15">
+      {/* <div className="absolute inset-0 opacity-15">
         <img 
           src="public/textura2.jpg" 
           alt="Textura natural de algodón" 
           className="w-full h-full object-cover"
         />
-      </div>
+      </div> */}
       
       <div className="container relative z-10">
         <div 

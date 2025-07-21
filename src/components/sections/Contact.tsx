@@ -7,6 +7,8 @@ import { ContactFormData } from '../../types';
 import { AnimatedPage } from '../common/AnimationPage';
 
 export function Contact() {
+  const FORM_ENDPOINT = 'https://formspree.io/f/mrblgvzn'; // <-- Replace this
+
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -14,31 +16,59 @@ export function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+        console.error('Formspree Error:', result);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus('error');
+    }
   };
 
   return (
     <AnimatedPage>
       <Section id="contactame" className="py-24">
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: '#8B8D79' }}
-        />
-
+        <div className="absolute inset-0" style={{ backgroundColor: '#6b6b5bff' }} />
+        <div className="absolute inset-0 opacity-5">
+          <img src="public/PajaTexture.jpg" alt="Textura natural" className="w-full h-full object-cover" />
+        </div>
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Natural cotton texture"
+            alt="Fondo"
             className="w-full h-full object-cover"
           />
         </div>
@@ -50,69 +80,52 @@ export function Contact() {
             </h2>
             <div className="w-16 h-0.5 mx-auto mb-8" style={{ backgroundColor: '#CBB186' }} />
             <p className="text-lg max-w-3xl mx-auto leading-relaxed opacity-90" style={{ color: '#EDDCC3' }}>
-              Estoy aquí para ayudarte a transformar tu visión en realidad. Conversemos sobre
-              tu proyecto y descubramos juntas cómo crear algo verdaderamente auténtico.
+              Estoy aquí para ayudarte a transformar tu visión en realidad.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
+            {/* Info Cards */}
             <div className="space-y-8">
-              <Card className="p-8" style={{ backgroundColor: '#EDDCC3', border: 'none' }}>
+              <Card className="p-8" style={{ backgroundColor: '#EDDCC3' }}>
                 <div className="flex items-center mb-6">
                   <Mail className="w-8 h-8 mr-6" style={{ color: '#565021' }} />
                   <div>
                     <h3 className="text-xl font-medium mb-2" style={{ color: '#565021' }}>Email</h3>
-                    <p className="text-base opacity-80" style={{ color: '#524334' }}>
-                      hola@gabrielaortiz.com
-                    </p>
+                    <p style={{ color: '#524334' }}>hola@gabrielaortiz.com</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-8" style={{ backgroundColor: '#EDDCC3', border: 'none' }}>
+              <Card className="p-8" style={{ backgroundColor: '#EDDCC3' }}>
                 <div className="flex items-center mb-6">
                   <Phone className="w-8 h-8 mr-6" style={{ color: '#565021' }} />
                   <div>
                     <h3 className="text-xl font-medium mb-2" style={{ color: '#565021' }}>Teléfono</h3>
-                    <p className="text-base opacity-80" style={{ color: '#524334' }}>
-                      +52 (55) 1234-5678
-                    </p>
+                    <p style={{ color: '#524334' }}>+52 (55) 1234-5678</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-8" style={{ backgroundColor: '#EDDCC3', border: 'none' }}>
+              <Card className="p-8" style={{ backgroundColor: '#EDDCC3' }}>
                 <div className="flex items-center mb-6">
                   <MapPin className="w-8 h-8 mr-6" style={{ color: '#565021' }} />
                   <div>
                     <h3 className="text-xl font-medium mb-2" style={{ color: '#565021' }}>Ubicación</h3>
-                    <p className="text-base opacity-80" style={{ color: '#524334' }}>
-                      Ciudad de México, México
-                    </p>
+                    <p style={{ color: '#524334' }}>Ciudad de México, México</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-8" style={{ backgroundColor: '#565021', border: 'none' }}>
-                <h3 className="text-xl font-medium mb-6" style={{ color: '#EDDCC3' }}>
-                  Sígueme en redes
-                </h3>
+              <Card className="p-8" style={{ backgroundColor: '#565021' }}>
+                <h3 className="text-xl font-medium mb-6" style={{ color: '#EDDCC3' }}>Sígueme en redes</h3>
                 <div className="flex space-x-6">
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
-                  >
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors">
                     <Instagram className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                   </a>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
-                  >
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors">
                     <Linkedin className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                   </a>
                 </div>
@@ -120,7 +133,7 @@ export function Contact() {
             </div>
 
             {/* Contact Form */}
-            <Card className="p-10" style={{ backgroundColor: '#EDDCC3', border: 'none' }}>
+            <Card className="p-10" style={{ backgroundColor: '#EDDCC3' }}>
               <h3 className="text-2xl font-medium mb-8" style={{ color: '#565021' }}>
                 Envíame un mensaje
               </h3>
@@ -138,7 +151,7 @@ export function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
+                      className="w-full px-4 py-3 border rounded-sm"
                       style={{ backgroundColor: 'white', borderColor: '#CBBEBA' }}
                     />
                   </div>
@@ -153,7 +166,7 @@ export function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
+                      className="w-full px-4 py-3 border rounded-sm"
                       style={{ backgroundColor: 'white', borderColor: '#CBBEBA' }}
                     />
                   </div>
@@ -170,7 +183,7 @@ export function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
+                    className="w-full px-4 py-3 border rounded-sm"
                     style={{ backgroundColor: 'white', borderColor: '#CBBEBA' }}
                   />
                 </div>
@@ -186,13 +199,21 @@ export function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors resize-none"
+                    className="w-full px-4 py-3 border rounded-sm resize-none"
                     style={{ backgroundColor: 'white', borderColor: '#CBBEBA' }}
                   />
                 </div>
 
-                <Button type="submit" size="lg" icon={Send} className="w-full">
-                  Enviar Mensaje
+                {status !== 'idle' && (
+                  <div className="text-sm text-center" aria-live="polite">
+                    {status === 'sending' && <p className="text-yellow-600">Enviando mensaje...</p>}
+                    {status === 'success' && <p className="text-green-600">¡Mensaje enviado con éxito!</p>}
+                    {status === 'error' && <p className="text-red-600">Error al enviar. Intenta nuevamente.</p>}
+                  </div>
+                )}
+
+                <Button type="submit" size="lg" icon={Send} className="w-full" disabled={status === 'sending'}>
+                  {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
                 </Button>
               </form>
             </Card>

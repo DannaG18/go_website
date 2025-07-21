@@ -32,7 +32,7 @@ export const MainHero: React.FC = () => {
       /> */}
 
       {/* Textura de madera natural */}
-      <div className="absolute inset-0 opacity-50">
+      <div className="absolute inset-0 opacity-">
         <img
           src="public/textura2.jpg"
           alt="Textura natural de algodón"
@@ -89,12 +89,12 @@ export const MainHero: React.FC = () => {
           <div className="space-y-10">
             <div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal mb-6 mt-6 leading-tight">
-                <span style={{ color: '#421919ff' }}>Gabriela Ortiz</span> {/* #291509 */}
+                <span style={{ color: '#ced8b8ff' }}>Gabriela Ortiz</span> {/* #291509 */}
                 {/* <br /> */}
                 {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
               </h1>
               <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#EDDCC3' }} />
-              <p className="text-xl md:text-2xl font-light mb-12 opacity-90" style={{ color: '#4D1A09' }}>
+              <p className="text-xl md:text-2xl font-light mb-12 opacity-90" style={{ color: '#f7f6f1ff' }}>
                 Consultora de Imagen & Marca Personal
               </p>
 
@@ -102,8 +102,8 @@ export const MainHero: React.FC = () => {
             </div>
 
             {/* Frase con estilo vintage */}
-            <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
-              <p className="text-lg md:text-xl font-light italic mb-6 leading-relaxed" style={{ color: '#FEFAE0' }}>
+            {/* <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}> */}
+              <p className="text-lg md:text-xl font-bold italic mb-6 leading-relaxed" style={{ color: '#e3eccaff' }}>
                 "El lujo no es tener más, sino encontrar lo que realmente te pertenece."
               </p>
 
@@ -126,7 +126,7 @@ export const MainHero: React.FC = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            {/* </div> */}
 
             {/* Botones con estilo vintage */}
             <div className="flex flex-col sm:flex-row gap-6">
@@ -134,7 +134,7 @@ export const MainHero: React.FC = () => {
                 Descubre mi trabajo
               </Button>
               <Button
-                variant="outline"
+                variant="secondary"
                 size="lg"
                 onClick={scrollToContact}
               >

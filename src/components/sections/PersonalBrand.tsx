@@ -49,36 +49,43 @@ export const PersonalBrand: React.FC = () => {
           className="absolute inset-0"
           style={{ backgroundColor: '#C8BAAA' }}
         />
+        <div className="absolute inset-0 opacity-10">
+          <img
+            src="public/TelaTexture.jpg"
+            alt="Textura natural de algodón"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
         {/* Textura vintage de papel */}
         <div className="absolute inset-0 vintage-texture-paper opacity-30" />
 
         {/* Elementos decorativos vintage */}
-        <div className="absolute inset-0 opacity-5">
+        {/* <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 overflow-hidden animate-vintage-float">
             <img
               src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400"
               alt="Plantas naturales"
               className="w-full h-full object-cover"
             />
-          </div>
+          </div> */}
 
-          <div className="absolute top-40 right-20 w-48 h-48 overflow-hidden">
+        {/* <div className="absolute top-40 right-20 w-48 h-48 overflow-hidden">
             <img
               src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Textura de lino"
               className="w-full h-full object-cover opacity-60"
             />
-          </div>
+          </div> */}
 
-          <div className="absolute bottom-32 left-20 w-24 h-24 overflow-hidden">
+        {/* <div className="absolute bottom-32 left-20 w-24 h-24 overflow-hidden">
             <img
               src="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&w=300"
               alt="Eucalipto"
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="container relative z-10">
           {/* Hero Section */}

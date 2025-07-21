@@ -18,8 +18,18 @@ export const Services: React.FC = () => {
       <Section id="servicios" className="py-24">
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: '#8B8D79' }}
+          style={{ backgroundColor: '#8b8d79ff' }}
         />
+
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="public/WhiteTexture3.jpg"
+            alt="Textura natural de algodón"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Vintage linen texture */}
 
         {/* Vintage paper texture background */}
         <div className="absolute inset-0 vintage-texture-paper opacity-40" />

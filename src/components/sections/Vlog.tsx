@@ -34,14 +34,14 @@ export const Vlog: React.FC = () => {
 
   return (
     <Section id="vlog" className="py-24">
-      <div 
+      <div
         className="absolute inset-0"
         style={{ backgroundColor: '#EDDCC3' }}
       />
-      
+
       {/* Vintage paper texture */}
       <div className="absolute inset-0 vintage-texture-paper opacity-30" />
-      
+
       <div className="container relative z-10">
         {/* Header */}
         <div className="text-center mb-20">
@@ -49,8 +49,8 @@ export const Vlog: React.FC = () => {
             Vlog
           </h2>
           <div className="w-16 h-0.5 mx-auto mb-8" style={{ backgroundColor: '#8B8D79' }} />
-          <p className="text-lg max-w-4xl mx-auto leading-relaxed opacity-80 mb-12" style={{ color: '#524354' }}>
-            Contenido auténtico sobre moda consciente, estilo personal y vida sostenible. 
+          <p className="text-lg max-w-4xl mx-auto leading-relaxed opacity-80 mb-12" style={{ color: '#291509' }}>
+            Contenido auténtico sobre moda consciente, estilo personal y vida sostenible.
             Descubre tips prácticos, marcas locales y guías para construir tu estilo único.
           </p>
         </div>
@@ -60,23 +60,23 @@ export const Vlog: React.FC = () => {
           <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
             ¿Qué encontrarás?
           </h3>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contentTypes.map((type, index) => (
-              <Card 
+              <Card
                 key={index}
-                hover 
+                hover
                 className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
-                style={{ backgroundColor: '#C8BAAA' }}
+                style={{ backgroundColor: '#4D1A09' }}
               >
-                <type.icon 
-                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110" 
-                  style={{ color: type.color }} 
+                <type.icon
+                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                  style={{ color: type.color }}
                 />
-                <h4 className="text-xl font-semibold mb-4" style={{ color: '#291509' }}>
+                <h4 className="text-xl font-semibold mb-4" style={{ color: '#e7e0dcff' }}>
                   {type.title}
                 </h4>
-                <p className="text-sm leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                <p className="text-sm leading-relaxed opacity-80" style={{ color: '#f1e6f3ff' }}>
                   {type.description}
                 </p>
               </Card>
@@ -89,12 +89,12 @@ export const Vlog: React.FC = () => {
           <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
             Videos Destacados
           </h3>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {VLOG_VIDEOS.map((video, index) => (
-              <Card 
-                key={video.id} 
-                hover 
+              <Card
+                key={video.id}
+                hover
                 className="group overflow-hidden transform transition-all duration-500 hover:scale-105"
                 style={{ backgroundColor: '#C8BAAA' }}
               >
@@ -105,7 +105,7 @@ export const Vlog: React.FC = () => {
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {/* Play button */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="w-20 h-20 bg-white bg-opacity-90 flex items-center justify-center vintage-shadow">
@@ -121,11 +121,11 @@ export const Vlog: React.FC = () => {
 
                   {/* Category badge */}
                   <div className="absolute top-4 left-4">
-                    <span 
-                      className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow" 
-                      style={{ 
-                        backgroundColor: '#8B8D79', 
-                        color: '#EDDCC3' 
+                    <span
+                      className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
+                      style={{
+                        backgroundColor: '#8B8D79',
+                        color: '#EDDCC3'
                       }}
                     >
                       <Tag className="w-3 h-3 mr-1" />
@@ -133,12 +133,12 @@ export const Vlog: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-8">
                   <h4 className="text-xl font-medium mb-4 leading-tight" style={{ color: '#291509' }}>
                     {video.title}
                   </h4>
-                  
+
                   <p className="text-sm leading-relaxed opacity-70 mb-6" style={{ color: '#524354' }}>
                     {video.description}
                   </p>
@@ -161,40 +161,48 @@ export const Vlog: React.FC = () => {
                 Sígueme en todas las plataformas
               </h3>
               <p className="text-lg opacity-90 max-w-3xl mx-auto" style={{ color: '#C8BAAA' }}>
-                Cada plataforma ofrece contenido único adaptado a su formato. 
+                Cada plataforma ofrece contenido único adaptado a su formato.
                 No te pierdas ninguna actualización sobre moda consciente y estilo auténtico.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <Card 
-                hover 
+              <a
+                href="https://www.instagram.com/sgabrielaortiz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                // className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+                style={{ backgroundColor: '#1C2218' }}
+              >
+                <Card
+                  hover
+                  className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
+                  style={{ backgroundColor: '#EDDCC3' }}
+                >
+                  <Instagram
+                    className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                    style={{ color: '#4D1A09' }}
+                  />
+                  <h4 className="text-xl font-semibold mb-3" style={{ color: '#291509' }}>
+                    Instagram
+                  </h4>
+                  <p className="text-sm opacity-80 mb-4" style={{ color: '#524354' }}>
+                    Stories diarias, reels inspiradores y contenido behind the scenes
+                  </p>
+                  <div className="text-xs opacity-60" style={{ color: '#524354' }}>
+                    @sgabrielaortiz
+                  </div>
+                </Card>
+              </a>
+
+              <Card
+                hover
                 className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
                 style={{ backgroundColor: '#EDDCC3' }}
               >
-                <Instagram 
-                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110" 
-                  style={{ color: '#4D1A09' }} 
-                />
-                <h4 className="text-xl font-semibold mb-3" style={{ color: '#291509' }}>
-                  Instagram
-                </h4>
-                <p className="text-sm opacity-80 mb-4" style={{ color: '#524354' }}>
-                  Stories diarias, reels inspiradores y contenido behind the scenes
-                </p>
-                <div className="text-xs opacity-60" style={{ color: '#524354' }}>
-                  @sgabrielaortiz
-                </div>
-              </Card>
-
-              <Card 
-                hover 
-                className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
-                style={{ backgroundColor: '#8B8D79' }}
-              >
-                <Youtube 
-                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110" 
-                  style={{ color: '#EDDCC3' }} 
+                <Youtube
+                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                  style={{ color: '#EDDCC3' }}
                 />
                 <h4 className="text-xl font-semibold mb-3" style={{ color: '#EDDCC3' }}>
                   YouTube
@@ -207,14 +215,14 @@ export const Vlog: React.FC = () => {
                 </div>
               </Card>
 
-              <Card 
-                hover 
+              <Card
+                hover
                 className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
-                style={{ backgroundColor: '#4D1A09' }}
+                style={{ backgroundColor: '#EDDCC3' }}
               >
-                <Video 
-                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110" 
-                  style={{ color: '#CBB186' }} 
+                <Video
+                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                  style={{ color: '#CBB186' }}
                 />
                 <h4 className="text-xl font-semibold mb-3" style={{ color: '#EDDCC3' }}>
                   TikTok
@@ -227,29 +235,29 @@ export const Vlog: React.FC = () => {
                 </div>
               </Card>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a 
-                href="https://instagram.com/sgabrielaortiz" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/sgabrielaortiz"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 vintage-shadow"
-                style={{ 
-                  backgroundColor: '#CBB186', 
-                  color: '#291509' 
+                style={{
+                  backgroundColor: '#CBB186',
+                  color: '#291509'
                 }}
               >
                 <Instagram className="w-5 h-5 mr-2" />
                 Seguir en Instagram
               </a>
-              
-              <a 
-                href="https://youtube.com/@gabrielaortiz" 
-                target="_blank" 
+
+              <a
+                href="https://youtube.com/@gabrielaortiz"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 vintage-shadow"
-                style={{ 
-                  backgroundColor: 'transparent', 
+                style={{
+                  backgroundColor: 'transparent',
                   color: '#EDDCC3',
                   border: '2px solid #CBB186'
                 }}
@@ -270,13 +278,13 @@ export const Vlog: React.FC = () => {
             <p className="text-base mb-8 opacity-90" style={{ color: '#CBB186' }}>
               Suscríbete para recibir notificaciones de nuevos videos y contenido exclusivo
             </p>
-            
+
             <div className="max-w-md mx-auto flex gap-4">
               <input
                 type="email"
                 placeholder="Tu email aquí"
                 className="flex-1 px-4 py-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-colors"
-                style={{ 
+                style={{
                   backgroundColor: '#EDDCC3',
                   borderColor: '#C8BAAA',
                   color: '#291509'
@@ -284,9 +292,9 @@ export const Vlog: React.FC = () => {
               />
               <button
                 className="px-6 py-3 font-medium transition-all duration-300 hover:scale-105 vintage-shadow"
-                style={{ 
-                  backgroundColor: '#CBB186', 
-                  color: '#291509' 
+                style={{
+                  backgroundColor: '#CBB186',
+                  color: '#291509'
                 }}
               >
                 Suscribirse

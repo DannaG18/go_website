@@ -14,12 +14,20 @@ const iconMap = {
 export const ServicesPreview: React.FC = () => {
 
   return (
+    
     <section id="servicios-preview" className="py-32 relative overflow-hidden">
       {/* Background con Verde Eucalipto */}
       <div 
         className="absolute inset-0"
-        style={{ backgroundColor: '#6e8157e8' }}
+        style={{ backgroundColor: '#414b33e8' }}
       />
+            <div className="absolute inset-0 opacity-15">
+        <img
+          src="public/LeavesBackground.jpg"
+          alt="Textura natural de algodón"
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {/* Textura vintage de lino */}
       <div className="absolute inset-0 vintage-texture-linen opacity-30" />

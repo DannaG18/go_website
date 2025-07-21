@@ -1,4 +1,4 @@
-import { Leaf, Heart, Star, Award } from 'lucide-react';
+import { Leaf, Heart, Star, Award, PenLine, BookOpen, Wind } from 'lucide-react';
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 
@@ -29,7 +29,7 @@ export const About: React.FC = () => {
             {/* Filosofía Principal */}
             <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#C8BAAA' }}>
               <div className="text-center mb-8">
-                <Leaf className="w-12 h-12 mx-auto mb-4" style={{ color: '#565021' }} />
+                <BookOpen className="w-12 h-12 mx-auto mb-4" style={{ color: '#565021' }} />
                 <h3 className="text-3xl font-bold mb-6" style={{ color: '#291509' }}>
                   Mi Filosofía
                 </h3>
@@ -56,7 +56,7 @@ export const About: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-6 vintage-shadow" style={{ backgroundColor: '#8B8D79' }}>
                 <div className="text-center mb-6">
-                  <Star className="w-10 h-10 mx-auto mb-4" style={{ color: '#EDDCC3' }} />
+                  <Wind className="w-10 h-10 mx-auto mb-4" style={{ color: '#EDDCC3' }} />
                   <h4 className="text-xl font-bold" style={{ color: '#EDDCC3' }}>
                     Lujo Silencioso
                   </h4>

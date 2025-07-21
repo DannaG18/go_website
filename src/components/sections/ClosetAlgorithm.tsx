@@ -137,7 +137,7 @@ export const ClosetAlgorithm: React.FC = () => {
 
             <div
               ref={elementRef}
-              className={`grid md:grid-cols-2 lg:grid-cols-5 gap-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`grid md:grid-cols-2 lg:grid-cols-5 gap-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
             >
               {CLOSET_ALGORITHM_STEPS.map((step, index) => {
@@ -173,7 +173,7 @@ export const ClosetAlgorithm: React.FC = () => {
 
                     {/* Arrow connector for desktop */}
                     {index < CLOSET_ALGORITHM_STEPS.length - 1 && (
-                      <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                      <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-10">
                         <ArrowRight className="w-6 h-6 opacity-60" style={{ color: '#CBB186' }} />
                       </div>
                     )}
