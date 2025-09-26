@@ -3,6 +3,11 @@ import { Play, Clock, Tag, Instagram, Youtube, Video, BookOpen, Leaf, ShoppingBa
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { VLOG_VIDEOS } from '../../utils/constants';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export const Vlog: React.FC = () => {
   const contentTypes = [
@@ -10,25 +15,25 @@ export const Vlog: React.FC = () => {
       icon: Leaf,
       title: 'Moda Sostenible',
       description: 'Descubre marcas conscientes, materiales eco-friendly y consumo responsable.',
-      color: '#565021'
+      color: '#9e9552ff'
     },
     {
       icon: Users,
       title: 'Marcas Locales',
       description: 'Conoce diseñadores y marcas colombianas que están transformando la industria.',
-      color: '#4D1A09'
+      color: '#EDDCC3'
     },
     {
       icon: ShoppingBag,
       title: 'Guías de Compra',
       description: 'Aprende a construir un armario funcional y atemporal con piezas clave.',
-      color: '#8B8D79'
+      color: '#d8ae6fff'
     },
     {
       icon: BookOpen,
       title: 'Educación de Estilo',
       description: 'Tips, consejos y metodologías para desarrollar tu propio lenguaje visual.',
-      color: '#1C2218'
+      color: '#EDDCC3'
     }
   ];
 
@@ -90,67 +95,88 @@ export const Vlog: React.FC = () => {
             Videos Destacados
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {VLOG_VIDEOS.map((video, index) => (
-              <Card
-                key={video.id}
-                hover
-                className="group overflow-hidden transform transition-all duration-500 hover:scale-105"
-                style={{ backgroundColor: '#C8BAAA' }}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: { slidesPerView: 2 }, // en pantallas medianas: 2 cards
+              1024: { slidesPerView: 3 }, // en pantallas grandes: 3 cards
+            }}
+            className="max-w-5xl mx-auto"
+          >
+            {VLOG_VIDEOS.map((video) => (
+              <SwiperSlide key={video.id}>
+                <Card
+                  hover
+                  className="group overflow-hidden transform transition-all duration-500 hover:scale-105"
+                  style={{ backgroundColor: "#C8BAAA" }}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="w-50 h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Play button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-20 h-20 bg-white bg-opacity-90 flex items-center justify-center vintage-shadow">
-                      <Play className="w-8 h-8 ml-1" style={{ color: '#565021' }} />
+                    {/* Play button */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-20 h-20 bg-white bg-opacity-90 flex items-center justify-center vintage-shadow">
+                        <Play className="w-8 h-8 ml-1" style={{ color: "#565021" }} />
+                      </div>
+                    </div>
+
+                    {/* Duration badge */}
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
+                      <Clock className="w-4 h-4 mr-2" />
+                      {video.duration}
+                    </div>
+
+                    {/* Category badge */}
+                    <div className="absolute top-4 left-4">
+                      <span
+                        className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
+                        style={{
+                          backgroundColor: "#8B8D79",
+                          color: "#EDDCC3",
+                        }}
+                      >
+                        <Tag className="w-3 h-3 mr-1" />
+                        {video.category}
+                      </span>
                     </div>
                   </div>
 
-                  {/* Duration badge */}
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
-                    <Clock className="w-4 h-4 mr-2" />
-                    {video.duration}
-                  </div>
-
-                  {/* Category badge */}
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
-                      style={{
-                        backgroundColor: '#8B8D79',
-                        color: '#EDDCC3'
-                      }}
+                  <div className="p-8">
+                    <h4
+                      className="text-xl font-medium mb-4 leading-tight"
+                      style={{ color: "#291509" }}
                     >
-                      <Tag className="w-3 h-3 mr-1" />
-                      {video.category}
-                    </span>
+                      {video.title}
+                    </h4>
+
+                    <p
+                      className="text-sm leading-relaxed opacity-70 mb-6"
+                      style={{ color: "#524354" }}
+                    >
+                      {video.description}
+                    </p>
+
+                    <button
+                      className="text-sm font-medium flex items-center transition-colors duration-300 hover:opacity-80"
+                      style={{ color: "#565021" }}
+                    >
+                      Ver video
+                      <Play className="w-4 h-4 ml-2" />
+                    </button>
                   </div>
-                </div>
-
-                <div className="p-8">
-                  <h4 className="text-xl font-medium mb-4 leading-tight" style={{ color: '#291509' }}>
-                    {video.title}
-                  </h4>
-
-                  <p className="text-sm leading-relaxed opacity-70 mb-6" style={{ color: '#524354' }}>
-                    {video.description}
-                  </p>
-
-                  <button className="text-sm font-medium flex items-center transition-colors duration-300 hover:opacity-80" style={{ color: '#565021' }}>
-                    Ver video
-                    <Play className="w-4 h-4 ml-2" />
-                  </button>
-                </div>
-              </Card>
+                </Card>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
 
         {/* Platforms Section */}
@@ -183,7 +209,7 @@ export const Vlog: React.FC = () => {
                     className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
                     style={{ color: '#4D1A09' }}
                   />
-                  <h4 className="text-xl font-semibold mb-3" style={{ color: '#291509' }}>
+                  <h4 className="text-xl font-semibold mb-3" style={{ color: '#4D1A09' }}>
                     Instagram
                   </h4>
                   <p className="text-sm opacity-80 mb-4" style={{ color: '#524354' }}>
@@ -202,15 +228,15 @@ export const Vlog: React.FC = () => {
               >
                 <Youtube
                   className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: '#EDDCC3' }}
+                  style={{ color: '#4D1A09' }}
                 />
-                <h4 className="text-xl font-semibold mb-3" style={{ color: '#EDDCC3' }}>
+                <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
                   YouTube
                 </h4>
-                <p className="text-sm opacity-90 mb-4" style={{ color: '#C8BAAA' }}>
+                <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
                   Videos extensos, tutoriales detallados y análisis profundo
                 </p>
-                <div className="text-xs opacity-70" style={{ color: '#C8BAAA' }}>
+                <div className="text-xs opacity-70" style={{ color: '#524354' }}>
                   Gabriela Ortiz
                 </div>
               </Card>
@@ -222,15 +248,15 @@ export const Vlog: React.FC = () => {
               >
                 <Video
                   className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: '#CBB186' }}
+                  style={{ color: '#4D1A09' }}
                 />
-                <h4 className="text-xl font-semibold mb-3" style={{ color: '#EDDCC3' }}>
+                <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
                   TikTok
                 </h4>
-                <p className="text-sm opacity-90 mb-4" style={{ color: '#C8BAAA' }}>
+                <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
                   Tips rápidos, tendencias conscientes y contenido educativo
                 </p>
-                <div className="text-xs opacity-70" style={{ color: '#C8BAAA' }}>
+                <div className="text-xs opacity-70" style={{ color: '#524354' }}>
                   @gabrielaortiz
                 </div>
               </Card>
