@@ -51,7 +51,7 @@ export const AboutPreview: React.FC = () => {
           <div className="relative">
             <div className="aspect-[4/5] bg-gradient-to-br from-sage-200 to-cream-200 overflow-hidden shadow-xl">
               <img
-                src="public/about-me-preview.png"
+                src="public/photo4.jpeg"
                 alt="Gabriela Ortiz - Consultora de Imagen"
                 className="w-full h-full object-cover"
               />

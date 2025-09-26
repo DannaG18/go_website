@@ -148,9 +148,9 @@ export const MainHero: React.FC = () => {
             <div className="relative overflow-hidden vintage-shadow-lg vintage-border">
               <img
                 // src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                src="public/hero-photo.png"
+                src="public/photo6.jpeg"
                 alt="Gabriela Ortiz - Consultora de Imagen"
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[700px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
             </div>
