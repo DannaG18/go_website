@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --swiper-navigation-color: #2a0713;  /* color de las flechas */
+  --swiper-navigation-size: 40px;      /* tamaño del ícono */
+  --swiper-navigation-margin-left: 50px;    /* margen alrededor del ícono */
+}
+
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -52,6 +59,13 @@
     background: rgba(139, 141, 121, 0.3);
     color: #291509;
   }
+}
+:global(.swiper-button-prev) {
+  left: -50px;
+}
+
+:global(.swiper-button-next) {
+  right: -80px;
 }
 
 @layer components {

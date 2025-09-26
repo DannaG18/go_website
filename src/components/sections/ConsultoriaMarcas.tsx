@@ -40,7 +40,7 @@ export const ConsultoriaMarcas: React.FC = () => {
     },
     {
       numero: 2,
-      titulo: 'REINVENCIÓN ESTRATÉGICA (Sin greenwashing)',
+      titulo: "REINVENCIÓN ESTRATÉGICA?\n(Sin greenwashing)",
       items: [
         {
           subtitulo: 'Re-diseño de narrativa',
@@ -195,99 +195,39 @@ export const ConsultoriaMarcas: React.FC = () => {
           <div className="mb-20">
             <div className="text-center mb-16">
               <h3 className="text-4xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
-                METODOLOGÍA DE TRABAJO 
+                METODOLOGÍA DE TRABAJO
               </h3>
               <p className="text-lg opacity-80" style={{ color: '#CBB186' }}>
                 Enfoque centrado en el cliente
               </p>
             </div>
 
-            <div className="space-y-6">
-              {metodologia.map((etapa, index) => {
-                const isExpanded = activeIndex === index;
-                return (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {metodologia.map((etapa, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center p-6 shadow-md"
+                  style={{ backgroundColor: '#EDDCC3' }}
+                >
+                  {/* Círculo con número */}
                   <div
-                    key={index}
-                    className="vintage-shadow overflow-hidden transition-all duration-300"
-                    style={{ backgroundColor: '#EDDCC3' }} 
+                    className="w-16 h-16 flex items-center justify-center text-white font-light text-2xl rounded-full mb-4"
+                    style={{ backgroundColor: '#4D1A09' }}
                   >
-                    {/* Header - Always visible */}
-                    <div
-                      className="p-6 cursor-pointer hover:bg-opacity-90 transition-all duration-200"
-                      style={{ backgroundColor: '#EDDCC3' }}
-                      onClick={() => setActiveIndex(isExpanded ? null : index)}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <div
-                            className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl mr-6 rounded-full"
-                            style={{ backgroundColor: '#4D1A09' }}
-                          >
-                            {etapa.numero}
-                          </div>
-                          <h4 className="text-xl font-bold" style={{ color: '#291509' }}>
-                            {etapa.titulo}
-                          </h4>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-sm opacity-60" style={{ color: '#524354' }}>
-                            {isExpanded ? 'Ocultar' : 'Ver detalles'}
-                          </span>
-                          <div
-                            className={`transition-transform duration-300 ${
-                              isExpanded ? 'rotate-180' : 'rotate-0'
-                            }`}
-                          >
-                            <ArrowRight className="w-5 h-5" style={{ color: '#4D1A09' }} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content - Expandable */}
-                    <div
-                      className={`transition-all duration-500 ease-in-out ${
-                        isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                      } overflow-hidden`}
-                    >
-                      <div className="px-6 pb-6">
-                        <div
-                          className="h-px mb-6 mx-12"
-                          style={{ backgroundColor: '#8B8D79' }}
-                        />
-                        <div className="space-y-6 ml-18">
-                          {etapa.items.map((item, i) => (
-                            <div
-                              key={i}
-                              className="group hover:bg-opacity-50 hover:bg-white p-4 rounded-lg transition-all duration-200"
-                            >
-                              <div className="flex items-start">
-                                <div className="flex-shrink-0 mr-4 mt-1">
-                                  <div
-                                    className="w-3 h-3 rounded-full"
-                                    style={{ backgroundColor: '#565021' }}
-                                  />
-                                </div>
-                                <div className="flex-1">
-                                  <h5 className="text-lg font-semibold mb-2 group-hover:text-opacity-90 transition-all duration-200" 
-                                      style={{ color: '#4D1A09' }}>
-                                    {item.subtitulo}
-                                  </h5>
-                                  <p className="text-base leading-relaxed opacity-80" 
-                                     style={{ color: '#524354' }}>
-                                    {item.descripcion}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+                    {etapa.numero}
                   </div>
-                );
-              })}
+
+                  {/* Título */}
+                  <h4
+                    className="text-lg font-bold text-center"
+                    style={{ color: '#291509' }}
+                  >
+                    {etapa.titulo}
+                  </h4>
+                </div>
+              ))}
             </div>
+
           </div>
 
           {/* Call to Action */}
@@ -307,12 +247,12 @@ export const ConsultoriaMarcas: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                <Button
-                  size="lg"
-                  onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  ¿Hablamos?
-                </Button>
+                  <Button
+                    size="lg"
+                    onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    ¿Hablamos?
+                  </Button>
                 </a>
                 <Button
                   variant="secondary"

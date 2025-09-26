@@ -26,13 +26,13 @@ export const MainHero: React.FC = () => {
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
       {/* Background con Arena */}
-      {/* <div 
+      <div 
         className="absolute inset-0"
-        style={{ backgroundColor: '#FEFAE0' }}
-      /> */}
+        style={{ backgroundColor: '#845a5a72' }}
+      />
 
       {/* Textura de madera natural */}
-      <div className="absolute inset-0 opacity-">
+      <div className="absolute inset-0 opacity-40">
         <img
           src="public/textura2.jpg"
           alt="Textura natural de algodón"
@@ -48,7 +48,7 @@ export const MainHero: React.FC = () => {
       <div className="absolute inset-0 vintage-texture-paper opacity-50" />
 
       {/* Elementos vintage de fondo */}
-      <div className="absolute inset-0 opacity-8">
+      <div className="absolute inset-0 opacity-10">
         {/* <div className="absolute top-20 left-10 w-32 h-32 overflow-hidden animate-vintage-float vintage-border">
           <img 
             src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400" 
@@ -73,13 +73,13 @@ export const MainHero: React.FC = () => {
           />
         </div> */}
 
-        <div className="absolute bottom-20 right-32 w-40 h-40 overflow-hidden animate-vintage-float vintage-border" style={{ animationDelay: '2s' }}>
+        {/* <div className="absolute bottom-20 right-32 w-40 h-40 overflow-hidden animate-vintage-float vintage-border" style={{ animationDelay: '2s' }}>
           <img
             src="https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&w=300"
             alt="Plantas verdes sage"
             className="w-full h-full object-cover opacity-70"
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Contenido */}
@@ -89,12 +89,12 @@ export const MainHero: React.FC = () => {
           <div className="space-y-10">
             <div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal mb-6 mt-6 leading-tight">
-                <span style={{ color: '#ced8b8ff' }}>Gabriela Ortiz</span> {/* #291509 */}
+                <span style={{ color: '#291509' }}>Gabriela Ortiz</span> {/* #291509 */}
                 {/* <br /> */}
                 {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
               </h1>
-              <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#EDDCC3' }} />
-              <p className="text-xl md:text-2xl font-light mb-12 opacity-90" style={{ color: '#f7f6f1ff' }}>
+              <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#f6fbe3ff' }} />
+              <p className="text-xl md:text-2xl font-light- mb-12 opacity-90" style={{ color: '#291509' }}>
                 Consultora de Imagen & Marca Personal
               </p>
 
@@ -103,7 +103,7 @@ export const MainHero: React.FC = () => {
 
             {/* Frase con estilo vintage */}
             {/* <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}> */}
-              <p className="text-lg md:text-xl font-bold italic mb-6 leading-relaxed" style={{ color: '#e3eccaff' }}>
+              <p className="text-lg md:text-xl font-bold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
                 "El lujo no es tener más, sino encontrar lo que realmente te pertenece."
               </p>
 
@@ -145,7 +145,7 @@ export const MainHero: React.FC = () => {
 
           {/* Lado derecho - Foto con marco vintage */}
           <div className="relative">
-            <div className="relative overflow-hidden vintage-shadow-lg vintage-border">
+            <div className="relative overflow-hidden vintage-shadow-lg ">
               <img
                 // src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800" 
                 src="public/photo6.jpeg"

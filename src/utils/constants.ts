@@ -73,34 +73,38 @@ export const SERVICES = [
 export const VLOG_VIDEOS = [
   {
     id: 'moda-sostenible-guia',
-    title: 'Guía Completa: Moda Sostenible en Colombia',
-    description: 'Todo lo que necesitas saber sobre marcas locales conscientes y materiales eco-friendly.',
-    thumbnail: 'https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=800',
-    duration: '15:30',
+    title: '"No inviertas en ropa, invierte en tu cuerpo" ',
+    description: 'Cómo sentirte increíble con los que llevas puesto.',
+    link: 'https://www.instagram.com/p/DI4Zz1XOyJM/',
+    thumbnail: '/public/vlog2.png',
+    duration: '00:53',
     category: 'Moda Sostenible'
   },
   {
     id: 'marcas-locales-spotlight',
-    title: 'Marcas Colombianas que Debes Conocer',
-    description: 'Spotlight a diseñadores locales que están revolucionando la moda nacional.',
-    thumbnail: 'https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=800',
-    duration: '12:15',
-    category: 'Marcas Locales'
+    title: 'Revelando los Secretos de tu Diseñadora Favorita',
+    description: 'Todo lo que debes saber para hacer una compra consciente.',
+    link: 'https://www.instagram.com/p/DM77uY1uwY1/',
+    thumbnail: '/public/vlog3.png',
+    duration: '00:38',
+    category: 'Guía de Compra'
   },
   {
     id: 'basicos-armario-guia',
-    title: 'Básicos de Armario: Guía de Compra 2025',
-    description: 'Las 15 piezas esenciales para construir un guardarropa funcional y atemporal.',
-    thumbnail: 'https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&w=800',
-    duration: '18:45',
-    category: 'Guías de Compra'
+    title: 'Básicos de Armario: Guía de versatilidad',
+    description: 'Cómo transformar tu look de office en un outfit funcional y atemporal.',
+    link: 'https://www.instagram.com/p/DJh_xB6tPSM/',
+    thumbnail: '/public/vlog5.png',
+    duration: '1:10',
+    category: 'Guía de Compra'
   },
   {
     id: 'estilo-personal-metodologia',
-    title: 'Cómo Desarrollar tu Estilo Personal',
-    description: 'Mi metodología paso a paso para descubrir y definir tu lenguaje visual único.',
-    thumbnail: 'https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&w=800',
-    duration: '22:30',
+    title: '¿DESINTERÉS O MIEDO?',
+    description: '¡El reto más grande de mi trabajo como consultora de imagen sigue siendo generarte la confianza de conocerte a ti mismo!.',
+    link: 'https://www.instagram.com/p/DNgRBXJuEB5/',
+    thumbnail: '/public/vlog4.png',
+    duration: '00:55',
     category: 'Educación de Estilo'
   }
 ] as const;

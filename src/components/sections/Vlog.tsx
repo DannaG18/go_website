@@ -97,7 +97,7 @@ export const Vlog: React.FC = () => {
 
           <Swiper
             modules={[Navigation, Pagination]}
-            spaceBetween={30}
+            // spaceBetween={10}  
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
@@ -105,75 +105,79 @@ export const Vlog: React.FC = () => {
               768: { slidesPerView: 2 }, // en pantallas medianas: 2 cards
               1024: { slidesPerView: 3 }, // en pantallas grandes: 3 cards
             }}
-            className="max-w-5xl mx-auto"
+            className="max-w-8xl mx-auto"
           >
             {VLOG_VIDEOS.map((video) => (
               <SwiperSlide key={video.id}>
-                <Card
-                  hover
-                  className="group overflow-hidden transform transition-all duration-500 hover:scale-105"
-                  style={{ backgroundColor: "#C8BAAA" }}
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-50 h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className='ml-16 mr-16 mb-10'>
+                  <Card
+                    hover
+                    className="group overflow-hidden transform transition-all duration-500 hover:scale-105"
+                    style={{ backgroundColor: "#C8BAAA" }}
+                  >
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-100 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    {/* Play button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-20 h-20 bg-white bg-opacity-90 flex items-center justify-center vintage-shadow">
-                        <Play className="w-8 h-8 ml-1" style={{ color: "#565021" }} />
+                      {/* Play button */}
+                      <a href={video.link} target="_blank" rel="">
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-20 h-20 bg-white bg-opacity-90 flex items-center justify-center vintage-shadow">
+                            <Play className="w-8 h-8 ml-1" style={{ color: "#565021" }} />
+                          </div>
+                        </div>
+                      </a>
+                      {/* Duration badge */}
+                      <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
+                        <Clock className="w-4 h-4 mr-2" />
+                        {video.duration}
+                      </div>
+
+                      {/* Category badge */}
+                      <div className="absolute top-4 left-4">
+                        <span
+                          className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
+                          style={{
+                            backgroundColor: "#8B8D79",
+                            color: "#EDDCC3",
+                          }}
+                        >
+                          <Tag className="w-3 h-3 mr-1" />
+                          {video.category}
+                        </span>
                       </div>
                     </div>
 
-                    {/* Duration badge */}
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
-                      <Clock className="w-4 h-4 mr-2" />
-                      {video.duration}
-                    </div>
-
-                    {/* Category badge */}
-                    <div className="absolute top-4 left-4">
-                      <span
-                        className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
-                        style={{
-                          backgroundColor: "#8B8D79",
-                          color: "#EDDCC3",
-                        }}
+                    <div className="p-8">
+                      <h4
+                        className="text-xl font-medium mb-2 leading-tight"
+                        style={{ color: "#291509" }}
                       >
-                        <Tag className="w-3 h-3 mr-1" />
-                        {video.category}
-                      </span>
+                        {video.title}
+                      </h4>
+
+                      <p
+                        className="text-sm leading-relaxed opacity-70 mb-4"
+                        style={{ color: "#524354" }}
+                      >
+                        {video.description}
+                      </p>
+                      <a href={video.link} target="_blank" rel="">
+                        <button
+                          className="text-sm font-medium flex items-center transition-colors duration-300 hover:opacity-80"
+                          style={{ color: "#565021" }}
+                        >
+                          Ver video
+                          <Play className="w-4 h-4 ml-2" />
+                        </button>
+                      </a>
                     </div>
-                  </div>
-
-                  <div className="p-8">
-                    <h4
-                      className="text-xl font-medium mb-4 leading-tight"
-                      style={{ color: "#291509" }}
-                    >
-                      {video.title}
-                    </h4>
-
-                    <p
-                      className="text-sm leading-relaxed opacity-70 mb-6"
-                      style={{ color: "#524354" }}
-                    >
-                      {video.description}
-                    </p>
-
-                    <button
-                      className="text-sm font-medium flex items-center transition-colors duration-300 hover:opacity-80"
-                      style={{ color: "#565021" }}
-                    >
-                      Ver video
-                      <Play className="w-4 h-4 ml-2" />
-                    </button>
-                  </div>
-                </Card>
+                  </Card>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
