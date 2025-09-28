@@ -76,7 +76,7 @@ export const PurchasePromise: React.FC = () => {
           <div className="relative">
             <div className="relative overflow-hidden organic-shadow-lg">
               <img 
-                src="public/photo5.jpeg" 
+                src="/photo5.jpeg" 
                 alt="Proceso creativo y materiales naturales" 
                 className="w-full h-[650px] object-cover"
               />

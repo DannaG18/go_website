@@ -32,17 +32,17 @@ export const MainHero: React.FC = () => {
       />
 
       {/* Textura de madera natural */}
-      <div className="absolute inset-0 opacity-40">
+      {/* <div className="absolute inset-0 opacity-40">
         <img
           src="public/textura2.jpg"
           alt="Textura natural de algodón"
           className="w-full h-full object-cover"
-        />
+        /> */}
         {/* <div
     className="absolute inset-0"
     style={{ backgroundColor: 'rgba(210, 170, 124, 0.5)' }} 
   ></div> */}
-      </div>
+      {/* </div> */}
 
       {/* Textura vintage de papel */}
       <div className="absolute inset-0 vintage-texture-paper opacity-50" />
@@ -148,7 +148,7 @@ export const MainHero: React.FC = () => {
             <div className="relative overflow-hidden vintage-shadow-lg ">
               <img
                 // src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                src="public/photo6.jpeg"
+                src="/photo6.jpeg"
                 alt="Gabriela Ortiz - Consultora de Imagen"
                 className="w-full h-[700px] object-cover"
               />

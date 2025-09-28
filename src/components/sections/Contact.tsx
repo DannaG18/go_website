@@ -63,7 +63,7 @@ export function Contact() {
       <Section id="contactame" className="py-24">
         <div className="absolute inset-0" style={{ backgroundColor: '#6b6b5bff' }} />
         <div className="absolute inset-0 opacity-5">
-          <img src="public/PajaTexture.jpg" alt="Textura natural" className="w-full h-full object-cover" />
+          <img src="/PajaTexture.jpg" alt="Textura natural" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 opacity-10">
           <img

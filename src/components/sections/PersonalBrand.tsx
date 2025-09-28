@@ -51,7 +51,7 @@ export const PersonalBrand: React.FC = () => {
         />
         <div className="absolute inset-0 opacity-10">
           <img
-            src="public/TelaTexture.jpg"
+            src="/TelaTexture.jpg"
             alt="Textura natural de algodón"
             className="w-full h-full object-cover"
           />

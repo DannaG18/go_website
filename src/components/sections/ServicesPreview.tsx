@@ -23,7 +23,7 @@ export const ServicesPreview: React.FC = () => {
       />
             <div className="absolute inset-0 opacity-15">
         <img
-          src="public/LeavesBackground.jpg"
+          src="/LeavesBackground.jpg"
           alt="Textura natural de algodón"
           className="w-full h-full object-cover"
         />

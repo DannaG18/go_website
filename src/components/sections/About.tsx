@@ -34,7 +34,7 @@ export const About: React.FC = () => {
             <Card className="overflow-hidden vintage-shadow" style={{ backgroundColor: '#C8BAAA' }}>
               <div className="relative">
                 <img 
-                  src="public/photo3.jpeg" 
+                  src="/photo3.jpeg" 
                   alt="Gabriela Ortiz - Diseñadora de Modas" 
                   className="w-full h-[700px] object-cover"
                 />
