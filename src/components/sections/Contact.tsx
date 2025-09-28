@@ -92,7 +92,10 @@ export function Contact() {
                   <Mail className="w-8 h-8 mr-6" style={{ color: '#565021' }} />
                   <div>
                     <h3 className="text-xl font-medium mb-2" style={{ color: '#565021' }}>Email</h3>
-                    <p style={{ color: '#524334' }}>hola@gabrielaortiz.com</p>
+                    <a href="mailto:sgabrielaortiz@gmail.com?subject=Consulta&body=Hola, quiero más información.">
+                      <p style={{ color: '#524334' }}>sgabrielaortiz@gmail.com</p>
+                    </a>
+                    <p className='text-sm' style={{ color: '#7d654eff' }}>Respondo personalmente cada mensaje</p>
                   </div>
                 </div>
               </Card>
@@ -102,7 +105,10 @@ export function Contact() {
                   <Phone className="w-8 h-8 mr-6" style={{ color: '#565021' }} />
                   <div>
                     <h3 className="text-xl font-medium mb-2" style={{ color: '#565021' }}>Teléfono</h3>
-                    <p style={{ color: '#524334' }}>+52 (55) 1234-5678</p>
+                    <a href="tel:+573204033404">
+                      <p style={{ color: '#524334' }}>+57 (320) 403-3404</p>
+                    </a>
+                    <p className='text-sm' style={{ color: '#7d654eff' }}>Lun - Vie, 8:00 - 17:00</p>
                   </div>
                 </div>
               </Card>
@@ -112,7 +118,14 @@ export function Contact() {
                   <MapPin className="w-8 h-8 mr-6" style={{ color: '#565021' }} />
                   <div>
                     <h3 className="text-xl font-medium mb-2" style={{ color: '#565021' }}>Ubicación</h3>
-                    <p style={{ color: '#524334' }}>Ciudad de México, México</p>
+                    <a
+                      href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p style={{ color: '#524334' }}>Cúcuta, Norte de Santander, CO</p>
+                    </a>
+                    <p className='text-sm' style={{ color: '#7d654eff' }}>Reuniones con cita previa</p>
                   </div>
                 </div>
               </Card>
@@ -128,6 +141,14 @@ export function Contact() {
                     className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors">
                     <Linkedin className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                   </a>
+                  {/* <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
+                  >
+                    <Youtube className="w-6 h-6" style={{ color: '#EDDCC3' }} />
+                  </a> */}
                 </div>
               </Card>
             </div>

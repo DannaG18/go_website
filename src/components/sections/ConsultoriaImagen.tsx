@@ -3,7 +3,6 @@ import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { AnimatedPage } from '../common/AnimationPage';
 import { useState } from 'react';
 import '../../index.css';
 
@@ -98,7 +97,6 @@ export const ConsultoriaImagen: React.FC = () => {
   ];
 
   return (
-    <AnimatedPage>
       <Section id="consultoria-imagen" className="py-24">
         <div className="absolute inset-0" style={{ backgroundColor: '#C8BAAA' }} />
         <div className="absolute inset-0 vintage-texture-paper opacity-30" />
@@ -244,6 +242,5 @@ export const ConsultoriaImagen: React.FC = () => {
           </div>
         </div>
       </Section>
-    </AnimatedPage>
   );
 };

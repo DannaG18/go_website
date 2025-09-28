@@ -98,7 +98,7 @@ export const ClosetAlgorithm: React.FC = () => {
 
             {/* Benefits */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-3xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
                 Lo que Lograrás
               </h3>
               {benefits.map((benefit, index) => (
@@ -116,10 +116,10 @@ export const ClosetAlgorithm: React.FC = () => {
                       {index + 1}
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2" style={{ color: '#291509' }}>
+                      <h4 className="text-xl font-semibold mb-2" style={{ color: '#291509' }}>
                         {benefit.title}
                       </h4>
-                      <p className="text-sm leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                      <p className="text-m leading-relaxed opacity-80" style={{ color: '#524354' }}>
                         {benefit.description}
                       </p>
                     </div>
@@ -201,19 +201,19 @@ export const ClosetAlgorithm: React.FC = () => {
                 {/* Features */}
                 <div className="grid md:grid-cols-3 gap-6 mb-10">
                   <div className="text-center">
-                    <Download className="w-8 h-8 mx-auto mb-3" style={{ color: '#CBB186' }} />
-                    <h4 className="font-semibold mb-2" style={{ color: '#EDDCC3' }}>Descarga Inmediata</h4>
-                    <p className="text-sm opacity-80" style={{ color: '#C8BAAA' }}>Acceso instantáneo tras la compra</p>
+                    <Download className="w-8 h-8 mx-auto mb-3" style={{ color: '#fcdba5ff' }} />
+                    <h4 className="font-semibold text-lg mb-2" style={{ color: '#EDDCC3' }}>Descarga Inmediata</h4>
+                    <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>Acceso instantáneo tras la compra</p>
                   </div>
                   <div className="text-center">
-                    <Star className="w-8 h-8 mx-auto mb-3" style={{ color: '#CBB186' }} />
-                    <h4 className="font-semibold mb-2" style={{ color: '#EDDCC3' }}>Contenido Exclusivo</h4>
-                    <p className="text-sm opacity-80" style={{ color: '#C8BAAA' }}>Metodología única y personalizada</p>
+                    <Star className="w-8 h-8 mx-auto mb-3" style={{ color: '#fcdba5ff' }} />
+                    <h4 className="font-semibold text-lg mb-2" style={{ color: '#EDDCC3' }}>Contenido Exclusivo</h4>
+                    <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>Metodología única y personalizada</p>
                   </div>
                   <div className="text-center">
-                    <BookOpen className="w-8 h-8 mx-auto mb-3" style={{ color: '#CBB186' }} />
-                    <h4 className="font-semibold mb-2" style={{ color: '#EDDCC3' }}>Formato Digital</h4>
-                    <p className="text-sm opacity-80" style={{ color: '#C8BAAA' }}>Compatible con todos los dispositivos</p>
+                    <BookOpen className="w-8 h-8 mx-auto mb-3" style={{ color: '#fcdba5ff' }} />
+                    <h4 className="font-semibold text-lg mb-2" style={{ color: '#EDDCC3' }}>Formato Digital</h4>
+                    <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>Compatible con todos los dispositivos</p>
                   </div>
                 </div>
 
@@ -221,7 +221,7 @@ export const ClosetAlgorithm: React.FC = () => {
                 <div className="bg-white bg-opacity-10 p-8 mb-8 vintage-shadow">
                   <div className="text-center mb-6">
                     <span className="text-3xl font-bold" style={{ color: '#EDDCC3' }}>$150.0000 COP</span>
-                    <p className="text-sm opacity-80 mt-2" style={{ color: '#C8BAAA' }}>Inversión única • Acceso de por vida</p>
+                    <p className="text-sm opacity-80 mt-2" style={{ color: '#291509' }}>Inversión única • Acceso de por vida</p>
                   </div>
 
                   <Button
@@ -236,7 +236,7 @@ export const ClosetAlgorithm: React.FC = () => {
                   </Button>
                 </div>
 
-                <p className="text-sm opacity-70" style={{ color: '#C8BAAA' }}>
+                <p className="text-sm opacity-70" style={{ color: '#fcf4ebff' }}>
                   Garantía de satisfacción de 30 días • Pago seguro • Soporte incluido
                 </p>
               </div>

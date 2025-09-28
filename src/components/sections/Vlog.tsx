@@ -27,7 +27,7 @@ export const Vlog: React.FC = () => {
       icon: ShoppingBag,
       title: 'Guías de Compra',
       description: 'Aprende a construir un armario funcional y atemporal con piezas clave.',
-      color: '#d8ae6fff'
+      color: '#EDDCC3'
     },
     {
       icon: BookOpen,

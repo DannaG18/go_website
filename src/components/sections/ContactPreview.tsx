@@ -28,15 +28,15 @@ export function ContactPreview() {
   return (
     <section id="contacto-preview" className="py-32 relative overflow-hidden">
       <div className="absolute inset-0" style={{ backgroundColor: '#1C2218' }} />
-      
+
       <div className="absolute inset-0 opacity-10">
-        <img 
-          src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-          alt="Textura natural de lino" 
+        <img
+          src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Textura natural de lino"
           className="w-full h-full object-cover"
         />
       </div>
-      
+
       <div className="container relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-light mb-8" style={{ color: '#EDDCC3' }}>
@@ -44,7 +44,7 @@ export function ContactPreview() {
           </h2>
           <div className="w-16 h-0.5 mx-auto mb-8" style={{ backgroundColor: '#CBB186' }} />
           <p className="text-lg max-w-3xl mx-auto leading-relaxed opacity-90" style={{ color: '#C8BAAA' }}>
-            Estoy aquí para ayudarte a transformar tu visión en realidad. Conversemos sobre 
+            Estoy aquí para ayudarte a transformar tu visión en realidad. Conversemos sobre
             tu proyecto y descubramos juntas cómo crear algo verdaderamente auténtico.
           </p>
         </div>
@@ -56,9 +56,12 @@ export function ContactPreview() {
                 <Mail className="w-8 h-8 mr-6" style={{ color: '#291509' }} />
                 <div>
                   <h3 className="text-xl font-medium mb-2" style={{ color: '#291509' }}>Email</h3>
-                  <p className="text-base opacity-80" style={{ color: '#524354' }}>
-                    sgabrielaortiz@gmail.com
-                  </p>
+                  <a href="mailto:sgabrielaortiz@gmail.com?subject=Consulta&body=Hola, quiero más información.">
+                    <p className="text-base opacity-90" style={{ color: '#524354' }}>
+                      sgabrielaortiz@gmail.com
+                    </p>
+                  </a>
+                  <p className='text-sm opacity-60' style={{ color: '#524354' }}>Respondo personalmente cada mensaje</p>
                 </div>
               </div>
             </Card>
@@ -68,9 +71,12 @@ export function ContactPreview() {
                 <Phone className="w-8 h-8 mr-6" style={{ color: '#291509' }} />
                 <div>
                   <h3 className="text-xl font-medium mb-2" style={{ color: '#291509' }}>Teléfono</h3>
-                  <p className="text-base opacity-80" style={{ color: '#524354' }}>
-                    +57 (320) 403-3404
-                  </p>
+                  <a href="tel:+573204033404">
+                    <p className="text-base opacity-80" style={{ color: '#524354' }}>
+                      +57 (320) 403-3404
+                    </p>
+                  </a>
+                  <p className='text-sm opacity-60' style={{ color: '#524354' }}>Lun - Vie, 8:00 - 17:00</p>
                 </div>
               </div>
             </Card>
@@ -80,9 +86,16 @@ export function ContactPreview() {
                 <MapPin className="w-8 h-8 mr-6" style={{ color: '#291509' }} />
                 <div>
                   <h3 className="text-xl font-medium mb-2" style={{ color: '#291509' }}>Ubicación</h3>
-                  <p className="text-base opacity-80" style={{ color: '#524354' }}>
-                    Cúcuta, Colombia
-                  </p>
+                  <a
+                    href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="text-base opacity-80" style={{ color: '#524354' }}>
+                      Cúcuta, Norte de Santander, CO
+                    </p>
+                  </a>
+                  <p className='text-sm opacity-60' style={{ color: '#524354' }}>Reuniones con cita previa</p>
                 </div>
               </div>
             </Card>
@@ -108,14 +121,14 @@ export function ContactPreview() {
                 >
                   <Linkedin className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                 </a>
-                                <a
+                {/* <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
                 >
                   <Youtube className="w-6 h-6" style={{ color: '#EDDCC3' }} />
-                </a>
+                </a> */}
               </div>
             </Card>
           </div>
@@ -124,7 +137,7 @@ export function ContactPreview() {
             <h3 className="text-2xl font-medium mb-8" style={{ color: '#291509' }}>
               Envíame un mensaje
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -197,7 +210,7 @@ export function ContactPreview() {
             </form>
           </Card>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }

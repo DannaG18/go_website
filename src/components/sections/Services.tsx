@@ -1,5 +1,5 @@
 import { User, Briefcase, Users, Camera, ArrowRight } from 'lucide-react';
-import { AnimatedPage } from '../common/AnimationPage';
+// import { AnimatedPage } from '../common/AnimationPage';
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
@@ -14,7 +14,7 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <Section id="servicios" className="py-24">
         <div
           className="absolute inset-0"
@@ -135,6 +135,6 @@ export const Services: React.FC = () => {
           </div>
         </div>
       </Section>
-    </AnimatedPage>
+    // </AnimatedPage>
   );
 };

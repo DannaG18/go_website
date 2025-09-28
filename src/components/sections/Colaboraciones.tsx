@@ -4,7 +4,7 @@ import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { AnimatedPage } from '../common/AnimationPage';
+// import { AnimatedPage } from '../common/AnimationPage';
 
 export const Colaboraciones: React.FC = () => {
   const { isVisible, elementRef } = useScrollAnimation();
@@ -108,7 +108,7 @@ export const Colaboraciones: React.FC = () => {
   ];
 
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <Section id="colaboraciones" className="py-24">
         <div
           className="absolute inset-0"
@@ -130,7 +130,7 @@ export const Colaboraciones: React.FC = () => {
           {/* Filosofía Principal */}
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
             <div className="space-y-8">
-              <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+              <Card className="p-14 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
                   Responsabilidad Digital en 2025
                 </h2>
@@ -159,7 +159,7 @@ export const Colaboraciones: React.FC = () => {
 
             {/* Beneficios */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-3xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
                 Beneficios del Branding y Colaboraciones
               </h3>
               {beneficios.map((beneficio, index) => (
@@ -167,7 +167,7 @@ export const Colaboraciones: React.FC = () => {
                   key={index}
                   hover
                   className="p-6 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
-                  style={{ backgroundColor: '#C8BAAA' }}
+                  style={{ backgroundColor: '#d9cbbaff' }}
                 >
                   <div className="flex items-start">
                     <beneficio.icon
@@ -175,10 +175,10 @@ export const Colaboraciones: React.FC = () => {
                       style={{ color: '#4D1A09' }}
                     />
                     <div>
-                      <h4 className="text-lg font-semibold mb-2" style={{ color: '#291509' }}>
+                      <h4 className="text-xl font-semibold mb-2" style={{ color: '#291509' }}>
                         {beneficio.titulo}
                       </h4>
-                      <p className="text-sm leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                      <p className="text-m leading-relaxed opacity-80" style={{ color: '#524354' }}>
                         {beneficio.descripcion}
                       </p>
                     </div>
@@ -228,16 +228,16 @@ export const Colaboraciones: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-sm leading-relaxed mb-6 opacity-80" style={{ color: '#524354' }}>
+                  <p className="text-m leading-relaxed mb-6 opacity-80" style={{ color: '#524354' }}>
                     {servicio.descripcion}
                   </p>
 
                   <div className="space-y-2">
-                    <h5 className="text-sm font-semibold mb-3" style={{ color: '#565021' }}>
+                    <h5 className="text-m font-semibold mb-3" style={{ color: '#565021' }}>
                       VENTAJAS:
                     </h5>
                     {servicio.ventajas.map((ventaja, ventajaIndex) => (
-                      <div key={ventajaIndex} className="flex items-start text-xs">
+                      <div key={ventajaIndex} className="flex items-start text-sm">
                         <CheckCircle className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" style={{ color: '#565021' }} />
                         <span style={{ color: '#524354' }}>{ventaja}</span>
                       </div>
@@ -259,13 +259,13 @@ export const Colaboraciones: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 ">
               {paquetes.map((paquete, index) => (
                 <Card
                   key={index}
                   hover
                   className="p-8 text-center group transform transition-all duration-500 hover:scale-105 vintage-shadow"
-                  style={{ backgroundColor: index === 1 ? '#8B8D79' : '#565021' }}
+                  style={{ backgroundColor: index === 1 ? '#565021' : '#565021' }}
                 >
                   <div className="mb-6">
                     <h4 className="text-2xl font-bold mb-2" style={{ color: '#EDDCC3' }}>
@@ -337,6 +337,6 @@ export const Colaboraciones: React.FC = () => {
           </div>
         </div>
       </Section>
-    </AnimatedPage>
+    // </AnimatedPage>
   );
 };

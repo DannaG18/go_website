@@ -4,7 +4,7 @@ import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { AnimatedPage } from '../common/AnimationPage';
+// import { AnimatedPage } from '../common/AnimationPage';
 import { useState } from 'react';
 
 export const ConsultoriaMarcas: React.FC = () => {
@@ -40,7 +40,7 @@ export const ConsultoriaMarcas: React.FC = () => {
     },
     {
       numero: 2,
-      titulo: "REINVENCIÓN ESTRATÉGICA?\n(Sin greenwashing)",
+      titulo: "REINVENCIÓN ESTRATÉGICA\n(Sin greenwashing)",
       items: [
         {
           subtitulo: 'Re-diseño de narrativa',
@@ -105,11 +105,10 @@ export const ConsultoriaMarcas: React.FC = () => {
   ];
 
   return (
-    <AnimatedPage>
       <Section id="consultoria-marcas" className="py-24">
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: '#565021' }}
+          style={{ backgroundColor: '#565521ff' }}
         />
 
         {/* Textura vintage de papel */}
@@ -129,7 +128,7 @@ export const ConsultoriaMarcas: React.FC = () => {
           {/* Filosofía Principal */}
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
             <div className="space-y-8">
-              <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+              <Card className="p-9 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
                   El verdadero lujo no se agota en las temporadas
                 </h2>
@@ -162,7 +161,7 @@ export const ConsultoriaMarcas: React.FC = () => {
 
             {/* Beneficios */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-3xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
                 ¿Por qué funciona este enfoque?
               </h3>
               {beneficios.map((beneficio, index) => (
@@ -170,7 +169,7 @@ export const ConsultoriaMarcas: React.FC = () => {
                   key={index}
                   hover
                   className="p-6 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
-                  style={{ backgroundColor: '#C8BAAA' }}
+                  style={{ backgroundColor: '#EDDCC3' }}
                 >
                   <div className="flex items-start">
                     <beneficio.icon
@@ -178,10 +177,10 @@ export const ConsultoriaMarcas: React.FC = () => {
                       style={{ color: '#4D1A09' }}
                     />
                     <div>
-                      <h4 className="text-lg font-semibold mb-2" style={{ color: '#291509' }}>
+                      <h4 className="text-xl font-semibold mb-2" style={{ color: '#291509' }}>
                         {beneficio.titulo}
                       </h4>
-                      <p className="text-sm leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                      <p className="text-m leading-relaxed opacity-80" style={{ color: '#524354' }}>
                         {beneficio.descripcion}
                       </p>
                     </div>
@@ -197,7 +196,7 @@ export const ConsultoriaMarcas: React.FC = () => {
               <h3 className="text-4xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
                 METODOLOGÍA DE TRABAJO
               </h3>
-              <p className="text-lg opacity-80" style={{ color: '#CBB186' }}>
+              <p className="text-lg opacity-80" style={{ color: '#ebcc9aff' }}>
                 Enfoque centrado en el cliente
               </p>
             </div>
@@ -211,7 +210,7 @@ export const ConsultoriaMarcas: React.FC = () => {
                 >
                   {/* Círculo con número */}
                   <div
-                    className="w-16 h-16 flex items-center justify-center text-white font-light text-2xl rounded-full mb-4"
+                    className="w-16 h-16 flex items-center justify-center text-white font-bold text-2xl rounded-full mb-4"
                     style={{ backgroundColor: '#4D1A09' }}
                   >
                     {etapa.numero}
@@ -219,7 +218,7 @@ export const ConsultoriaMarcas: React.FC = () => {
 
                   {/* Título */}
                   <h4
-                    className="text-lg font-bold text-center"
+                    className="text-lg font-bold text-center whitespace-pre-line"
                     style={{ color: '#291509' }}
                   >
                     {etapa.titulo}
@@ -266,6 +265,5 @@ export const ConsultoriaMarcas: React.FC = () => {
           </div>
         </div>
       </Section>
-    </AnimatedPage>
   );
 };
