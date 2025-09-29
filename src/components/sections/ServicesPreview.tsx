@@ -52,7 +52,7 @@ export const ServicesPreview: React.FC = () => {
               <Card 
                 key={service.id} 
                 hover 
-                className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
+                className="p-8 text-center group transform transition-all duration-500 hover:scale-105 flex flex-col justify-between"
                 style={{ backgroundColor: '#EDDCC3' }}
               >
                 <div className="mb-8">
