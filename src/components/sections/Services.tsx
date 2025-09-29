@@ -103,7 +103,7 @@ export const Services: React.FC = () => {
                       }
                     }}
                   >
-                    Solicitar información
+                    Ver más información
                   </Button>
                 </Card>
               );
