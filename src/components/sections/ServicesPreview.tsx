@@ -63,7 +63,7 @@ export const ServicesPreview: React.FC = () => {
                   <h3 className="text-2xl font-medium mb-4" style={{ color: '#291509' }}>
                     {service.title}
                   </h3>
-                  <p className="text-m leading-relaxed mb-6 opacity-80" style={{ color: '#524354' }}>
+                  <p className="text-m leading-relaxed mb-4 opacity-80" style={{ color: '#524354' }}>
                     {service.description}
                   </p>
                 </div>
