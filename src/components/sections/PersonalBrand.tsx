@@ -112,7 +112,7 @@ export const PersonalBrand: React.FC = () => {
           >
             {/* Contenido Principal */}
             <div className="space-y-8">
-              <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+              <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#291509' }}>
                   <p className="font-medium">
                     En pleno 2025 todas las personas tenemos la responsabilidad
@@ -163,10 +163,10 @@ export const PersonalBrand: React.FC = () => {
             {/* Principios y Metodología */}
             <div className="space-y-8">
               <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#8B8D79' }}>
-                <h3 className="text-2xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
+                <h3 className="text-3xl font-bold mb-6" style={{ color: '#faf2e7ff' }}>
                   Mi Metodología
                 </h3>
-                <p className="text-base leading-relaxed mb-6 opacity-90" style={{ color: '#EDDCC3' }}>
+                <p className="text-base leading-relaxed mb-6 opacity-90" style={{ color: '#faf2e7ff' }}>
                   Desarrollo una estrategia integral que va más allá de la estética,
                   creando una identidad visual que refleje tu esencia y conecte
                   genuinamente con tu audiencia objetivo.
@@ -188,10 +188,10 @@ export const PersonalBrand: React.FC = () => {
                         style={{ color: '#4D1A09' }}
                       />
                       <div>
-                        <h4 className="text-lg font-semibold mb-2" style={{ color: '#291509' }}>
+                        <h4 className="text-xl font-semibold mb-2" style={{ color: '#291509' }}>
                           {principle.title}
                         </h4>
-                        <p className="text-sm leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                        <p className="text-m leading-relaxed opacity-80" style={{ color: '#524354' }}>
                           {principle.description}
                         </p>
                       </div>
