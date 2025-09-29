@@ -34,7 +34,7 @@ export const MainHero: React.FC = () => {
       {/* Textura de madera natural */}
       <div className="absolute inset-0 opacity-40">
         <img
-          src="public/textura2.jpg"
+          src="/textura2.jpg"
           alt="Textura natural de algodón"
           className="w-full h-full object-cover"
         />
