@@ -18,10 +18,10 @@ export function Header() {
 
   const menuItems = [
     { id: '/', label: 'Inicio' },
-    { id: '/marca-personal', label: 'Marca Personal' },
     { id: '/servicios', label: 'Servicios' },
     { id: '/vlog', label: 'Vlog' },
     { id: '/algoritmo-closet', label: 'El Algoritmo de tu Closet' },
+    { id: '/marca-personal', label: 'Marca Personal' },
     { id: '/sobre-mi', label: 'Sobre Mí' },
     { id: '/contactame', label: 'Contáctame' }
   ];
