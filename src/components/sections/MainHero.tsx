@@ -108,20 +108,20 @@ export const MainHero: React.FC = () => {
               </p>
 
               <div className="space-y-4">
-                <p className="text-m font-medium" style={{ color: '#FEFAE0' }}>
+                <p className="text-lg font-medium" style={{ color: '#FEFAE0' }}>
                   Si estás listo para:
                 </p>
                 <ul className="space-y-3 text-base" style={{ color: '#FEFAE0' }}>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
-                    Un armario que eleve tu esencia,
+                    <span className="w-2 h-2 text-lg mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                    Un armario que eleve tu esencia.
                   </li>
                   <li className="flex items-start">
                     <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
-                    Una marca que venda por valor, no por descuentos,
+                    Una marca que venda por valor, no por descuentos.
                   </li>
                   <li className="flex items-start">
-                    <span className="w-2 h-2 mr-4 mt-2 text-m flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                    <span className="w-2 h-2 mr-4 mt-2 text-lg flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
                     Un estilo de vida donde cada elección sume.
                   </li>
                 </ul>

@@ -60,17 +60,17 @@ export const ServicesPreview: React.FC = () => {
                     className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110" 
                     style={{ color: '#4D1A09' }} 
                   />
-                  <h3 className="text-xl font-medium mb-4" style={{ color: '#291509' }}>
+                  <h3 className="text-2xl font-medium mb-4" style={{ color: '#291509' }}>
                     {service.title}
                   </h3>
-                  <p className="text-sm leading-relaxed mb-6 opacity-80" style={{ color: '#524354' }}>
+                  <p className="text-lg leading-relaxed mb-6 opacity-80" style={{ color: '#524354' }}>
                     {service.description}
                   </p>
                 </div>
                 
                 <div className="space-y-3 mb-8">
                   {service.features.slice(0, 3).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center text-xs">
+                    <div key={featureIndex} className="flex items-center text-sm">
                       <div 
                         className="w-2 h-2 mr-3 flex-shrink-0" 
                         style={{ backgroundColor: '#565021' }} 
