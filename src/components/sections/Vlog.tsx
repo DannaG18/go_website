@@ -38,7 +38,7 @@ export const Vlog: React.FC = () => {
   ];
 
   return (
-    <Section id="vlog" className="py-24">
+    <Section id="vlog" className="py-24 relative w-full overflow-x-hidden" >
       <div
         className="absolute inset-0"
         style={{ backgroundColor: '#EDDCC3' }}
@@ -109,7 +109,7 @@ export const Vlog: React.FC = () => {
           >
             {VLOG_VIDEOS.map((video) => (
               <SwiperSlide key={video.id}>
-                <div className='ml-16 mr-16 mb-10'>
+                <div className='px-16 mb-10'>
                   <Card
                     hover
                     className="group overflow-hidden transform transition-all duration-500 hover:scale-105"

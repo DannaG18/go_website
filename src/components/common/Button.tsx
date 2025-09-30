@@ -52,6 +52,7 @@ export function Button({
           backgroundColor: '#291509',
           color: '#EDDCC3',
           borderColor: '#EDDCC3',
+          border: '2px solid',
         };
       case 'outline':
         return {

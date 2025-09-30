@@ -131,15 +131,15 @@ export const MainHero: React.FC = () => {
 
             {/* Botones con estilo vintage */}
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button size="lg" onClick={scrollToServices}>
-                Descubre mi trabajo
-              </Button>
               <Button
                 variant="secondary"
                 size="lg"
                 onClick={scrollToContact}
               >
                 Trabajemos juntos
+              </Button>
+              <Button size="lg" variant='tertiary' onClick={scrollToServices}>
+                Descubre mi trabajo
               </Button>
             </div>
           </div>

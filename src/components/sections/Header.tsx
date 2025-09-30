@@ -101,7 +101,7 @@ export function Header() {
                     {item.label}
                   </HashLink>
                 ) : (
-                  <Link
+                  <HashLink
                     key={item.id}
                     to={item.id}
                     onClick={() => setIsMenuOpen(false)}
@@ -111,7 +111,7 @@ export function Header() {
                       }`}
                   >
                     {item.label}
-                  </Link>
+                  </HashLink>
                 )
               )}
             </nav>
