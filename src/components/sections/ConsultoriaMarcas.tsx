@@ -241,18 +241,6 @@ export const ConsultoriaMarcas: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a
-                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    ¿Hablamos?
-                  </Button>
-                </a>
                 <Button
                   variant="secondary"
                   size="lg"
@@ -260,6 +248,19 @@ export const ConsultoriaMarcas: React.FC = () => {
                 >
                   Ver otros servicios
                 </Button>
+                <a
+                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant='tertiary'
+                    onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    ¿Hablamos?
+                  </Button>
+                </a>
               </div>
             </Card>
           </div>

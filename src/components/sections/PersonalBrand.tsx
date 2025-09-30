@@ -9,15 +9,6 @@ import { AnimatedPage } from '../common/AnimationPage';
 export const PersonalBrand: React.FC = () => {
   const { isVisible, elementRef } = useScrollAnimation();
 
-  const scrollToServices = () => {
-    const element = document.getElementById('cta-final');
-    if (element) {
-      const offset = 140;
-      const y = element.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
   const principles = [
     {
       icon: Eye,
@@ -49,9 +40,9 @@ export const PersonalBrand: React.FC = () => {
           className="absolute inset-0"
           style={{ backgroundColor: '#C8BAAA' }}
         />
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-20">
           <img
-            src="/TelaTexture.jpg"
+            src="/WhiteTexture3.jpg"
             alt="Textura natural de algodón"
             className="w-full h-full object-cover"
           />
@@ -111,8 +102,27 @@ export const PersonalBrand: React.FC = () => {
               }`}
           >
             {/* Contenido Principal */}
-            <div className="space-y-8">
-              <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+            <div className="space-y-6">
+              <div className="relative">
+                <img
+                  src="/photo5.jpeg"
+                  alt="Gabriela Ortiz - Diseñadora de Modas"
+                  className="w-full h-[320px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <h3 className="text-2xl font-serif font-bold mb-2" style={{ color: '#EDDCC3' }}>
+                    Gabriela Ortiz
+                  </h3>
+                  <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
+                    Consultora de Imagen Consciente
+                  </p>
+                  <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
+                    Cúcuta, Norte de Santander - CO
+                  </p>
+                </div>
+              </div>
+              <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#291509' }}>
                   <p className="font-medium">
                     En pleno 2025 todas las personas tenemos la responsabilidad
@@ -134,28 +144,19 @@ export const PersonalBrand: React.FC = () => {
 
               {/* Citas destacadas */}
               <div className="space-y-6">
-                <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#565021' }}>
+                <Card className="p-6 vintage-shadow" style={{ backgroundColor: '#565021' }}>
                   <blockquote className="text-xl font-light italic text-center" style={{ color: '#EDDCC3' }}>
                     "La identidad digital es tu nueva imagen. No una viralidad."
                   </blockquote>
                 </Card>
 
-                <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
+                <Card className="p-6 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
                   <p className="text-xl font-medium text-center" style={{ color: '#CBB186' }}>
                     Construye consumidores reales, no sólo followers.
                   </p>
                 </Card>
                 <div className="p-10 ">
-                  {/* Scroll indicator */}
-                  <div className="absolute bottom-9 left-28 transform -translate-x-1/2 animate-bounce-slow">
-                    <button
-                      onClick={scrollToServices}
-                      className="p-8 opacity-50 hover:opacity-80 transition-all duration-300 vintage-shadow"
-                      style={{ backgroundColor: 'rgba(7, 0, 0, 1)' }}
-                    >
-                      <ArrowDown className="w-80 h-6" style={{ color: '#fcfbf4ff' }} />
-                    </button>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -163,7 +164,7 @@ export const PersonalBrand: React.FC = () => {
             {/* Principios y Metodología */}
             <div className="space-y-8">
               <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#8B8D79' }}>
-                <h3 className="text-3xl font-bold mb-6" style={{ color: '#faf2e7ff' }}>
+                <h3 className="text-3xl font-bold mb-2" style={{ color: '#faf2e7ff' }}>
                   Mi Metodología
                 </h3>
                 <p className="text-base leading-relaxed mb-6 opacity-90" style={{ color: '#faf2e7ff' }}>
@@ -213,8 +214,8 @@ export const PersonalBrand: React.FC = () => {
                 sino que genere conexiones reales y transforme visitantes en clientes leales.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link to='/servicios'>
-                  <Button size="lg">
+                <Link to='/servicios' >
+                  <Button size="lg" variant='secondary'>
                     Ver mis servicios
                   </Button>
                 </Link>
@@ -224,7 +225,7 @@ export const PersonalBrand: React.FC = () => {
                   rel="noopener noreferrer"
                 >
                   <Button
-                    variant="secondary"
+                    variant="tertiary"
                     size="lg"
                     onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
                   >

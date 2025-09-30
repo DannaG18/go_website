@@ -27,8 +27,9 @@ export const MainHero: React.FC = () => {
     <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
       {/* Background con Arena */}
       <div 
+        id='inicio'
         className="absolute inset-0"
-        style={{ backgroundColor: '#845a5a72' }}
+        style={{ backgroundColor: '#84685a72' }}
       />
 
       {/* Textura de madera natural */}
@@ -156,15 +157,15 @@ export const MainHero: React.FC = () => {
             </div>
 
             {/* Elementos decorativos vintage */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 opacity-20 animate-vintage-float vintage-border" style={{ backgroundColor: '#8B8D79', animationDelay: '1s' }} />
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 opacity-15 animate-vintage-float vintage-border" style={{ backgroundColor: '#CBB186', animationDelay: '3s' }} />
-            <div className="absolute top-1/2 -left-4 w-8 h-8 opacity-30 vintage-border" style={{ backgroundColor: '#565021' }} />
-            <div className="absolute bottom-1/4 -right-6 w-12 h-12 opacity-25 vintage-border" style={{ backgroundColor: '#524354' }} />
+            {/* <div className="absolute -top-8 -right-8 w-32 h-32 opacity-20 animate-vintage-float vintage-border" style={{ backgroundColor: '#8B8D79', animationDelay: '1s' }} /> */}
+            {/* <div className="absolute -bottom-8 -left-8 w-40 h-40 opacity-15 animate-vintage-float vintage-border" style={{ backgroundColor: '#CBB186', animationDelay: '3s' }} /> */}
+            {/* <div className="absolute top-1/2 -left-4 w-8 h-8 opacity-30 vintage-border" style={{ backgroundColor: '#565021' }} /> */}
+            {/* <div className="absolute bottom-1/4 -right-6 w-12 h-12 opacity-25 vintage-border" style={{ backgroundColor: '#524354' }} /> */}
           </div>
         </div>
 
         {/* Indicador de scroll vintage */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* <div className="absolute left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={scrollToPromise}
             className="p-4 opacity-50 hover:opacity-80 transition-all duration-300 vintage-shadow vintage-border"
@@ -172,7 +173,7 @@ export const MainHero: React.FC = () => {
           >
             <ArrowDown className="w-6 h-6" style={{ color: '#403902ff' }} />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

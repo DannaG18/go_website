@@ -126,6 +126,7 @@ export const Services: React.FC = () => {
               >
                 <Button
                   size="lg"
+                  variant="tertiary"
                   onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Contactar ahora

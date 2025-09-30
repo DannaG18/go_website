@@ -115,7 +115,7 @@ export const ConsultoriaImagen: React.FC = () => {
           {/* Filosofía */}
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
             <div className="space-y-8">
-              <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+              <Card className="p-24 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
                   Armarios cápsula con esencia sostenible
                 </h2>
@@ -137,7 +137,7 @@ export const ConsultoriaImagen: React.FC = () => {
 
             {/* Beneficios */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-8" style={{ color: '#291509' }}>
+              <h3 className="text-3xl font-bold mb-10" style={{ color: '#291509' }}>
                 Lo que Lograrás
               </h3>
               {beneficios.map((beneficio, index) => (
@@ -153,10 +153,10 @@ export const ConsultoriaImagen: React.FC = () => {
                       style={{ color: '#EDDCC3' }}
                     />
                     <div>
-                      <h4 className="text-lg font-semibold mb-2" style={{ color: '#EDDCC3' }}>
+                      <h4 className="text-xl font-semibold mb-2" style={{ color: '#EDDCC3' }}>
                         {beneficio.titulo}
                       </h4>
-                      <p className="text-sm leading-relaxed opacity-90" style={{ color: '#EDDCC3' }}>
+                      <p className="text-m leading-relaxed opacity-90" style={{ color: '#EDDCC3' }}>
                         {beneficio.descripcion}
                       </p>
                     </div>
@@ -211,25 +211,11 @@ export const ConsultoriaImagen: React.FC = () => {
               <h3 className="text-3xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
                 ¿Lista para crear tu armario cápsula consciente?
               </h3>
-              <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#CBB186' }}>
+              <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#d2ca9aff' }}>
                 Trabajemos juntas para construir un guardarropa que refleje tu esencia,
                 respete el planeta y te haga sentir auténticamente tú.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a
-                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    onClick={() =>
-                      document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })
-                    }
-                  >
-                    Solicitar consulta
-                  </Button>
-                </a>
                 <Button
                   variant="secondary"
                   size="lg"
@@ -237,6 +223,21 @@ export const ConsultoriaImagen: React.FC = () => {
                 >
                   Ver otros servicios
                 </Button>
+                <a
+                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    variant='tertiary'
+                    onClick={() =>
+                      document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  >
+                    Solicitar consulta
+                  </Button>
+                </a>
               </div>
             </Card>
           </div>

@@ -49,7 +49,7 @@ export const AboutPreview: React.FC = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="aspect-[4/5] bg-gradient-to-br from-sage-200 to-cream-200 overflow-hidden shadow-xl border-8 border-white">
+            <div className="aspect-[4/5] bg-gradient-to-br from-sage-200 to-cream-200 overflow-hidden shadow-xl border-4 border-white">
               <img
                 src="/photo4.jpeg"
                 alt="Gabriela Ortiz - Consultora de Imagen"

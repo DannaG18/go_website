@@ -133,7 +133,7 @@ export function ContactPreview() {
             </Card>
           </div>
 
-          <Card className="p-10" style={{ backgroundColor: '#EDDCC3', border: 'none' }}>
+          <Card  className="p-10" style={{ backgroundColor: '#EDDCC3', border: 'none' }}>
             <h3 className="text-2xl font-medium mb-8" style={{ color: '#291509' }}>
               Envíame un mensaje
             </h3>

@@ -84,9 +84,9 @@ export const PurchasePromise: React.FC = () => {
             </div>
             
             {/* Elementos decorativos orgánicos */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 opacity-30 animate-float" style={{ backgroundColor: '#8B8D79' }} />
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 opacity-20 animate-float" style={{ backgroundColor: '#CBB186', animationDelay: '2s' }} />
-            <div className="absolute top-1/3 -right-4 w-6 h-6 opacity-40" style={{ backgroundColor: '#565021' }} />
+            {/* <div className="absolute -top-6 -left-6 w-24 h-24 opacity-30 animate-float" style={{ backgroundColor: '#8B8D79' }} /> */}
+            {/* <div className="absolute -bottom-6 -right-6 w-32 h-32 opacity-20 animate-float" style={{ backgroundColor: '#CBB186', animationDelay: '2s' }} /> */}
+            {/* <div className="absolute top-1/3 -right-4 w-6 h-6 opacity-40" style={{ backgroundColor: '#565021' }} /> */}
           </div>
         </div>
       </div>

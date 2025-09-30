@@ -46,7 +46,7 @@ export const About: React.FC = () => {
                 <img 
                   src="/photo3.jpeg" 
                   alt="Gabriela Ortiz - Diseñadora de Modas" 
-                  className="w-full h-[600px] object-cover"
+                  className="w-full h-[556px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
@@ -127,9 +127,9 @@ export const About: React.FC = () => {
                 
                 <div className="space-y-4">
                   <img 
-                    src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                    src="/photo7.jpeg" 
                     alt="Investigación de materiales sostenibles" 
-                    className="w-full h-64 object-cover vintage-shadow rounded-lg"
+                    className="w-full h-80 object-cover vintage-shadow rounded-lg"
                   />
                 </div>
               </div>
