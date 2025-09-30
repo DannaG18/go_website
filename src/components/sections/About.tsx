@@ -46,7 +46,7 @@ export const About: React.FC = () => {
                 <img 
                   src="/photo3.jpeg" 
                   alt="Gabriela Ortiz - Diseñadora de Modas" 
-                  className="w-full h-[700px] object-cover"
+                  className="w-full h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
@@ -57,7 +57,7 @@ export const About: React.FC = () => {
                     Consultora de Imagen Consciente
                   </p>
                   <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
-                    Cúcuta, Colombia
+                    Cúcuta, Norte de Santander - CO
                   </p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export const About: React.FC = () => {
               <h4 className="text-2xl font-serif font-bold mb-6" style={{ color: '#EDDCC3' }}>
                 El Conflicto Interno
               </h4>
-              <div className="space-y-4 text-lg leading-relaxed" style={{ color: '#C8BAAA' }}>
+              <div className="space-y-4 text-lg leading-relaxed" style={{ color: '#f0decaff' }}>
                 <p>
                   La industria me decía <em className="text-xl">"fabrica, consume, desecha"</em>.
                 </p>
@@ -113,7 +113,7 @@ export const About: React.FC = () => {
               </h3>
               
               <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#c7b69bff' }}>
+                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#e1ceb0ff' }}>
                   <p>
                     Mi momento llegó en el 2020, cuando me certifiqué en la investigación de fibras textiles 
                     y me encontré con un increíble reportaje sobre nuestros basureros de desecho textil 
@@ -147,7 +147,7 @@ export const About: React.FC = () => {
               <div className="w-16 h-0.5 mx-auto" style={{ backgroundColor: '#CBB186' }} />
             </div>
             
-            <div className="max-w-4xl mx-auto space-y-8 text-xl leading-relaxed text-center" style={{ color: '#c7b69bff' }}>
+            <div className="max-w-4xl mx-auto space-y-8 text-xl leading-relaxed text-center" style={{ color: '#e1ceb0ff' }}>
               <p>
                 Mi vena creativa, esa que me acompañaba desde niña no quería crear más ropa. 
                 <strong className="text-2xl block mt-4" style={{ color: '#EDDCC3' }}> 
@@ -286,6 +286,7 @@ export const About: React.FC = () => {
             
             <Button 
               size="lg"
+              variant='tertiary'
               onClick={() => window.location.href = '/algoritmo-closet'}
               className="text-xl px-12 py-6"
             >

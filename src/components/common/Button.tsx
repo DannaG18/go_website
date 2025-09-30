@@ -4,7 +4,7 @@ import { DivideIcon } from 'lucide-react';
 interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   icon?: React.ComponentType<{ className?: string }>; // ✅ aquí
   disabled?: boolean;
@@ -47,6 +47,12 @@ export function Button({
           color: '#EDDCC3',
           borderColor: '#565021',
         };
+      case 'tertiary':
+        return {
+          backgroundColor: '#291509',
+          color: '#EDDCC3',
+          borderColor: '#EDDCC3',
+        };
       case 'outline':
         return {
           backgroundColor: 'transparent',
@@ -65,9 +71,8 @@ export function Button({
       type={as === 'button' ? type : undefined}
       onClick={onClick}
       disabled={as === 'button' ? disabled : undefined}
-      className={`${baseClasses} ${sizes[size]} ${className} ${
-        disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 hover:vintage-shadow-lg transform'
-      }`}
+      className={`${baseClasses} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 hover:vintage-shadow-lg transform'
+        }`}
       style={getVariantStyles()}
     >
       {Icon && <Icon className="w-5 h-5 mr-2" />}
