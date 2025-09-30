@@ -94,7 +94,7 @@ export function Header() {
                   <HashLink
                     key={item.id}
                     smooth
-                    to="/#contacto"
+                    to="/#contacto-preview"
                     onClick={() => setIsMenuOpen(false)}
                     className="text-readable block w-full text-sm font-medium uppercase tracking-wide transition-all duration-300 rounded-lg px-4 py-2 text-custom-brown hover:text-marron-oscuro"
                   >

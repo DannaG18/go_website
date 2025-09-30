@@ -120,12 +120,19 @@ export const Colaboraciones: React.FC = () => {
 
       <div className="container relative z-10">
         {/* Hero Section */}
-        <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight" style={{ color: '#EDDCC3' }}>
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-snug sm:leading-tight"
+            style={{ color: '#EDDCC3' }}
+          >
             COLABORACIONES
           </h1>
-          <div className="w-24 h-0.5 mx-auto mb-12" style={{ backgroundColor: '#CBB186' }} />
+          <div
+            className="w-16 sm:w-20 md:w-24 h-0.5 mx-auto mb-8 sm:mb-10 md:mb-12"
+            style={{ backgroundColor: '#CBB186' }}
+          />
         </div>
+
 
         {/* Filosofía Principal */}
         <div className="grid lg:grid-cols-2 gap-16 mb-20">
@@ -294,19 +301,19 @@ export const Colaboraciones: React.FC = () => {
                     {/* <span className="text-4xl font-bold" style={{ color: '#CBB186' }}>
                       {paquete.precio}
                     </span> */}
-                                    <a
-                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    
-                    onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
-                    Solicitar colaboración
-                  </Button>
-                </a>
+                    <a
+                      href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        size="lg"
+
+                        onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Solicitar colaboración
+                      </Button>
+                    </a>
                   </div>
                 </div>
 
