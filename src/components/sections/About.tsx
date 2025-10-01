@@ -5,7 +5,7 @@ import { Button } from '../common/Button';
 
 export const About: React.FC = () => {
   return (
-    <Section id="sobre-mi" className="py-24">
+    <Section id="sobre-mi" className="py-24 relative w-full overflow-x-hidden">
       <div 
         className="absolute inset-0"
         style={{ backgroundColor: '#EDDCC3' }}
@@ -108,7 +108,7 @@ export const About: React.FC = () => {
         <div className="mb-24">
           <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#4D1A09' }}>
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-3xl font-serif font-bold text-center mb-8" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold text-center mb-8" style={{ color: '#EDDCC3' }}>
                 El Despertar - 2020
               </h3>
               
@@ -141,7 +141,7 @@ export const About: React.FC = () => {
         <div className="mb-24">
           <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
             <div className="text-center mb-12">
-              <h3 className="text-4xl font-serif font-bold mb-6" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: '#EDDCC3' }}>
                 La Transformación - 2022
               </h3>
               <div className="w-16 h-0.5 mx-auto" style={{ backgroundColor: '#CBB186' }} />
@@ -181,7 +181,7 @@ export const About: React.FC = () => {
                 className="p-8 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
                 style={{ backgroundColor: '#C8BAAA' }}
               >
-                <div className="flex items-start">
+                <div className="flex items-center">
                   <div 
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl mr-6 mt-1 flex-shrink-0"
                     style={{ backgroundColor: '#565021' }}
@@ -201,7 +201,7 @@ export const About: React.FC = () => {
         <div className="mb-24">
           <Card className="p-12 text-center vintage-shadow" style={{ backgroundColor: '#565021' }}>
             <div className="max-w-4xl mx-auto space-y-8">
-              <h3 className="text-3xl font-serif font-bold mb-8" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold mb-8" style={{ color: '#EDDCC3' }}>
                 Mi Compromiso Contigo
               </h3>
               

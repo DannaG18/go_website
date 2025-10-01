@@ -117,7 +117,7 @@ export const ConsultoriaMarcas: React.FC = () => {
         <div className="container relative z-10">
           {/* Hero Section */}
           <div className="text-center mb-20">
-            <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight" style={{ color: '#EDDCC3' }}>
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight" style={{ color: '#EDDCC3' }}>
               CONSULTORÍA PARA
               <br />
               <span style={{ color: '#CBB186' }}>MARCAS DE MODA</span>

@@ -109,267 +109,241 @@ export const Colaboraciones: React.FC = () => {
 
   return (
     // <AnimatedPage>
-    <Section id="colaboraciones" className="py-24">
+<Section id="colaboraciones" className="py-16 sm:py-20 md:py-24 relative w-full overflow-x-hidden">
+  <div className="absolute inset-0" style={{ backgroundColor: '#4D1A09' }} />
+  <div className="absolute inset-0 vintage-texture-paper opacity-30" />
+
+  <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+    {/* Hero Section */}
+    <div className="text-center mt-10 mb-12 sm:mb-16 md:mb-20">
+      <h1
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-snug sm:leading-tight"
+        style={{ color: '#EDDCC3' }}
+      >
+        COLABORACIONES
+      </h1>
       <div
-        className="absolute inset-0"
-        style={{ backgroundColor: '#4D1A09' }}
+        className="w-16 sm:w-20 md:w-24 h-0.5 mx-auto mb-8 sm:mb-10 md:mb-12"
+        style={{ backgroundColor: '#CBB186' }}
       />
+    </div>
 
-      {/* Textura vintage de papel */}
-      <div className="absolute inset-0 vintage-texture-paper opacity-30" />
+    {/* Filosofía + Beneficios */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-16 sm:mb-20">
+      <div className="space-y-6 sm:space-y-8">
+        <Card className="p-6 sm:p-10 md:p-16 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8" style={{ color: '#291509' }}>
+            Responsabilidad Digital en 2025
+          </h2>
 
-      <div className="container relative z-10">
-        {/* Hero Section */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 leading-snug sm:leading-tight"
-            style={{ color: '#EDDCC3' }}
+          <div className="space-y-4 sm:space-y-6 text-base sm:text-lg leading-relaxed" style={{ color: '#524354' }}>
+            <p>
+              En pleno 2025 todas las personas tenemos la responsabilidad de crear
+              una imagen digital asertiva.
+            </p>
+            <p>
+              Y en las marcas esta responsabilidad se incrementa de forma exponencial.
+              Tu identidad visual digital es tu nueva vitrina ante el mercado.
+            </p>
+
+            <div className="p-4 sm:p-6 vintage-border" style={{ backgroundColor: '#565021' }}>
+              <p className="text-lg sm:text-xl font-medium text-center" style={{ color: '#EDDCC3' }}>
+                Transmítele al consumidor un interés genuino de cambiar su vida mediante
+                tus productos/servicios, y lo habrás convertido en tu cliente.
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <div className="space-y-4 sm:space-y-6">
+        <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10" style={{ color: '#EDDCC3' }}>
+          Beneficios del Branding y Colaboraciones
+        </h3>
+        {beneficios.map((beneficio, index) => (
+          <Card
+            key={index}
+            hover
+            className="p-4 sm:p-6 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
+            style={{ backgroundColor: '#d9cbbaff' }}
           >
-            COLABORACIONES
-          </h1>
-          <div
-            className="w-16 sm:w-20 md:w-24 h-0.5 mx-auto mb-8 sm:mb-10 md:mb-12"
-            style={{ backgroundColor: '#CBB186' }}
-          />
-        </div>
-
-
-        {/* Filosofía Principal */}
-        <div className="grid lg:grid-cols-2 gap-16 mb-20">
-          <div className="space-y-8">
-            <Card className="p-14 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
-              <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
-                Responsabilidad Digital en 2025
-              </h2>
-
-              <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#524354' }}>
-                <p>
-                  En pleno 2025 todas las personas tenemos la responsabilidad de crear
-                  una imagen digital asertiva.
+            <div className="flex items-start">
+              <beneficio.icon
+                className="w-8 h-8 sm:w-12 sm:h-12 mr-3 sm:mr-4 mt-1 transition-transform duration-300 group-hover:scale-110 flex-shrink-0"
+                style={{ color: '#4D1A09' }}
+              />
+              <div>
+                <h4 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2" style={{ color: '#291509' }}>
+                  {beneficio.titulo}
+                </h4>
+                <p className="text-sm sm:text-base leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                  {beneficio.descripcion}
                 </p>
-
-                <p>
-                  Y en las marcas esta responsabilidad se incrementa de forma exponencial.
-                  Tu identidad visual digital es tu nueva vitrina ante el mercado; debería
-                  ser esencial construirla y alimentarla desde tu ADN.
-                </p>
-
-                <div className="p-6 vintage-border" style={{ backgroundColor: '#565021' }}>
-                  <p className="text-xl font-medium text-center" style={{ color: '#EDDCC3' }}>
-                    Transmítele al consumidor un interés genuino de cambiar su vida mediante
-                    tus productos/servicios, y lo habrás convertido en tu cliente.
-                  </p>
-                </div>
               </div>
-            </Card>
-          </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
 
-          {/* Beneficios */}
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold mb-10 " style={{ color: '#EDDCC3' }}>
-              Beneficios del Branding y Colaboraciones
-            </h3>
-            {beneficios.map((beneficio, index) => (
-              <Card
-                key={index}
-                hover
-                className="p-6 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
-                style={{ backgroundColor: '#d9cbbaff' }}
-              >
-                <div className="flex items-start">
-                  <beneficio.icon
-                    className="w-12 h-12 mr-4 mt-1 transition-transform duration-300 group-hover:scale-110 flex-shrink-0"
-                    style={{ color: '#4D1A09' }}
-                  />
-                  <div>
-                    <h4 className="text-xl font-semibold mb-2" style={{ color: '#291509' }}>
-                      {beneficio.titulo}
-                    </h4>
-                    <p className="text-m leading-relaxed opacity-80" style={{ color: '#524354' }}>
-                      {beneficio.descripcion}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
+    {/* Servicios Individuales */}
+    <div className="mb-16 sm:mb-20">
+      <div className="text-center mb-10 sm:mb-16">
+        <h3 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6" style={{ color: '#EDDCC3' }}>
+          SERVICIOS INDIVIDUALES
+        </h3>
+        <p className="text-base sm:text-lg opacity-80" style={{ color: '#CBB186' }}>
+          Creación de contenido orgánico personalizado
+        </p>
+      </div>
 
-        {/* Servicios Individuales */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
-              SERVICIOS INDIVIDUALES
-            </h3>
-            <p className="text-lg opacity-80" style={{ color: '#CBB186' }}>
-              Creación de contenido orgánico personalizado
-            </p>
-          </div>
-
-          <div
-            ref={elementRef}
-            className={`grid md:grid-cols-3 gap-8 mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+      <div
+        ref={elementRef}
+        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
+        {serviciosIndividuales.map((servicio, index) => (
+          <Card
+            key={index}
+            hover
+            className="p-6 sm:p-8 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
+            style={{ backgroundColor: '#EDDCC3' }}
           >
-            {serviciosIndividuales.map((servicio, index) => (
-              <Card
-                key={index}
-                hover
-                className="p-8 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
-                style={{ backgroundColor: '#EDDCC3' }}
-              >
-                <div className="text-center mb-6">
-                  <servicio.icon
-                    className="w-16 h-16 mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
-                    style={{ color: '#4D1A09' }}
-                  />
-
-                  <h4 className="text-xl font-bold mb-2" style={{ color: '#291509' }}>
-                    {servicio.titulo}
-                  </h4>
-                  {/* 
-                    <div className="mb-4 px-6 py-3 inline-block" style={{ backgroundColor: '#565021' }}>
-                      <span className="text-2xl font-bold" style={{ color: '#EDDCC3' }}>
-                        {servicio.precio}
-                      </span>
-                    </div> */}
-                  <a
-                    href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      size="lg"
-                      onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
-                    >
-                      Solicitar colaboración
-                    </Button>
-                  </a>
-                </div>
-
-                <p className="text-m leading-relaxed mb-6 opacity-80" style={{ color: '#020102ff' }}>
-                  {servicio.descripcion}
-                </p>
-
-                <div className="space-y-2">
-                  <h5 className="text-m font-semibold mb-3" style={{ color: '#565021' }}>
-                    VENTAJAS:
-                  </h5>
-                  {servicio.ventajas.map((ventaja, ventajaIndex) => (
-                    <div key={ventajaIndex} className="flex items-start text-sm">
-                      <CheckCircle className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" style={{ color: '#565021' }} />
-                      <span style={{ color: '#524354' }}>{ventaja}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Paquetes */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
-              PAQUETES DE CONTENIDO
-            </h3>
-            <p className="text-lg opacity-80" style={{ color: '#CBB186' }}>
-              Soluciones integrales para mayor impacto
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 ">
-            {paquetes.map((paquete, index) => (
-              <Card
-                key={index}
-                hover
-                className="p-8 text-center group transform transition-all duration-500 hover:scale-105 vintage-shadow"
-                style={{ backgroundColor: index === 1 ? '#565021' : '#565021' }}
-              >
-                <div className="mb-6">
-                  <h4 className="text-2xl font-bold mb-2" style={{ color: '#EDDCC3' }}>
-                    {paquete.titulo}
-                  </h4>
-
-                  <div className="mb-4 px-4 py-2 inline-block" style={{ backgroundColor: '#EDDCC3' }}>
-                    <span className="text-sm font-medium" style={{ color: '#291509' }}>
-                      {paquete.duracion}
-                    </span>
-                  </div>
-
-                  <div className="mb-6">
-                    {/* <span className="text-4xl font-bold" style={{ color: '#CBB186' }}>
-                      {paquete.precio}
-                    </span> */}
-                    <a
-                      href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        size="lg"
-
-                        onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
-                      >
-                        Solicitar colaboración
-                      </Button>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <h5 className="text-lg font-semibold mb-4" style={{ color: '#EDDCC3' }}>
-                    INCLUYE:
-                  </h5>
-                  {paquete.incluye.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex items-start text-sm">
-                      <CheckCircle className="w-4 h-4 mr-3 mt-0.5 flex-shrink-0" style={{ color: '#CBB186' }} />
-                      <span style={{ color: '#C8BAAA' }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
-            <h3 className="text-3xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
-              ¿Lista para crear contenido que conecte?
-            </h3>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#e5cca4ff' }}>
-              Trabajemos juntas para crear contenido auténtico que genere conexiones reales
-              y transforme seguidores en clientes leales de tu marca.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                variant="secondary"
-                size="lg"
-                onClick={() => window.location.href = '/servicios'}
-              >
-                Ver otros servicios
-              </Button>
+            <div className="text-center mb-4 sm:mb-6">
+              <servicio.icon
+                className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-110"
+                style={{ color: '#4D1A09' }}
+              />
+              <h4 className="text-lg sm:text-xl font-bold mb-2" style={{ color: '#291509' }}>
+                {servicio.titulo}
+              </h4>
               <a
                 href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button
-                  size="lg"
-                  variant='tertiary'
+                  // size="md sm:lg"
                   onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Solicitar colaboración
                 </Button>
               </a>
             </div>
+
+            <p className="text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 opacity-80" style={{ color: '#020102ff' }}>
+              {servicio.descripcion}
+            </p>
+
+            <div className="space-y-2">
+              <h5 className="text-sm sm:text-base font-semibold mb-2 sm:mb-3" style={{ color: '#565021' }}>
+                VENTAJAS:
+              </h5>
+              {servicio.ventajas.map((ventaja, i) => (
+                <div key={i} className="flex items-start text-xs sm:text-sm">
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" style={{ color: '#565021' }} />
+                  <span style={{ color: '#524354' }}>{ventaja}</span>
+                </div>
+              ))}
+            </div>
           </Card>
-        </div>
+        ))}
       </div>
-    </Section>
+    </div>
+
+    {/* Paquetes */}
+    <div className="mb-16 sm:mb-20">
+      <div className="text-center mb-10 sm:mb-16">
+        <h3 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6" style={{ color: '#EDDCC3' }}>
+          PAQUETES DE CONTENIDO
+        </h3>
+        <p className="text-base sm:text-lg opacity-80" style={{ color: '#CBB186' }}>
+          Soluciones integrales para mayor impacto
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {paquetes.map((paquete, index) => (
+          <Card
+            key={index}
+            hover
+            className="p-6 sm:p-8 text-center group transform transition-all duration-500 hover:scale-105 vintage-shadow"
+            style={{ backgroundColor: '#565021' }}
+          >
+            <h4 className="text-xl sm:text-2xl font-bold mb-2" style={{ color: '#EDDCC3' }}>
+              {paquete.titulo}
+            </h4>
+            <div className="mb-4 px-3 sm:px-4 py-1 sm:py-2 inline-block" style={{ backgroundColor: '#EDDCC3' }}>
+              <span className="text-xs sm:text-sm font-medium" style={{ color: '#291509' }}>
+                {paquete.duracion}
+              </span>
+            </div>
+
+
+            <div className="space-y-2 sm:space-y-3">
+            <a
+              href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                // size="md sm:lg"
+                className="mb-4 sm:mb-6"
+                onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Solicitar colaboración
+              </Button>
+            </a>
+              <h5 className="text-base sm:text-lg font-semibold mb-2 sm:mb-4" style={{ color: '#EDDCC3' }}>
+                INCLUYE:
+              </h5>
+              {paquete.incluye.map((item, i) => (
+                <div key={i} className="flex items-start text-xs sm:text-sm">
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-2 sm:mr-3 mt-0.5 flex-shrink-0" style={{ color: '#CBB186' }} />
+                  <span style={{ color: '#C8BAAA' }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+
+    {/* Call to Action */}
+    <div className="text-center">
+      <Card className="p-8 sm:p-12 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
+        <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" style={{ color: '#EDDCC3' }}>
+          ¿Lista para crear contenido que conecte?
+        </h3>
+        <p className="text-base sm:text-lg mb-6 sm:mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#e5cca4ff' }}>
+          Trabajemos juntas para crear contenido auténtico que genere conexiones reales
+          y transforme seguidores en clientes leales de tu marca.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+          <Button variant="secondary" onClick={() => window.location.href = '/servicios'}>
+            Ver otros servicios
+          </Button>
+          <a
+            href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              // size="md sm:lg"
+              variant="tertiary"
+              onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Solicitar colaboración
+            </Button>
+          </a>
+        </div>
+      </Card>
+    </div>
+  </div>
+</Section>
+
     // </AnimatedPage>
   );
 };
