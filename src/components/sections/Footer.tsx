@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const menuItems = [
-    { path: '/marca-personal', label: 'MARCA PERSONAL' },
     { path: '/servicios', label: 'SERVICIOS' },
     { path: '/vlog', label: 'VLOG' },
     { path: '/algoritmo-closet', label: 'EL ALGORITMO DE TU CLOSET' },
     { path: '/sobre-mi', label: 'SOBRE MÍ' },
+    { path: '/marca-personal', label: 'MARCA PERSONAL' },
     { path: '/contactame', label: 'CONTÁCTAME' }
   ];
 
@@ -79,9 +79,12 @@ export const Footer: React.FC = () => {
                 <Mail className="w-5 h-5" style={{ color: '#EDDCC3' }} />
               </a>
             </div>
-            <p className="text-sm mb-3 opacity-80" style={{ color: '#EDDCC3' }}>
-              sgabrielaortiz@gmail.com
-            </p>
+            <a href="mailto:sgabrielaortiz@gmail.com">
+              <p className="text-sm mb-3 opacity-80" style={{ color: '#EDDCC3' }}>
+                sgabrielaortiz@gmail.com
+              </p>
+
+            </a>
             <a href="tel:+573204033404">
               <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>
                 +57 (320) 403-3404

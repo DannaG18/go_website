@@ -120,7 +120,7 @@ export const Services: React.FC = () => {
               y creemos una propuesta a tu medida.
             </p>
             <a
-              href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+              href="https://wa.me/573204033404?text=Hola,%20mi%20nombre%20es%20(pon tu nombre aquí)%20y%20necesito%20un%20servicio%20personalizado"
               target="_blank"
               rel="noopener noreferrer"
             >

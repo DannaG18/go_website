@@ -279,7 +279,7 @@ export const About: React.FC = () => {
             <h3 className="text-3xl font-serif font-bold mb-6" style={{ color: '#EDDCC3' }}>
               Descubre el Poder de tu Clóset Consciente
             </h3>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#CBB186' }}>
+            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#e2d0b2ff' }}>
               No se trata de tener más ropa. Se trata de tener la ropa correcta. 
               Comencemos este viaje hacia un estilo auténtico y consciente.
             </p>
