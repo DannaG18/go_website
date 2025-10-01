@@ -6,14 +6,14 @@ import { Button } from '../common/Button';
 export const About: React.FC = () => {
   return (
     <Section id="sobre-mi" className="py-24 relative w-full overflow-x-hidden">
-      <div 
+      <div
         className="absolute inset-0"
         style={{ backgroundColor: '#EDDCC3' }}
       />
-      
+
       {/* Textura vintage de papel */}
       <div className="absolute inset-0 vintage-texture-paper opacity-30" />
-      
+
       <div className="container relative z-10">
         {/* Hero Section */}
         <div className="text-center mb-20">
@@ -43,9 +43,9 @@ export const About: React.FC = () => {
           <div className="lg:col-span-1">
             <Card className="overflow-hidden vintage-shadow" style={{ backgroundColor: '#C8BAAA' }}>
               <div className="relative">
-                <img 
-                  src="/photo3.jpeg" 
-                  alt="Gabriela Ortiz - Diseñadora de Modas" 
+                <img
+                  src="/photo3.jpeg"
+                  alt="Gabriela Ortiz - Diseñadora de Modas"
                   className="w-full h-[556px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -56,9 +56,15 @@ export const About: React.FC = () => {
                   <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
                     Consultora de Imagen Consciente
                   </p>
-                  <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
-                    Cúcuta, Norte de Santander - CO
-                  </p>
+                  <a
+                    href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
+                      Cúcuta, Norte de Santander - CO
+                    </p>
+                  </a>
                 </div>
               </div>
             </Card>
@@ -73,15 +79,15 @@ export const About: React.FC = () => {
               </h4>
               <div className="space-y-4 text-lg leading-relaxed" style={{ color: '#524354' }}>
                 <p>
-                  Durante toda mi vida el mundo para mí era una pasarela de moda y su consumo. 
+                  Durante toda mi vida el mundo para mí era una pasarela de moda y su consumo.
                   Soñé con vivir de ello. Y por un tiempo lo logré.
                 </p>
                 <p>
-                  Me gradué, creé colecciones y seguí tendencias. Por fuera estaba viviendo el sueño. 
+                  Me gradué, creé colecciones y seguí tendencias. Por fuera estaba viviendo el sueño.
                   Pero por dentro, una inquietud crecía.
                 </p>
                 <p className="text-xl font-medium" style={{ color: '#291509' }}>
-                  Pese a que construí todo lo que me habían enseñado a construir, 
+                  Pese a que construí todo lo que me habían enseñado a construir,
                   una pieza esencial no encajaba.
                 </p>
               </div>
@@ -111,24 +117,24 @@ export const About: React.FC = () => {
               <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold text-center mb-8" style={{ color: '#EDDCC3' }}>
                 El Despertar - 2020
               </h3>
-              
+
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#e1ceb0ff' }}>
                   <p>
-                    Mi momento llegó en el 2020, cuando me certifiqué en la investigación de fibras textiles 
-                    y me encontré con un increíble reportaje sobre nuestros basureros de desecho textil 
+                    Mi momento llegó en el 2020, cuando me certifiqué en la investigación de fibras textiles
+                    y me encontré con un increíble reportaje sobre nuestros basureros de desecho textil
                     que crecen día a día, con prendas que tardaron siglos en degradarse pero que solo se usaron una vez.
                   </p>
                   <p className="text-xl font-bold" style={{ color: '#EDDCC3' }}>
-                    Ese fue el instante en el que mi pasión por la moda chocó de frente con mi humanidad. 
+                    Ese fue el instante en el que mi pasión por la moda chocó de frente con mi humanidad.
                     Había llegado la hora de cambiar el enfoque.
                   </p>
                 </div>
-                
+
                 <div className="space-y-4">
-                  <img 
-                    src="/photo7.jpeg" 
-                    alt="Investigación de materiales sostenibles" 
+                  <img
+                    src="/photo7.jpeg"
+                    alt="Investigación de materiales sostenibles"
                     className="w-full h-80 object-cover vintage-shadow rounded-lg"
                   />
                 </div>
@@ -146,16 +152,16 @@ export const About: React.FC = () => {
               </h3>
               <div className="w-16 h-0.5 mx-auto" style={{ backgroundColor: '#CBB186' }} />
             </div>
-            
+
             <div className="max-w-4xl mx-auto space-y-8 text-xl leading-relaxed text-center" style={{ color: '#e1ceb0ff' }}>
               <p>
-                Mi vena creativa, esa que me acompañaba desde niña no quería crear más ropa. 
-                <strong className="text-2xl block mt-4" style={{ color: '#EDDCC3' }}> 
+                Mi vena creativa, esa que me acompañaba desde niña no quería crear más ropa.
+                <strong className="text-2xl block mt-4" style={{ color: '#EDDCC3' }}>
                   Quería crear conciencia.
                 </strong>
               </p>
               <p>
-                En 2022, renuncié al manual convencional. Me volqué a la investigación y descubrí que 
+                En 2022, renuncié al manual convencional. Me volqué a la investigación y descubrí que
                 el verdadero lujo no es la etiqueta nueva; <strong className="text-xl" style={{ color: '#EDDCC3' }}>es el conocimiento.</strong>
               </p>
             </div>
@@ -167,7 +173,7 @@ export const About: React.FC = () => {
           <h3 className="text-4xl font-serif font-bold text-center mb-16" style={{ color: '#291509' }}>
             El Verdadero Conocimiento
           </h3>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {[
               "El conocimiento de abrir tu armario y amarlo por completo.",
@@ -175,14 +181,14 @@ export const About: React.FC = () => {
               "El conocimiento de vestirte con piezas de calidad que cuentan una historia, no un arrepentimiento.",
               "El conocimiento de que tu imagen proyecte no solo tu buen gusto, sino tu inteligencia y tu respeto por el mundo."
             ].map((knowledge, index) => (
-              <Card 
+              <Card
                 key={index}
-                hover 
+                hover
                 className="p-8 group transform transition-all duration-500 hover:scale-105 vintage-shadow"
                 style={{ backgroundColor: '#C8BAAA' }}
               >
                 <div className="flex items-center">
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl mr-6 mt-1 flex-shrink-0"
                     style={{ backgroundColor: '#565021' }}
                   >
@@ -204,12 +210,12 @@ export const About: React.FC = () => {
               <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold mb-8" style={{ color: '#EDDCC3' }}>
                 Mi Compromiso Contigo
               </h3>
-              
+
               <p className="text-xl leading-relaxed" style={{ color: '#C8BAAA' }}>
-                <strong style={{ color: '#EDDCC3' }}>Mi servicio no es sólo un servicio de consultoría.</strong> 
+                <strong style={{ color: '#EDDCC3' }}>Mi servicio no es sólo un servicio de consultoría.</strong>
                 Te brindo toda la información que en unos años, practicarla no será opción, sino obligación.
               </p>
-              
+
               <div className="p-8 rounded-lg" style={{ backgroundColor: 'rgba(237, 220, 195, 0.1)' }}>
                 <p className="text-xl italic mb-4" style={{ color: '#CBB186' }}>
                   "Porque este mundo hoy, es para quienes lo respetamos y creemos en él."
@@ -232,7 +238,7 @@ export const About: React.FC = () => {
               </h3>
               <div className="w-20 h-0.5 mx-auto" style={{ backgroundColor: '#8B8D79' }} />
             </div>
-            
+
             <div className="max-w-4xl mx-auto space-y-8 text-center">
               <div className="space-y-6 text-xl leading-relaxed" style={{ color: '#524354' }}>
                 <p className="font-bold text-2xl" style={{ color: '#291509' }}>
@@ -245,23 +251,23 @@ export const About: React.FC = () => {
 
               <div className="p-8 rounded-lg" style={{ backgroundColor: '#C8BAAA' }}>
                 <p className="text-lg leading-relaxed" style={{ color: '#524354' }}>
-                  Mi método: <strong style={{ color: '#291509' }}>El algoritmo de tu clóset</strong> es un camino donde 
-                  desciframos tu estilo y lo llenamos con las mejores piezas, aquellas que elegirás no por un impulso, 
+                  Mi método: <strong style={{ color: '#291509' }}>El algoritmo de tu clóset</strong> es un camino donde
+                  desciframos tu estilo y lo llenamos con las mejores piezas, aquellas que elegirás no por un impulso,
                   sino con el poder de quien conoce el impacto real de cada etiqueta.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-                <Button 
+                <Button
                   size="lg"
                   onClick={() => window.location.href = '/algoritmo-closet'}
                   className="text-xl px-12 py-6"
                 >
                   El Algoritmo de tu Clóset
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
+                <Button
+                  variant="outline"
+                  size="lg"
                   icon={Phone}
                   onClick={() => window.open('https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20agendar%20una%20llamada.', '_blank')}
                   className="text-xl px-12 py-6"
@@ -280,17 +286,17 @@ export const About: React.FC = () => {
               Descubre el Poder de tu Clóset Consciente
             </h3>
             <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto" style={{ color: '#e2d0b2ff' }}>
-              No se trata de tener más ropa. Se trata de tener la ropa correcta. 
+              No se trata de tener más ropa. Se trata de tener la ropa correcta.
               Comencemos este viaje hacia un estilo auténtico y consciente.
             </p>
-            
-                <Button 
-                  variant="tertiary" 
-                  size="lg" 
-                  onClick={() => window.open('https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20iniciar%20mi%20transformación.', '_blank')}
-                  className="text-xl px-12 py-6"
-                >
-              Comenzar mi Transformación  
+
+            <Button
+              variant="tertiary"
+              size="lg"
+              onClick={() => window.open('https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20iniciar%20mi%20transformación.', '_blank')}
+              className="text-xl px-12 py-6"
+            >
+              Comenzar mi Transformación
             </Button>
           </Card>
         </div>

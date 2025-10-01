@@ -134,7 +134,7 @@ export function ContactPreview() {
                     rel="noopener noreferrer"
                   >
                     <p className="text-base opacity-80" style={{ color: '#352c36ff' }}>
-                      Cúcuta, Norte de Santander, CO
+                      Cúcuta, Norte de Santander - CO
                     </p>
                   </a>
                   <p className='text-sm opacity-60' style={{ color: '#392f3aff' }}>Reuniones con cita previa</p>

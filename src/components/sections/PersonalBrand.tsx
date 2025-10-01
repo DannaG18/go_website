@@ -117,9 +117,15 @@ export const PersonalBrand: React.FC = () => {
                   <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
                     Consultora de Imagen Consciente
                   </p>
-                  <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
-                    Cúcuta, Norte de Santander - CO
-                  </p>
+                  <a
+                    href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
+                      Cúcuta, Norte de Santander - CO
+                    </p>
+                  </a>
                 </div>
               </div>
               <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
