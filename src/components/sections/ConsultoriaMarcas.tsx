@@ -249,7 +249,7 @@ export const ConsultoriaMarcas: React.FC = () => {
                   Ver otros servicios
                 </Button>
                 <a
-                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí),%20quiero%20transformar%20mi%20marca%20y%20necesito%20una%20consultoría%20de%20moda."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

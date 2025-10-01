@@ -224,7 +224,7 @@ export const ConsultoriaImagen: React.FC = () => {
                   Ver otros servicios
                 </Button>
                 <a
-                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20aquí%20tu%20nombre)%20y%20¡quiero%20solicitar%20una%20consulta%20de%20imagen%20personal!"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

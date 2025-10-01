@@ -326,7 +326,7 @@ export const Colaboraciones: React.FC = () => {
             Ver otros servicios
           </Button>
           <a
-            href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+            href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20una%20colaboración%20de%20(escribe%20el%20tipo%20de%20colaboración)."
             target="_blank"
             rel="noopener noreferrer"
           >

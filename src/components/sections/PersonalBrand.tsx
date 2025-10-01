@@ -220,7 +220,7 @@ export const PersonalBrand: React.FC = () => {
                   </Button>
                 </Link>
                 <a
-                  href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                  href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20construir%20mi%20marca%20personal%20auténtica."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

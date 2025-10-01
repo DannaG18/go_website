@@ -263,7 +263,7 @@ export const About: React.FC = () => {
                   variant="outline" 
                   size="lg" 
                   icon={Phone}
-                  onClick={() => window.open('https://wa.me/573204033404', '_blank')}
+                  onClick={() => window.open('https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20agendar%20una%20llamada.', '_blank')}
                   className="text-xl px-12 py-6"
                 >
                   Agenda una Llamada Sin Costo
@@ -284,12 +284,12 @@ export const About: React.FC = () => {
               Comencemos este viaje hacia un estilo auténtico y consciente.
             </p>
             
-            <Button 
-              size="lg"
-              variant='tertiary'
-              onClick={() => window.location.href = '/algoritmo-closet'}
-              className="text-xl px-12 py-6"
-            >
+                <Button 
+                  variant="tertiary" 
+                  size="lg" 
+                  onClick={() => window.open('https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20iniciar%20mi%20transformación.', '_blank')}
+                  className="text-xl px-12 py-6"
+                >
               Comenzar mi Transformación  
             </Button>
           </Card>

@@ -285,7 +285,7 @@ export const CharlasCapacitaciones: React.FC = () => {
                 Ver otros servicios
               </Button>
               <a
-                href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20solicitar%20una%20charla%20o%20capacitación."
                 target="_blank"
                 rel="noopener noreferrer"
               >
