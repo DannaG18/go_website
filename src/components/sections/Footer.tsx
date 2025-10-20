@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Mail, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export const Footer: React.FC = () => {
   const menuItems = [
@@ -8,7 +9,7 @@ export const Footer: React.FC = () => {
     { path: '/algoritmo-closet', label: 'EL ALGORITMO DE TU CLOSET' },
     { path: '/sobre-mi', label: 'SOBRE MÍ' },
     { path: '/marca-personal', label: 'MARCA PERSONAL' },
-    { path: '/contactame', label: 'CONTÁCTAME' }
+    { path: '/#contacto-preview', label: 'CONTÁCTAME', hash: true },
   ];
 
   return (
@@ -35,13 +36,13 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm">
               {menuItems.map((item) => (
                 <li key={item.path}>
-                  <Link
+                  <HashLink
                     to={item.path}
                     className="hover:opacity-100 transition-opacity duration-200 opacity-70"
                     style={{ color: '#EDDCC3' }}
                   >
                     {item.label}
-                  </Link>
+                  </HashLink>
                 </li>
               ))}
             </ul>
