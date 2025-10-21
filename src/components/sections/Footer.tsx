@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 export const Footer: React.FC = () => {
   const menuItems = [
     { path: '/servicios', label: 'SERVICIOS' },
-    { path: '/vlog', label: 'VLOG' },
+    { path: '/blog', label: 'BLOG' },
     { path: '/algoritmo-closet', label: 'EL ALGORITMO DE TU CLOSET' },
     { path: '/sobre-mi', label: 'SOBRE MÍ' },
     { path: '/marca-personal', label: 'MARCA PERSONAL' },

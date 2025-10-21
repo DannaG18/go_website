@@ -9,7 +9,7 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 export const CharlasCapacitaciones: React.FC = () => {
   const { isVisible, elementRef } = useScrollAnimation();
 
-    const scrollToFormatos = () => {
+  const scrollToFormatos = () => {
     const element = document.getElementById('next-content');
     if (element) {
       const offset = 140;
@@ -29,7 +29,8 @@ export const CharlasCapacitaciones: React.FC = () => {
         'Demostración práctica en vivo',
         'Interacción con la audiencia',
         'Enfoque en autoconocimiento'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20solicitar%20una%20charla%20inspiracional.'
     },
     {
       icon: Clock,
@@ -41,7 +42,8 @@ export const CharlasCapacitaciones: React.FC = () => {
         'Styling colectivo práctico',
         'Ejercicios de autoconocimiento',
         'Guía de básicos personalizados'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20solicitar%20un%20workshop%20interactivo.'
     },
     {
       icon: Building,
@@ -53,7 +55,8 @@ export const CharlasCapacitaciones: React.FC = () => {
         'Herramientas de asesoría',
         'Metodología sostenible',
         'Certificación incluida'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20solicitar%20un%20programa%20corporativo.'
     }
   ];
 
@@ -165,18 +168,18 @@ export const CharlasCapacitaciones: React.FC = () => {
                 </div>
               </Card>
             ))}
-          {/* Scroll indicator debajo de los pilares */}
-          <div className="flex justify-en">
-            <button
-              onClick={scrollToFormatos}
-              className="flex justify-center items-center p-6 w-full h-28 opacity-90 hover:opacity-100 transition-all duration-300 vintage-shadow"
-              style={{ backgroundColor: '#291509' }}
-            >
-              <ArrowDown className="w-6 h-6" style={{ color: '#fcfbf4ff' }} />
-            </button>
+            {/* Scroll indicator debajo de los pilares */}
+            <div className="flex justify-en">
+              <button
+                onClick={scrollToFormatos}
+                className="flex justify-center items-center p-6 w-full h-28 opacity-90 hover:opacity-100 transition-all duration-300 vintage-shadow"
+                style={{ backgroundColor: '#291509' }}
+              >
+                <ArrowDown className="w-6 h-6" style={{ color: '#fcfbf4ff' }} />
+              </button>
+            </div>
           </div>
         </div>
-          </div>
 
 
         {/* Formatos Disponibles */}
@@ -221,14 +224,26 @@ export const CharlasCapacitaciones: React.FC = () => {
                   {formato.descripcion}
                 </p>
 
-                <div className="space-y-2">
+                <div className="space-y-2 mb-5">
                   {formato.caracteristicas.map((caracteristica, charIndex) => (
-                    <div key={charIndex} className="flex items-center text-sm">
-                      <CheckCircle className="w-3 h-3 mr-2" style={{ color: '#565021' }} />
+                    <div key={charIndex} className="flex items-center text-sm z">
+                      <CheckCircle className="w-3 h-3 mr-2 " style={{ color: '#565021' }} />
                       <span style={{ color: '#524354' }}>{caracteristica}</span>
                     </div>
                   ))}
                 </div>
+                <a
+                  href={formato.mensaje}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    className="w-full"
+                    onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Solicitar colaboración
+                  </Button>
+                </a>
               </Card>
             ))}
           </div>

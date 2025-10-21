@@ -108,7 +108,8 @@ export const ConsultoriaImagen: React.FC = () => {
         'Formulario diagnostico (Virtual)',
         'Hallazgos y recomendaciones (Documento)',
         'Básicos de armario segun cuerpo y estilo (Documento)'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20aquí%20tu%20nombre)%20y%20¡quiero%20solicitar%20una%20asesoría%20básica!'
     },
     {
       numero: 2,
@@ -121,7 +122,8 @@ export const ConsultoriaImagen: React.FC = () => {
         'Hallazgos y recomendaciones (Presencial o virtual)',
         'Intervención de clóset, elección de prendas que se quedan y se van (Cita presencial)',
         'Básicos de armario segun cuerpo y estilo (Documento)',
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20aquí%20tu%20nombre)%20y%20¡quiero%20solicitar%20una%20asesoría%20premium!'
     },
     {
       numero: 3,
@@ -135,7 +137,8 @@ export const ConsultoriaImagen: React.FC = () => {
         'Intervención de clóset, elección de prendas que se quedan y se van (Cita presencial)',
         'Básicos de armario segun cuerpo y estilo (Documento)',
         '2 Acompañamientos en rutas de compras estratégicas para armario base.'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20aquí%20tu%20nombre)%20y%20¡quiero%20solicitar%20una%20paquete%20de%20asesoría%20completo!'
     }
   ]
 
@@ -283,7 +286,7 @@ export const ConsultoriaImagen: React.FC = () => {
                     {asesorias.titulo}
                   </h4>
                   <a
-                    href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                    href={asesorias.mensaje}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

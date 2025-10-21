@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-export const Vlog: React.FC = () => {
+export const Blog: React.FC = () => {
   const contentTypes = [
     {
       icon: Leaf,
@@ -38,7 +38,7 @@ export const Vlog: React.FC = () => {
   ];
 
   return (
-    <Section id="vlog" className="py-24 relative w-full overflow-x-hidden" >
+    <Section id="blog" className="py-24 relative w-full overflow-x-hidden" >
       <div
         className="absolute inset-0"
         style={{ backgroundColor: '#EDDCC3' }}
@@ -51,7 +51,7 @@ export const Vlog: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-light mb-8" style={{ color: '#291509' }}>
-            Vlog
+            Blog
           </h2>
           <div className="w-16 h-0.5 mx-auto mb-8" style={{ backgroundColor: '#8B8D79' }} />
           <p className="text-lg max-w-4xl mx-auto leading-relaxed opacity-80 mb-12" style={{ color: '#291509' }}>
@@ -224,26 +224,33 @@ export const Vlog: React.FC = () => {
                   </div>
                 </Card>
               </a>
-
-              <Card
-                hover
-                className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
-                style={{ backgroundColor: '#EDDCC3' }}
+              <a
+                href="https://www.youtube.com/@sgabrielaortiz"
+                target="_blank"
+                rel="noopener noreferrer"
+                // className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+                style={{ backgroundColor: '#1C2218' }}
               >
-                <Youtube
-                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: '#4D1A09' }}
-                />
-                <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
-                  YouTube
-                </h4>
-                <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
-                  Videos extensos, tutoriales detallados y análisis profundo
-                </p>
-                <div className="text-xs opacity-70" style={{ color: '#524354' }}>
-                  Gabriela Ortiz
-                </div>
-              </Card>
+                <Card
+                  hover
+                  className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
+                  style={{ backgroundColor: '#EDDCC3' }}
+                >
+                  <Youtube
+                    className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                    style={{ color: '#4D1A09' }}
+                  />
+                  <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
+                    YouTube
+                  </h4>
+                  <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
+                    Videos extensos, tutoriales detallados y análisis profundo
+                  </p>
+                  <div className="text-xs opacity-70" style={{ color: '#524354' }}>
+                    Gabriela Ortiz
+                  </div>
+                </Card>
+              </a>
 
               <Card
                 hover
@@ -282,7 +289,7 @@ export const Vlog: React.FC = () => {
               </a>
 
               <a
-                href="https://youtube.com/@gabrielaortiz"
+                href="https://www.youtube.com/@sgabrielaortiz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 vintage-shadow"
@@ -300,7 +307,7 @@ export const Vlog: React.FC = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
             <h3 className="text-2xl font-bold mb-4" style={{ color: '#EDDCC3' }}>
               ¿Quieres ser la primera en enterarte?
@@ -331,7 +338,7 @@ export const Vlog: React.FC = () => {
               </button>
             </div>
           </Card>
-        </div>
+        </div> */}
       </div>
     </Section>
   );

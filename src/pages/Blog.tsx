@@ -1,13 +1,13 @@
 import { Header } from '../components/sections/Header';
-import { Vlog } from '../components/sections/Vlog';
+import { Blog } from '../components/sections/Blog';
 import { Footer } from '../components/sections/Footer';
 
-export const VlogPage: React.FC = () => {
+export const BlogPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <main>
-        <Vlog />
+        <Blog />
       </main>
       <Footer />
     </div>

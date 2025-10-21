@@ -54,7 +54,7 @@ export const About: React.FC = () => {
                     Gabriela Ortiz
                   </h3>
                   <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
-                    Imagen e identidad digital
+                    Imagen e Identidad Digital
                   </p>
                   <a
                     href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"

@@ -11,7 +11,7 @@ import { AnimatePresence } from 'framer-motion';
 // Import page components
 import { MarcaPersonalPage } from './pages/MarcaPersonal';
 import { ServiciosPage } from './pages/Servicios';
-import { VlogPage } from './pages/Vlog';
+import { BlogPage } from './pages/Blog';
 import { AlgoritmoClosetPage } from './pages/AlgoritmoCloset';
 import { SobreMiPage } from './pages/SobreMi';
 import { ContactoPage } from './pages/Contacto';
@@ -44,7 +44,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/marca-personal" element={<MarcaPersonalPage />} />
           <Route path="/servicios" element={<ServiciosPage />} />
-          <Route path="/vlog" element={<VlogPage />} />
+          <Route path="/blog" element={<BlogPage />} />
           <Route path="/algoritmo-closet" element={<AlgoritmoClosetPage />} />
           <Route path="/sobre-mi" element={<SobreMiPage />} />
           <Route path="/contactame" element={<ContactoPage />} />

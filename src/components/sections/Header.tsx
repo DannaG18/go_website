@@ -20,7 +20,7 @@ export function Header() {
   const menuItems = [
     { id: '/#inicio', label: 'Inicio', hash: true },
     { id: '/servicios', label: 'Servicios' },
-    { id: '/vlog', label: 'Vlog' },
+    { id: '/blog', label: 'Blog' },
     { id: '/algoritmo-closet', label: 'El Algoritmo de tu Closet' },
     { id: '/sobre-mi', label: 'Sobre Mí' },
     { id: '/marca-personal', label: 'Marca Personal' },

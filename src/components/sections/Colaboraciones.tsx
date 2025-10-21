@@ -40,7 +40,8 @@ export const Colaboraciones: React.FC = () => {
         'ADN de marca personal y marca fusionados en armonía',
         'Entrega por WeTransfer para aprobación',
         'Una modificación incluida'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20la%20colaboración%20POST%20FORMATO%20CARRUSEL.'
     },
     {
       icon: Video,
@@ -54,7 +55,8 @@ export const Colaboraciones: React.FC = () => {
         'ADN de marca personal y marca fusionados en armonía',
         'Entrega por WeTransfer para aprobación',
         'Una modificación incluida'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20la%20colaboración%20VIDEO%20FORMATO%20REEL.'
     },
     {
       icon: Instagram,
@@ -67,7 +69,8 @@ export const Colaboraciones: React.FC = () => {
         'ADN de marca personal y marca fusionados en armonía',
         'Publicación orgánica en momento solicitado',
         'Uso en marca personal y marca oficial'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20la%20colaboración%20VIDEO%20FORMATO%20HISTORIA.'
     }
   ];
 
@@ -81,7 +84,8 @@ export const Colaboraciones: React.FC = () => {
         '2 Historias durante la semana',
         'Fechas acordadas por ambas partes',
         'Taggeo de marca incluido'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20el%20PAQUETE%20SEMANAL.'
     },
     {
       titulo: 'PAQUETE DOS SEMANAS',
@@ -92,7 +96,8 @@ export const Colaboraciones: React.FC = () => {
         '4 Historias durante el periodo',
         '1 Post en formato carrusel',
         'Productos acordados por ambas partes'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20el%20PAQUETE%20DOS%20SEMANAS.'
     },
     {
       titulo: 'PAQUETE MENSUAL',
@@ -103,7 +108,8 @@ export const Colaboraciones: React.FC = () => {
         '6-8 Historias durante el mes',
         '1 Post en formato carrusel',
         'Productos diferentes adaptados al sello personal'
-      ]
+      ],
+      mensaje:'https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20o%20empresa%20aquí)%20y%20quiero%20solicitar%20el%20PAQUETE%20MENSUAL.'
     }
   ];
 
@@ -218,7 +224,7 @@ export const Colaboraciones: React.FC = () => {
                 {servicio.titulo}
               </h4>
               <a
-                href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+                href={servicio.mensaje}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -282,7 +288,7 @@ export const Colaboraciones: React.FC = () => {
 
             <div className="space-y-2 sm:space-y-3">
             <a
-              href="https://wa.me/573204033404?text=Hola%20quiero%20más%20información"
+              href={paquete.mensaje}
               target="_blank"
               rel="noopener noreferrer"
             >
