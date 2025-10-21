@@ -223,17 +223,17 @@ export const ClosetAlgorithm: React.FC = () => {
                     <span className="text-3xl font-bold" style={{ color: '#EDDCC3' }}>$150.0000 COP</span>
                     <p className="text-sm opacity-80 mt-2" style={{ color: '#291509' }}>Inversión única • Acceso de por vida</p>
                   </div>
-
-                  <Button
-                    size="lg"
-                    className="w-full md:w-auto mx-auto text-xl px-12 py-6"
-                    onClick={() => {
-                      // Aquí iría la lógica de compra/redirección
-                      console.log('Redirigir a compra del ebook');
-                    }}
-                  >
-                    Comprar Ebook Ahora
-                  </Button>
+                  <a
+                    href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20adquirir%20el%20Ebook."
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <Button
+                      size="lg"
+                      className="w-full md:w-auto mx-auto text-xl px-12 py-6"
+                    >
+                      Comprar Ebook Ahora
+                    </Button>
+                  </a>
                 </div>
 
                 <p className="text-sm opacity-70" style={{ color: '#fcf4ebff' }}>
