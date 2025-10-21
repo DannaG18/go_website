@@ -26,7 +26,7 @@ export const MainHero: React.FC = () => {
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
       {/* Background con Arena */}
-      <div 
+      <div
         id='inicio'
         className="absolute inset-0"
         style={{ backgroundColor: '#84685a72' }}
@@ -96,7 +96,7 @@ export const MainHero: React.FC = () => {
               </h1>
               <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#f6fbe3ff' }} />
               <p className="text-xl md:text-2xl font-light- mb-12 opacity-90" style={{ color: '#291509' }}>
-                Consultora de Imagen & Marca Personal
+                Imagen e identidad digital
               </p>
 
 
@@ -104,29 +104,29 @@ export const MainHero: React.FC = () => {
 
             {/* Frase con estilo vintage */}
             {/* <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}> */}
-              <p className="text-lg md:text-xl font-bold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
-                "El lujo no es tener más, sino encontrar lo que realmente te pertenece."
-              </p>
+            <p className="text-lg md:text-xl font-bold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
+              "El lujo no es tener más, sino encontrar lo que realmente te pertenece."
+            </p>
 
-              <div className="space-y-4">
-                <p className="text-lg font-medium" style={{ color: '#FEFAE0' }}>
-                  Si estás listo para:
-                </p>
-                <ul className="space-y-3 text-base" style={{ color: '#FEFAE0' }}>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 text-lg mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
-                    Un armario que eleve tu esencia.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
-                    Una marca que venda por valor, no por descuentos.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 mr-4 mt-2 text-lg flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
-                    Un estilo de vida donde cada elección sume.
-                  </li>
-                </ul>
-              </div>
+            <div className="space-y-4">
+              <p className="text-lg font-medium" style={{ color: '#FEFAE0' }}>
+                Si estás listo para:
+              </p>
+              <ul className="space-y-3 text-base" style={{ color: '#FEFAE0' }}>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 text-lg mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                  Un armario que eleve tu esencia.
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                  Una marca que venda por valor, no por descuentos.
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 mr-4 mt-2 text-lg flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                  Un estilo de vida donde cada elección sume.
+                </li>
+              </ul>
+            </div>
             {/* </div> */}
 
             {/* Botones con estilo vintage */}

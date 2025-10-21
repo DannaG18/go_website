@@ -300,7 +300,7 @@ export const Vlog: React.FC = () => {
         </div>
 
         {/* Newsletter Signup */}
-        {/* <div className="text-center">
+        <div className="text-center">
           <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
             <h3 className="text-2xl font-bold mb-4" style={{ color: '#EDDCC3' }}>
               ¿Quieres ser la primera en enterarte?
@@ -331,7 +331,7 @@ export const Vlog: React.FC = () => {
               </button>
             </div>
           </Card>
-        </div> */}
+        </div>
       </div>
     </Section>
   );
