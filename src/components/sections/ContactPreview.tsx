@@ -7,7 +7,7 @@ import { ContactFormData } from '../../types';
 import { SERVICES } from '../../utils/constants';
 
 export function ContactPreview() {
-  const FORM_ENDPOINT = 'https://formspree.io/f/mdkwvgbz'; // <-- Replace this
+  const FORM_ENDPOINT = 'https://formspree.io/f/xldpkbkp'; // <-- Replace this
 
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
