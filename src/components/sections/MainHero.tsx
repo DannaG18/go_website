@@ -94,9 +94,9 @@ export const MainHero: React.FC = () => {
                 {/* <br /> */}
                 {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
               </h1>
-              <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#f6fbe3ff' }} />
+              <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#FEFAE0' }} />
               <p className="text-xl md:text-2xl font-light- mb-12 opacity-90" style={{ color: '#291509' }}>
-                Imagen e identidad digital
+                Imagen e Identidad Digital
               </p>
 
 
@@ -104,9 +104,13 @@ export const MainHero: React.FC = () => {
 
             {/* Frase con estilo vintage */}
             {/* <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}> */}
-            <p className="text-lg md:text-xl font-bold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
-              "El lujo no es tener más, sino encontrar lo que realmente te pertenece."
+            <p className="text-lg md:text-xl font-semibold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
+              "El lujo no es tener más, sino encontrar lo que realmente te pertenece. Te ayudo a construir una imagen coherente, sofisticada y consciente, donde cada prenda cuenta tu historia. ¿Mi misión? Ser tu guía en este viaje."
             </p>
+            {/* <p className="text-lg md:text-xl font-bold  mb-6 leading-tight" style={{ color: '#324d0cff' }}>
+              Mi misión? Ser tu guía en este viaje
+            </p> */}
+
 
             <div className="space-y-4">
               <p className="text-lg font-medium" style={{ color: '#FEFAE0' }}>

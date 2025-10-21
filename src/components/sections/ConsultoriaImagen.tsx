@@ -115,20 +115,24 @@ export const ConsultoriaImagen: React.FC = () => {
           {/* Filosofía */}
           <div className="grid lg:grid-cols-2 gap-16 mb-20">
             <div className="space-y-8">
-              <Card className="p-24 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+              <Card className="p-16 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
-                  Armarios cápsula con esencia sostenible
+                  El Arte de lo Esencial
                 </h2>
                 <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#524354' }}>
                   <p>
-                    Creo que la verdadera elegancia nace de la coherencia entre lo que vestimos y lo que valoramos.
+                    Juntos analizaremos tu estilo de vida, esencia y cuerpo para definir una identidad visual clara y atemporal.
                   </p>
                   <p>
-                    Mi enfoque no se limita a crear armarios funcionales, sino a curar prendas que reflejen tu identidad mientras minimizan el impacto ambiental.
+                    No se trata de cambiar todo tu armario, sino de curarlo y potenciarlo con piezas clave, versátiles y llenas de significado
+                  </p>
+                  <p>
+                    Aprenderás de las reglas de la combinación para maximizar cada prenda y accesorio, creando looks auténticos que reflejen tu personalidad y valores.
                   </p>
                   <div className="p-6 vintage-border" style={{ backgroundColor: '#565021' }}>
                     <p className="text-xl font-medium text-center" style={{ color: '#EDDCC3' }}>
-                      Menos es más, pero solo cuando cada pieza suma.
+                      Lograrás una imagen pulida y coherente, sin el estrés matutino de
+                      <span className='font-bold italic'> "no tengo qué ponerme"</span>.
                     </p>
                   </div>
                 </div>
