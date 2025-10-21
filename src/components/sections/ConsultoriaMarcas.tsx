@@ -101,7 +101,6 @@ export const ConsultoriaMarcas: React.FC = () => {
   const pilares = [
     { texto: 'Educar (no solo vender)' },
     { texto: 'Valorizar (no liquidar)' },
-    { texto: 'Legar (no producir)' }
   ];
 
   return (
@@ -130,7 +129,7 @@ export const ConsultoriaMarcas: React.FC = () => {
             <div className="space-y-8">
               <Card className="p-9 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
                 <h2 className="text-3xl font-bold mb-8" style={{ color: '#291509' }}>
-                  El verdadero lujo no se agota en las temporadas
+                  El verdadero estilo no se agota en las temporadas
                 </h2>
 
                 <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#524354' }}>
@@ -152,8 +151,8 @@ export const ConsultoriaMarcas: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-xl font-bold text-center" style={{ color: '#4D1A09' }}>
-                    Trabajemos en una reinvención que tus clientes recordarán.
+                  <p className="text-xl font-semibold text-center" style={{ color: '#4D1A09' }}>
+                    Trabajemos en una reinvención que tus clientes recordarán <span className='font-bold italic'>"Invierte en lo que perdura"</span>
                   </p>
                 </div>
               </Card>

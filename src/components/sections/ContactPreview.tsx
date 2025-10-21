@@ -156,7 +156,7 @@ export function ContactPreview() {
                   <Instagram className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/gabriela-ortiz-79550b367/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
@@ -164,7 +164,7 @@ export function ContactPreview() {
                   <Linkedin className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/gabriela-ortiz-79550b367/"
+                  href="https://www.youtube.com/@sgabrielaortiz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"

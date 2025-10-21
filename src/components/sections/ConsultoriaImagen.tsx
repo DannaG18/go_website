@@ -234,7 +234,7 @@ export const ConsultoriaImagen: React.FC = () => {
                 {/* Círculo con número */}
                 <div
                   className="w-16 h-16 flex items-center justify-center text-white font-bold text-2xl rounded-full mb-4"
-                  style={{ backgroundColor: '#4D1A09' }}
+                  style={{ backgroundColor: '#4D1A09', color: '#FEFAE0' }}
                 >
                   {etapa.numero}
                 </div>

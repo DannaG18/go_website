@@ -142,14 +142,13 @@ export const Colaboraciones: React.FC = () => {
               una imagen digital asertiva.
             </p>
             <p>
-              Y en las marcas esta responsabilidad se incrementa de forma exponencial.
-              Tu identidad visual digital es tu nueva vitrina ante el mercado.
+              En tu negocio esta responsabilidad se incrementa de forma exponencial.
+              Tu identidad visual digital es tu nueva vitrina ante el mercado y es esencial construirla.
             </p>
 
             <div className="p-4 sm:p-6 vintage-border" style={{ backgroundColor: '#565021' }}>
-              <p className="text-lg sm:text-xl font-medium text-center" style={{ color: '#EDDCC3' }}>
-                Transmítele al consumidor un interés genuino de cambiar su vida mediante
-                tus productos/servicios, y lo habrás convertido en tu cliente.
+              <p className="text-lg sm:text-xl font-medium text-center italic" style={{ color: '#EDDCC3' }}>
+              "La identidad digital es tu nueva imagen. No una viralidad. Construye comunidad real".
               </p>
             </div>
           </div>
