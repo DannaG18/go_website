@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
                 <Instagram className="w-5 h-5" style={{ color: '#EDDCC3' }} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/gabriela-ortiz-79550b367/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"

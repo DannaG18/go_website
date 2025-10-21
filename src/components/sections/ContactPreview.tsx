@@ -7,7 +7,7 @@ import { ContactFormData } from '../../types';
 import { SERVICES } from '../../utils/constants';
 
 export function ContactPreview() {
-  const FORM_ENDPOINT = 'https://formspree.io/f/mrblgvzn'; // <-- Replace this
+  const FORM_ENDPOINT = 'https://formspree.io/f/mdkwvgbz'; // <-- Replace this
 
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -163,14 +163,14 @@ export function ContactPreview() {
                 >
                   <Linkedin className="w-6 h-6" style={{ color: '#EDDCC3' }} />
                 </a>
-                {/* <a
-                  href="https://linkedin.com"
+                <a
+                  href="https://www.linkedin.com/in/gabriela-ortiz-79550b367/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
                 >
                   <Youtube className="w-6 h-6" style={{ color: '#EDDCC3' }} />
-                </a> */}
+                </a>
               </div>
             </Card>
           </div>
