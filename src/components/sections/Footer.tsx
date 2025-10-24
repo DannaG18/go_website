@@ -101,11 +101,13 @@ export const Footer: React.FC = () => {
           <p className="text-sm mb-4 md:mb-0 opacity-70" style={{ color: '#EDDCC3' }}>
             © 2025 Gabriela Ortiz. Todos los derechos reservados.
           </p>
+          <a href="https://dg18.netlify.app/" target="_blank" rel="noopener noreferrer">
           <div className="flex items-center text-sm opacity-70" style={{ color: '#EDDCC3' }}>
             <span>Hecho por DG con</span>
             <Heart className="w-4 h-4 mx-2" style={{ color: '#CBB186' }} />
             <span>en Colombia</span>
           </div>
+          </a>
         </div>
       </div>
     </footer>

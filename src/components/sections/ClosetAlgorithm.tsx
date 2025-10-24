@@ -237,7 +237,7 @@ export const ClosetAlgorithm: React.FC = () => {
                     {/* Price and CTA */}
                     <div className="bg-white bg-opacity-10 p-8 vintage-shadow">
                       <div className="text-center mb-6">
-                        <span className="text-3xl font-bold" style={{ color: '#361603ff' }}>$80.0000 COP</span>
+                        <span className="text-3xl font-bold" style={{ color: '#361603ff' }}>$10 USD</span>
                         <p className="text-sm opacity-80 mt-2" style={{ color: '#291509' }}>Inversión única • Acceso de por vida</p>
                       </div>
                       <a
