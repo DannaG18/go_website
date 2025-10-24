@@ -76,7 +76,7 @@ export const VLOG_VIDEOS = [
     title: '"No inviertas en ropa, invierte en tu cuerpo" ',
     description: 'Cómo sentirte increíble con los que llevas puesto.',
     link: 'https://www.instagram.com/p/DI4Zz1XOyJM/',
-    thumbnail: '/vlog2.png',
+    thumbnail: '/blog/blog2.png',
     duration: '00:53',
     category: 'Moda Sostenible'
   },
@@ -85,7 +85,7 @@ export const VLOG_VIDEOS = [
     title: 'Revelando los Secretos de tu Diseñadora Favorita',
     description: 'Todo lo que debes saber para hacer una compra consciente.',
     link: 'https://www.instagram.com/p/DM77uY1uwY1/',
-    thumbnail: '/vlog3.png',
+    thumbnail: '/blog/blog3.png',
     duration: '00:38',
     category: 'Guía de Compra'
   },
@@ -94,7 +94,7 @@ export const VLOG_VIDEOS = [
     title: 'Básicos de Armario: Guía de versatilidad',
     description: 'Cómo transformar tu look de office en un outfit funcional y atemporal.',
     link: 'https://www.instagram.com/p/DJh_xB6tPSM/',
-    thumbnail: '/vlog5.png',
+    thumbnail: 'blog/blog5.png',
     duration: '1:10',
     category: 'Guía de Compra'
   },
@@ -103,7 +103,7 @@ export const VLOG_VIDEOS = [
     title: '¿DESINTERÉS O MIEDO?',
     description: '¡El reto más grande de mi trabajo como consultora de imagen sigue siendo generarte la confianza de conocerte a ti mismo!.',
     link: 'https://www.instagram.com/p/DNgRBXJuEB5/',
-    thumbnail: '/vlog4.png',
+    thumbnail: '/blog/blog4.png',
     duration: '00:55',
     category: 'Educación de Estilo'
   }

@@ -41,13 +41,13 @@ export const ClosetAlgorithm: React.FC = () => {
       <Section id="algoritmo-closet" className="py-24">
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: '#565021' }}
+          style={{ backgroundColor: '#250700ff' }}
         />
 
         {/* Natural fabric texture overlay */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <img
-            src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            src="textures/WhiteTexture2.jpg"
             alt="Natural fabric texture"
             className="w-full h-full object-cover"
           />
@@ -67,13 +67,14 @@ export const ClosetAlgorithm: React.FC = () => {
           </div>
 
           {/* Main Description */}
-          <div className="grid lg:grid-cols-2 gap-16 mb-20">
-            <div className="space-y-8">
-              <Card className="p-10 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
-                <h3 className="text-2xl font-bold mb-6" style={{ color: '#291509' }}>
+          <div className="grid lg:grid-cols-2 gap-10 mb-20">
+            <div className="space-y-6">
+              <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
+                <h3 className="text-center text-[34px] font-bold mb-6" style={{ color: '#291509' }}>
                   Una Poderosa Herramienta Digital
                 </h3>
-                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#524354' }}>
+                <div className="grid md:grid-cols-2 gap-12 items-center " style={{ color: '#3a303bff' }}>
+                  <div className='space-y-6 text-lg leading-relaxed'>
                   <p>
                     Una poderosa herramienta digital de iniciación a tu nuevo armario
                     cápsula con prendas básicas y atemporales definidas para ti.
@@ -82,11 +83,19 @@ export const ClosetAlgorithm: React.FC = () => {
                     Un recorrido introspectivo en tus raíces que te permitirá amar tu
                     sello personal y darte la seguridad de tu propio estilo.
                   </p>
+                  </div>
+                <div className="space-y-4 mx-full">
+                  <img
+                    src="/gaby/photo11.jpeg"
+                    alt="Investigación de materiales sostenibles"
+                    className="w-full h-full object-cover object-[25%_98%] shadow-2xl"
+                  />
+                </div>
                 </div>
               </Card>
 
-              <Card className="p-8 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
-                <h4 className="text-xl font-medium mb-4" style={{ color: '#EDDCC3' }}>
+              <Card className="p-8 vintage-shadow border-white" style={{ backgroundColor: '#512418ff' }}>
+                <h4 className="text-2xl font-medium mb-3" style={{ color: '#EDDCC3' }}>
                   Más que un Ebook
                 </h4>
                 <p className="text-base leading-relaxed opacity-90" style={{ color: '#C8BAAA' }}>
@@ -98,7 +107,7 @@ export const ClosetAlgorithm: React.FC = () => {
 
             {/* Benefits */}
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold mb-8" style={{ color: '#EDDCC3' }}>
+              <h3 className="text-[33px] font-bold mb-8" style={{ color: '#EDDCC3' }}>
                 Lo que Lograrás
               </h3>
               {benefits.map((benefit, index) => (
@@ -119,7 +128,7 @@ export const ClosetAlgorithm: React.FC = () => {
                       <h4 className="text-xl font-semibold mb-2" style={{ color: '#291509' }}>
                         {benefit.title}
                       </h4>
-                      <p className="text-m leading-relaxed opacity-80" style={{ color: '#524354' }}>
+                      <p className="text-m leading-relaxed opacity-80" style={{ color: '#413642ff' }}>
                         {benefit.description}
                       </p>
                     </div>
@@ -162,11 +171,11 @@ export const ClosetAlgorithm: React.FC = () => {
                         style={{ color: '#565021' }}
                       />
 
-                      <h4 className="text-lg font-medium mb-4" style={{ color: '#291509' }}>
+                      <h4 className="text-lg font-semibold mb-4" style={{ color: '#291509' }}>
                         {step.title}
                       </h4>
 
-                      <p className="text-sm leading-relaxed opacity-80" style={{ color: '#524334' }}>
+                      <p className="text-sm leading-relaxed opacity-80" style={{ color: '#362c23ff' }}>
                         {step.description}
                       </p>
                     </Card>
@@ -185,58 +194,68 @@ export const ClosetAlgorithm: React.FC = () => {
 
           {/* Ebook Purchase Section */}
           <div className="text-center">
-            <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#8B8D79' }}>
+            <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#EDDCC3' }}>
               <div className="max-w-4xl mx-auto">
-                <BookOpen className="w-20 h-20 mx-auto mb-8" style={{ color: '#EDDCC3' }} />
+                <BookOpen className="w-20 h-20 mx-auto mb-8" style={{ color: '#361603ff' }} />
 
-                <h3 className="text-4xl font-bold mb-6" style={{ color: '#EDDCC3' }}>
+                <h3 className="text-4xl font-bold mb-14" style={{ color: '#361603ff' }}>
                   Obtén tu Ebook Digital
                 </h3>
 
-                <p className="text-xl mb-8 opacity-90 leading-relaxed" style={{ color: '#EDDCC3' }}>
-                  Descarga inmediata de "El Algoritmo de tu Closet" - Tu guía completa
-                  para construir un armario cápsula auténtico y atemporal.
-                </p>
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="space-y-4 mx-full h-full">
+                    <img
+                      src="/gaby/ebook.png"
+                      alt="Investigación de materiales sostenibles"
+                      className="w-full h-full object-cover object-[25%_95%] vintage-shadow rounded-lg"
+                    />
+                  </div>
+                  <div className='flex justify-start flex-col h-full'>
+                    <p className="text-2xl  mb-12 opacity-90 leading-relaxed" style={{ color: '#361603ff' }}>
+                      <strong>"El Algoritmo de tu Closet"</strong>  - Tu guía completa
+                      para construir un armario cápsula auténtico y atemporal.
+                    </p>
+                    {/* Features */}
+                    <div className="grid md:grid-cols-3 gap-6 mb-10">
+                      <div className="text-center">
+                        <Download className="w-8 h-8 mx-auto mb-3" style={{ color: '#361603ff' }} />
+                        <h4 className="font-semibold text-lg mb-2" style={{ color: '#361603ff' }}>Descarga Inmediata</h4>
+                        <p className="text-sm opacity-80" style={{ color: '#361603ff' }}>Acceso instantáneo tras la compra</p>
+                      </div>
+                      <div className="text-center">
+                        <Star className="w-8 h-8 mx-auto mb-3" style={{ color: '#361603ff' }} />
+                        <h4 className="font-semibold text-lg mb-2" style={{ color: '#361603ff' }}>Contenido Exclusivo</h4>
+                        <p className="text-sm opacity-80" style={{ color: '#361603ff' }}>Metodología única y personalizada</p>
+                      </div>
+                      <div className="text-center">
+                        <BookOpen className="w-8 h-8 mx-auto mb-3" style={{ color: '#361603ff' }} />
+                        <h4 className="font-semibold text-lg mb-2" style={{ color: '#361603ff' }}>Formato Digital</h4>
+                        <p className="text-sm opacity-80" style={{ color: '#361603ff' }}>Compatible con todos los dispositivos</p>
+                      </div>
+                    </div>
 
-                {/* Features */}
-                <div className="grid md:grid-cols-3 gap-6 mb-10">
-                  <div className="text-center">
-                    <Download className="w-8 h-8 mx-auto mb-3" style={{ color: '#fcdba5ff' }} />
-                    <h4 className="font-semibold text-lg mb-2" style={{ color: '#EDDCC3' }}>Descarga Inmediata</h4>
-                    <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>Acceso instantáneo tras la compra</p>
-                  </div>
-                  <div className="text-center">
-                    <Star className="w-8 h-8 mx-auto mb-3" style={{ color: '#fcdba5ff' }} />
-                    <h4 className="font-semibold text-lg mb-2" style={{ color: '#EDDCC3' }}>Contenido Exclusivo</h4>
-                    <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>Metodología única y personalizada</p>
-                  </div>
-                  <div className="text-center">
-                    <BookOpen className="w-8 h-8 mx-auto mb-3" style={{ color: '#fcdba5ff' }} />
-                    <h4 className="font-semibold text-lg mb-2" style={{ color: '#EDDCC3' }}>Formato Digital</h4>
-                    <p className="text-sm opacity-80" style={{ color: '#EDDCC3' }}>Compatible con todos los dispositivos</p>
+                    {/* Price and CTA */}
+                    <div className="bg-white bg-opacity-10 p-8 vintage-shadow">
+                      <div className="text-center mb-6">
+                        <span className="text-3xl font-bold" style={{ color: '#361603ff' }}>$80.0000 COP</span>
+                        <p className="text-sm opacity-80 mt-2" style={{ color: '#291509' }}>Inversión única • Acceso de por vida</p>
+                      </div>
+                      <a
+                        href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20adquirir%20el%20Ebook."
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <Button
+                          size="lg"
+                          className="w-full md:w-auto mx-auto text-xl px-12 py-6"
+                        >
+                          Comprar Ebook Ahora
+                        </Button>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                {/* Price and CTA */}
-                <div className="bg-white bg-opacity-10 p-8 mb-8 vintage-shadow">
-                  <div className="text-center mb-6">
-                    <span className="text-3xl font-bold" style={{ color: '#EDDCC3' }}>$150.0000 COP</span>
-                    <p className="text-sm opacity-80 mt-2" style={{ color: '#291509' }}>Inversión única • Acceso de por vida</p>
-                  </div>
-                  <a
-                    href="https://wa.me/573204033404?text=Hola,%20soy%20(pon%20tu%20nombre%20aquí)%20y%20quiero%20adquirir%20el%20Ebook."
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <Button
-                      size="lg"
-                      className="w-full md:w-auto mx-auto text-xl px-12 py-6"
-                    >
-                      Comprar Ebook Ahora
-                    </Button>
-                  </a>
-                </div>
-
-                <p className="text-sm opacity-70" style={{ color: '#fcf4ebff' }}>
+                <p className="text-sm opacity-70 mt-9" style={{ color: '#361603ff' }}>
                   Garantía de satisfacción de 30 días • Pago seguro • Soporte incluido
                 </p>
               </div>

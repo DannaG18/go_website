@@ -23,7 +23,7 @@ export const Services: React.FC = () => {
 
       <div className="absolute inset-0 opacity-20">
         <img
-          src="/WhiteTexture3.jpg"
+          src="/textures/WhiteTexture3.jpg"
           alt="Textura natural de algodón"
           className="w-full h-full object-cover"
         />

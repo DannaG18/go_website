@@ -44,7 +44,7 @@ export const About: React.FC = () => {
             <Card className="overflow-hidden vintage-shadow" style={{ backgroundColor: '#C8BAAA' }}>
               <div className="relative">
                 <img
-                  src="/photo3.jpeg"
+                  src="/gaby/photo12.jpeg"
                   alt="Gabriela Ortiz - Diseñadora de Modas"
                   className="w-full h-[556px] object-cover"
                 />
@@ -57,12 +57,12 @@ export const About: React.FC = () => {
                     Imagen e Identidad Digital
                   </p>
                   <a
-                    href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"
+                    href="https://www.google.com/maps/place/Colombia"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
-                      Cúcuta, Norte de Santander - CO
+                    <p className="text-base italic mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
+                      Servicio Internacional desde Colombia
                     </p>
                   </a>
                 </div>
@@ -133,9 +133,9 @@ export const About: React.FC = () => {
 
                 <div className="space-y-4">
                   <img
-                    src="/photo7.jpeg"
+                    src="gaby/photo16.jpeg"
                     alt="Investigación de materiales sostenibles"
-                    className="w-full h-80 object-cover vintage-shadow rounded-lg"
+                    className="w-full h-96 object-cover object-[25%_95%] vintage-shadow rounded-lg"
                   />
                 </div>
               </div>
@@ -145,25 +145,33 @@ export const About: React.FC = () => {
 
         {/* The Transformation - 2022 */}
         <div className="mb-24">
-          <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#1C2218' }}>
-            <div className="text-center mb-12">
-              <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: '#EDDCC3' }}>
+          <Card className="p-12 vintage-shadow  items-center" style={{ backgroundColor: '#1C2218' }}>
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold text-center mb-8" style={{ color: '#EDDCC3' }}>
                 La Transformación - 2022
               </h3>
-              <div className="w-16 h-0.5 mx-auto" style={{ backgroundColor: '#CBB186' }} />
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-8 text-xl leading-relaxed text-center" style={{ color: '#e1ceb0ff' }}>
-              <p>
-                Mi vena creativa, esa que me acompañaba desde niña no quería crear más ropa.
-                <strong className="text-2xl block mt-4" style={{ color: '#EDDCC3' }}>
-                  Quería crear conciencia.
-                </strong>
-              </p>
-              <p>
-                En 2022, renuncié al manual convencional. Me volqué a la investigación y descubrí que
-                el verdadero lujo no es la etiqueta nueva; <strong className="text-xl" style={{ color: '#EDDCC3' }}>es el conocimiento.</strong>
-              </p>
+              <div className="w-16 h-0.5 mx-auto mb-8" style={{ backgroundColor: '#CBB186' }} />
+              <div className='grid md:grid-cols-2 gap-12 items-center'>
+                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#e1ceb0ff' }}>
+                  <p>
+                    Mi vena creativa, esa que me acompañaba desde niña no quería crear más ropa.
+                    <strong className="text-2xl block mt-4" style={{ color: '#EDDCC3' }}>
+                      Quería crear conciencia.
+                    </strong>
+                  </p>
+                  <p>
+                    En 2022, renuncié al manual convencional. Me volqué a la investigación y descubrí que
+                    el verdadero lujo no es la etiqueta nueva; <strong className="text-xl" style={{ color: '#EDDCC3' }}>es el conocimiento.</strong>
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <img
+                    src="gaby/photo9.jpeg"
+                    alt="Investigación de materiales sostenibles"
+                    className="w-full h-96 object-cover object-[25%_95%] shadow-2xl rounded-lg"
+                  />
+                </div>
+              </div>
             </div>
           </Card>
         </div>
@@ -211,19 +219,30 @@ export const About: React.FC = () => {
                 Mi Compromiso Contigo
               </h3>
 
-              <p className="text-xl leading-relaxed" style={{ color: '#C8BAAA' }}>
-                <strong style={{ color: '#EDDCC3' }}>Mi servicio no es sólo un servicio de consultoría.</strong>
-                Te brindo toda la información que en unos años, practicarla no será opción, sino obligación.
-              </p>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-4 ">
+                  <img
+                    src="gaby/photo13.jpeg"
+                    alt="Investigación de materiales sostenibles"
+                    className="w-full h-[460px] object-cover object-[25%_95%] vintage-shadow rounded-lg"
+                  />
+                </div>
+                <div>
+                  <p className="text-xl leading-relaxed mb-8" style={{ color: '#C8BAAA' }}>
+                    <strong className=' block' style={{ color: '#EDDCC3' }}>Mi servicio no es sólo un servicio de consultoría.</strong>
+                    Te brindo toda la información que en unos años, practicarla no será opción, sino obligación.
+                  </p>
 
-              <div className="p-8 rounded-lg" style={{ backgroundColor: 'rgba(237, 220, 195, 0.1)' }}>
-                <p className="text-xl italic mb-4" style={{ color: '#CBB186' }}>
-                  "Porque este mundo hoy, es para quienes lo respetamos y creemos en él."
-                </p>
-                <p className="text-2xl font-bold" style={{ color: '#EDDCC3' }}>
-                  Tu clóset tiene el poder de vestirte.<br />
-                  Pero tu mente tiene el poder de elevar tu conciencia.
-                </p>
+                  <div className="p-8 rounded-lg" style={{ backgroundColor: 'rgba(237, 220, 195, 0.1)' }}>
+                    <p className="text-xl italic mb-4" style={{ color: '#CBB186' }}>
+                      "Porque este mundo hoy, es para quienes lo respetamos y creemos en él."
+                    </p>
+                    <p className="text-2xl font-bold" style={{ color: '#EDDCC3' }}>
+                      Tu clóset tiene el poder de vestirte.<br />
+                      Pero tu mente tiene el poder de elevar tu conciencia.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </Card>

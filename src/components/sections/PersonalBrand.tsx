@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Card } from '../common/Card';
 import { Button } from '../common/Button';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { AnimatedPage } from '../common/AnimationPage';
+// import { AnimatedPage } from '../common/AnimationPage';
 
 export const PersonalBrand: React.FC = () => {
   const { isVisible, elementRef } = useScrollAnimation();
@@ -33,7 +33,7 @@ export const PersonalBrand: React.FC = () => {
   ];
 
   return (
-    <AnimatedPage>
+    // <AnimatedPage>
       <Section id="marca-personal" className="min-h-screen py-24">
         {/* Background con Arena */}
         <div
@@ -105,9 +105,9 @@ export const PersonalBrand: React.FC = () => {
             <div className="space-y-6">
               <div className="relative">
                 <img
-                  src="/photo5.jpeg"
+                  src="gaby/photo15.jpeg"
                   alt="Gabriela Ortiz - Diseñadora de Modas"
-                  className="w-full h-[320px] object-cover"
+                  className="w-full h-[320px] object-cover object-[25%_42%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
@@ -118,12 +118,12 @@ export const PersonalBrand: React.FC = () => {
                     Imagen e Identidad Digital
                   </p>
                   <a
-                    href="https://www.google.com/maps/place/C%C3%BAcuta,+Norte+de+Santander"
+                    href="https://www.google.com/maps/place/Colombia"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <p className="text-sm mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
-                      Cúcuta, Norte de Santander - CO
+                    <p className="text-base italic mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
+                      Servicio Internacional desde Colombia
                     </p>
                   </a>
                 </div>
@@ -243,7 +243,7 @@ export const PersonalBrand: React.FC = () => {
           </div>
         </div>
       </Section>
-    </AnimatedPage>
+    // </AnimatedPage>
 
   );
 };

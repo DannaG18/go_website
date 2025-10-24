@@ -1,5 +1,6 @@
 import { ArrowDown } from 'lucide-react';
 import { Button } from '../common/Button';
+import { Card } from '../common/Card';
 
 export const MainHero: React.FC = () => {
   const scrollToPromise = () => {
@@ -35,7 +36,7 @@ export const MainHero: React.FC = () => {
       {/* Textura de madera natural */}
       <div className="absolute inset-0 opacity-40">
         <img
-          src="/textura2.jpg"
+          src="/textures/textura2.jpg"
           alt="Textura natural de algodón"
           className="w-full h-full object-cover"
         />
@@ -94,7 +95,7 @@ export const MainHero: React.FC = () => {
                 {/* <br /> */}
                 {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
               </h1>
-              <div className="w-34 h-0.5 mb-8" style={{ backgroundColor: '#FEFAE0' }} />
+              <div className="w-34 h-1 mb-8 rounded-sm" style={{ backgroundColor: '#d5d3bfff' }} />
               <p className="text-xl md:text-2xl font-light- mb-12 opacity-90" style={{ color: '#291509' }}>
                 Imagen e Identidad Digital
               </p>
@@ -150,15 +151,36 @@ export const MainHero: React.FC = () => {
 
           {/* Lado derecho - Foto con marco vintage */}
           <div className="relative">
-            <div className="relative overflow-hidden vintage-shadow-lg ">
-              <img
-                // src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                src="/photo6.jpeg"
-                alt="Gabriela Ortiz - Consultora de Imagen"
-                className="w-full h-[700px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+          {/* Left - Personal Photo */}
+          <div className="lg:col-span-1">
+            <div className="overflow-hidden shadow-2xl" style={{ backgroundColor: '#C8BAAA' }}>
+              <div className="relative">
+                <img
+                  src="/gaby/photo6.jpeg"
+                  alt="Gabriela Ortiz - Diseñadora de Modas"
+                  className="w-full h-[720px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  {/* <h3 className="text-2xl font-serif font-bold mb-2" style={{ color: '#EDDCC3' }}>
+                    Gabriela Ortiz
+                  </h3>
+                  <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
+                    Diseñadora de modas 
+                  </p> */}
+                  {/* <a
+                    href="https://www.google.com/maps/place/Colombia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="text-base italic mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
+                      Servicio Internacional desde Colombia
+                    </p>
+                  </a> */}
+                </div>
+              </div>
             </div>
+          </div>
 
             {/* Elementos decorativos vintage */}
             {/* <div className="absolute -top-8 -right-8 w-32 h-32 opacity-20 animate-vintage-float vintage-border" style={{ backgroundColor: '#8B8D79', animationDelay: '1s' }} /> */}

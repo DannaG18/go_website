@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Clock, Tag, Instagram, Youtube, Video, BookOpen, Leaf, ShoppingBag, Users } from 'lucide-react';
+import { Play, Clock, Tag, Instagram, Youtube, Video, BookOpen, Leaf, ShoppingBag, Users, Linkedin } from 'lucide-react';
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { VLOG_VIDEOS } from '../../utils/constants';
@@ -8,6 +8,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
 
 export const Blog: React.FC = () => {
   const contentTypes = [
@@ -251,26 +252,33 @@ export const Blog: React.FC = () => {
                   </div>
                 </Card>
               </a>
-
+              <a
+                href="https://www.linkedin.com/in/gabriela-ortiz-79550b367/"
+                target="_blank"
+                rel="noopener noreferrer"
+                // className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+                style={{ backgroundColor: '#1C2218' }}
+              >
               <Card
                 hover
                 className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
                 style={{ backgroundColor: '#EDDCC3' }}
               >
-                <Video
+                <Linkedin
                   className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
                   style={{ color: '#4D1A09' }}
                 />
                 <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
-                  TikTok
+                  LinkedIn
                 </h4>
                 <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
                   Tips rápidos, tendencias conscientes y contenido educativo
                 </p>
                 <div className="text-xs opacity-70" style={{ color: '#524354' }}>
-                  @gabrielaortiz
+                  Gabriela Ortiz
                 </div>
               </Card>
+              </a>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

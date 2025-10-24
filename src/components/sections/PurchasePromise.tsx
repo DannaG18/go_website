@@ -74,9 +74,9 @@ export const PurchasePromise: React.FC = () => {
 
           {/* Imagen con marco orgánico */}
           <div className="relative">
-            <div className="relative overflow-hidden organic-shadow-lg">
+            <div className="relative overflow-hidden shadow-lg shadow-red-950/50  ">
               <img 
-                src="/photo5.jpeg" 
+                src="/gaby/photo10.jpeg" 
                 alt="Proceso creativo y materiales naturales" 
                 className="w-full h-[650px] object-cover"
               />

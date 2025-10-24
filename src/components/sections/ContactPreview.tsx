@@ -103,7 +103,7 @@ export function ContactPreview() {
                       sgabrielaortiz@gmail.com
                     </p>
                   </a>
-                  <p className='text-sm opacity-60' style={{ color: '#392f3aff' }}>Respondo personalmente cada mensaje</p>
+                  <p className='text-sm opacity-60 italic' style={{ color: '#392f3aff' }}>Respondo personalmente cada mensaje</p>
                 </div>
               </div>
             </Card>
@@ -118,7 +118,7 @@ export function ContactPreview() {
                       +57 (320) 403-3404
                     </p>
                   </a>
-                  <p className='text-sm opacity-60' style={{ color: '#392f3aff' }}>Lun - Vie, 8:00 - 17:00</p>
+                  <p className='text-sm opacity-60 italic' style={{ color: '#392f3aff' }}>Lun - Vie, 8:00 - 17:00</p>
                 </div>
               </div>
             </Card>
@@ -134,10 +134,10 @@ export function ContactPreview() {
                     rel="noopener noreferrer"
                   >
                     <p className="text-base opacity-80" style={{ color: '#352c36ff' }}>
-                      Cúcuta, Norte de Santander - CO
+                      Servicio internacional desde Colombia
                     </p>
                   </a>
-                  <p className='text-sm opacity-60' style={{ color: '#392f3aff' }}>Reuniones con cita previa</p>
+                  <p className='text-sm opacity-60 italic' style={{ color: '#392f3aff' }}>A un meet de distancia</p>
                 </div>
               </div>
             </Card>
