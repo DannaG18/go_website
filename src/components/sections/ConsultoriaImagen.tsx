@@ -294,7 +294,7 @@ export const ConsultoriaImagen: React.FC = () => {
                       // size="md sm:lg"
                       onClick={() => document.getElementById('contactame')?.scrollIntoView({ behavior: 'smooth' })}
                     >
-                      Solicitar colaboración
+                      Solicitar asesoría
                     </Button>
                   </a>
                 </div>

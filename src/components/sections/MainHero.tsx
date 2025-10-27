@@ -34,20 +34,17 @@ export const MainHero: React.FC = () => {
       />
 
       {/* Textura de madera natural */}
-      <div className="absolute inset-0 opacity-40">
-        <img
-          src="/textures/textura2.jpg"
-          alt="Textura natural de algodón"
-          className="w-full h-full object-cover"
-        />
-        {/* <div
-    className="absolute inset-0"
-    style={{ backgroundColor: 'rgba(210, 170, 124, 0.5)' }} 
-  // ></div> */}
+      <div className="absolute inset-0 bg-[url(/)] bg-cover bg-center">
+        <div
+          className="absolute inset-0 backdrop-blur-2xl"
+          style={{ backgroundColor: 'rgba(210, 189, 169, 0.65)' }}
+        ></div>
       </div>
 
+
+
       {/* Textura vintage de papel */}
-      <div className="absolute inset-0 vintage-texture-paper opacity-50" />
+      {/* <div className="absolute inset-0 vintage-texture-paper opacity-50" /> */}
 
       {/* Elementos vintage de fondo */}
       <div className="absolute inset-0 opacity-10">
@@ -88,15 +85,15 @@ export const MainHero: React.FC = () => {
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Lado izquierdo - Contenido de texto */}
-          <div className="space-y-10">
-            <div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal mb-6 mt-6 leading-tight">
+          <div className="space-y-14">
+            <div className='w-[560px] text-end mb-24'>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal mb-1 mt-6 leading-tight">
                 <span style={{ color: '#291509' }}>Gabriela Ortiz</span> {/* #291509 */}
                 {/* <br /> */}
                 {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
               </h1>
-              <div className="w-34 h-1 mb-8 rounded-sm" style={{ backgroundColor: '#d5d3bfff' }} />
-              <p className="text-xl md:text-2xl font-light- mb-12 opacity-90" style={{ color: '#291509' }}>
+              <div className="w-[560px] h-0.5 mb-8 rounded-sm" style={{ backgroundColor: '#ebe5dcff' }} />
+              <p className="text-xl md:text-2xl font-base mb-12 opacity-90" style={{ color: '#291509' }}>
                 Imagen e Identidad Digital
               </p>
 
@@ -105,29 +102,29 @@ export const MainHero: React.FC = () => {
 
             {/* Frase con estilo vintage */}
             {/* <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}> */}
-            <p className="text-lg md:text-xl font-semibold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
+            {/* <p className="w-[560px] text-end text-lg md:text-xl font-semibold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
               "El lujo no es tener más, sino encontrar lo que realmente te pertenece. Te ayudo a construir una imagen coherente, sofisticada y consciente, donde cada prenda cuenta tu historia. ¿Mi misión? Ser tu guía en este viaje."
-            </p>
+            </p> */}
             {/* <p className="text-lg md:text-xl font-bold  mb-6 leading-tight" style={{ color: '#324d0cff' }}>
               Mi misión? Ser tu guía en este viaje
             </p> */}
 
 
             <div className="space-y-4">
-              <p className="text-lg font-medium" style={{ color: '#FEFAE0' }}>
-                Si estás listo para:
+              <p className="text-xl font-medium" style={{ color: '#291509' }}>
+                SI ESTÁS LISTO PARA:
               </p>
-              <ul className="space-y-3 text-base" style={{ color: '#FEFAE0' }}>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 text-lg mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+              <ul className="space-y-3 text-base" style={{ color: '#291509' }}>
+                <li className="text-base flex items-start">
+                  <span className="w-2 h-2 mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#ebe5dcff' }} />
                   Un armario que eleve tu esencia.
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                  <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#ebe5dcff' }} />
                   Una marca que venda por valor, no por descuentos.
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 mr-4 mt-2 text-lg flex-shrink-0" style={{ backgroundColor: '#CBB186' }} />
+                  <span className="w-2 h-2 mr-4 mt-2 text-lg flex-shrink-0" style={{ backgroundColor: '#ebe5dcff' }} />
                   Un estilo de vida donde cada elección sume.
                 </li>
               </ul>
@@ -135,7 +132,7 @@ export const MainHero: React.FC = () => {
             {/* </div> */}
 
             {/* Botones con estilo vintage */}
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-6 mt-5">
               <Button
                 variant="secondary"
                 size="lg"
@@ -151,24 +148,24 @@ export const MainHero: React.FC = () => {
 
           {/* Lado derecho - Foto con marco vintage */}
           <div className="relative">
-          {/* Left - Personal Photo */}
-          <div className="lg:col-span-1">
-            <div className="overflow-hidden shadow-2xl" style={{ backgroundColor: '#C8BAAA' }}>
-              <div className="relative">
-                <img
-                  src="/gaby/photo6.jpeg"
-                  alt="Gabriela Ortiz - Diseñadora de Modas"
-                  className="w-full h-[720px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-8 left-8 right-8">
-                  {/* <h3 className="text-2xl font-serif font-bold mb-2" style={{ color: '#EDDCC3' }}>
+            {/* Left - Personal Photo */}
+            <div className="lg:col-span-1">
+              <div className="overflow-hidden shadow-2xl" style={{ backgroundColor: '#C8BAAA' }}>
+                <div className="relative">
+                  <img
+                    src="/gaby/photo14.jpeg"
+                    alt="Gabriela Ortiz - Diseñadora de Modas"
+                    className="w-full h-[650px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8 right-8">
+                    {/* <h3 className="text-2xl font-serif font-bold mb-2" style={{ color: '#EDDCC3' }}>
                     Gabriela Ortiz
                   </h3>
                   <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
                     Diseñadora de modas 
                   </p> */}
-                  {/* <a
+                    {/* <a
                     href="https://www.google.com/maps/place/Colombia"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -177,10 +174,10 @@ export const MainHero: React.FC = () => {
                       Servicio Internacional desde Colombia
                     </p>
                   </a> */}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
             {/* Elementos decorativos vintage */}
             {/* <div className="absolute -top-8 -right-8 w-32 h-32 opacity-20 animate-vintage-float vintage-border" style={{ backgroundColor: '#8B8D79', animationDelay: '1s' }} /> */}
