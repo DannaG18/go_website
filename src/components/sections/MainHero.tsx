@@ -5,193 +5,123 @@ import { Card } from '../common/Card';
 export const MainHero: React.FC = () => {
   const scrollToPromise = () => {
     const element = document.getElementById('promesa-compra');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToServices = () => {
     const element = document.getElementById('servicios-preview');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToContact = () => {
     const element = document.getElementById('contacto-preview');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
-      {/* Background con Arena */}
+    <section
+      id="inicio"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden py-16 md:py-20"
+    >
+      {/* Fondo base */}
       <div
-        id='inicio'
         className="absolute inset-0"
         style={{ backgroundColor: '#84685a72' }}
       />
 
-      {/* Textura de madera natural */}
-      <div className="absolute inset-0 bg-[url(/)] bg-cover bg-center">
+      {/* Textura difuminada */}
+      <div className="absolute inset-0 bg-[url(/textures/textura2.jpg)] bg-cover bg-center">
         <div
           className="absolute inset-0 backdrop-blur-2xl"
-          style={{ backgroundColor: 'rgba(210, 189, 169, 0.65)' }}
+          style={{ backgroundColor: 'rgba(237, 214, 192, 0.65)' }}
         ></div>
       </div>
 
-
-
-      {/* Textura vintage de papel */}
-      {/* <div className="absolute inset-0 vintage-texture-paper opacity-50" /> */}
-
-      {/* Elementos vintage de fondo */}
-      <div className="absolute inset-0 opacity-10">
-        {/* <div className="absolute top-20 left-10 w-32 h-32 overflow-hidden animate-vintage-float vintage-border">
-          <img 
-            src="https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400" 
-            alt="Plantas verdes naturales" 
-            className="w-full h-full object-cover"
-          />
-        </div> */}
-
-        {/* <div className="absolute top-40 right-20 w-48 h-48 overflow-hidden vintage-border">
-          <img 
-            src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=600" 
-            alt="Textura de lino natural" 
-            className="w-full h-full object-cover opacity-60"
-          />
-        </div> */}
-
-        {/* <div className="absolute bottom-32 left-20 w-24 h-24 overflow-hidden vintage-border">
-          <img 
-            src="https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&w=300" 
-            alt="Hojas de eucalipto" 
-            className="w-full h-full object-cover"
-          />
-        </div> */}
-
-        {/* <div className="absolute bottom-20 right-32 w-40 h-40 overflow-hidden animate-vintage-float vintage-border" style={{ animationDelay: '2s' }}>
-          <img
-            src="https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&w=300"
-            alt="Plantas verdes sage"
-            className="w-full h-full object-cover opacity-70"
-          />
-        </div> */}
-      </div>
-
-      {/* Contenido */}
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Lado izquierdo - Contenido de texto */}
-          <div className="space-y-14">
-            <div className='w-[560px] text-end mb-24'>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal mb-1 mt-6 leading-tight">
-                <span style={{ color: '#291509' }}>Gabriela Ortiz</span> {/* #291509 */}
-                {/* <br /> */}
-                {/* <span style={{ color: '#565021' }}>Ortiz</span> */}
+      {/* Contenido principal */}
+      <div className="container relative z-10 px-4 sm:px-6 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Texto */}
+          <div className="space-y-10 text-center">
+            <div className="max-w-full md:max-w-md lg:max-w-[610px] lg:text-right mx-auto lg:ml-auto mb-10 lg:mb-24">
+              <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-normal leading-tight mt-5">
+                <span style={{ color: '#291509' }}>Gabriela Ortiz</span>
               </h1>
-              <div className="w-[560px] h-0.5 mb-8 rounded-sm" style={{ backgroundColor: '#ebe5dcff' }} />
-              <p className="text-xl md:text-2xl font-base mb-12 opacity-90" style={{ color: '#291509' }}>
+              <div
+                className="w-3/2 md:w-full h-0.5 my-1 mx-auto lg:mx-0 rounded-sm"
+                style={{ backgroundColor: '#ebe5dcff' }}
+              />
+              <p
+                className="text-lg sm:text-xl mt-3 md:text-2xl opacity-90"
+                style={{ color: '#291509' }}
+              >
                 Imagen e Identidad Digital
               </p>
-
-
             </div>
 
-            {/* Frase con estilo vintage */}
-            {/* <div className="p-8 vintage-border vintage-shadow" style={{ backgroundColor: '#1C2218' }}> */}
-            {/* <p className="w-[560px] text-end text-lg md:text-xl font-semibold italic mb-6 leading-relaxed" style={{ color: '#291509' }}>
-              "El lujo no es tener más, sino encontrar lo que realmente te pertenece. Te ayudo a construir una imagen coherente, sofisticada y consciente, donde cada prenda cuenta tu historia. ¿Mi misión? Ser tu guía en este viaje."
-            </p> */}
-            {/* <p className="text-lg md:text-xl font-bold  mb-6 leading-tight" style={{ color: '#324d0cff' }}>
-              Mi misión? Ser tu guía en este viaje
-            </p> */}
-
-
-            <div className="space-y-4">
-              <p className="text-xl font-medium" style={{ color: '#291509' }}>
+            {/* Lista de beneficios */}
+            <div className="lg:text-left space-y-4">
+              <p className="text-lg md:text-xl font-medium " style={{ color: '#291509' }}>
                 SI ESTÁS LISTO PARA:
               </p>
-              <ul className="space-y-3 text-base" style={{ color: '#291509' }}>
-                <li className="text-base flex items-start">
-                  <span className="w-2 h-2 mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#ebe5dcff' }} />
+              <ul
+                className=" space-y-3 text-sm sm:text-base md:text-lg mx-auto lg:mx-0"
+                style={{ color: '#291509' }}
+              >
+                <li className="flex items-start justify-start">
+                  <span
+                    className="w-2 h-2 mr-3 mt-2 flex-shrink-0"
+                    style={{ backgroundColor: '#ebe5dcff' }}
+                  />
                   Un armario que eleve tu esencia.
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 text-m mr-4 mt-2 flex-shrink-0" style={{ backgroundColor: '#ebe5dcff' }} />
+                <li className="flex items-start justify-start">
+                  <span
+                    className="w-2 h-2 mr-3 mt-2 flex-shrink-0"
+                    style={{ backgroundColor: '#ebe5dcff' }}
+                  />
                   Una marca que venda por valor, no por descuentos.
                 </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 mr-4 mt-2 text-lg flex-shrink-0" style={{ backgroundColor: '#ebe5dcff' }} />
+                <li className="flex items-start justify-start">
+                  <span
+                    className="w-2 h-2 mr-3 mt-2 flex-shrink-0"
+                    style={{ backgroundColor: '#ebe5dcff' }}
+                  />
                   Un estilo de vida donde cada elección sume.
                 </li>
               </ul>
             </div>
-            {/* </div> */}
 
-            {/* Botones con estilo vintage */}
-            <div className="flex flex-col sm:flex-row gap-6 mt-5">
-              <Button
-                variant="secondary"
-                size="lg"
-                onClick={scrollToContact}
-              >
+            {/* Botones */}
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6 mt-5">
+              <Button variant="secondary" size="lg" onClick={scrollToContact}>
                 Trabajemos juntos
               </Button>
-              <Button size="lg" variant='tertiary' onClick={scrollToServices}>
+              <Button size="lg" variant="tertiary" onClick={scrollToServices}>
                 Descubre mi trabajo
               </Button>
             </div>
           </div>
 
-          {/* Lado derecho - Foto con marco vintage */}
-          <div className="relative">
-            {/* Left - Personal Photo */}
-            <div className="lg:col-span-1">
-              <div className="overflow-hidden shadow-2xl" style={{ backgroundColor: '#C8BAAA' }}>
-                <div className="relative">
-                  <img
-                    src="/gaby/photo14.jpeg"
-                    alt="Gabriela Ortiz - Diseñadora de Modas"
-                    className="w-full h-[650px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-8 left-8 right-8">
-                    {/* <h3 className="text-2xl font-serif font-bold mb-2" style={{ color: '#EDDCC3' }}>
-                    Gabriela Ortiz
-                  </h3>
-                  <p className="text-base opacity-90" style={{ color: '#C8BAAA' }}>
-                    Diseñadora de modas 
-                  </p> */}
-                    {/* <a
-                    href="https://www.google.com/maps/place/Colombia"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <p className="text-base italic mt-2 opacity-80" style={{ color: '#C8BAAA' }}>
-                      Servicio Internacional desde Colombia
-                    </p>
-                  </a> */}
-                  </div>
-                </div>
+          {/* Imagen */}
+          <div className="relative w-full max-w-md mx-auto lg:max-w-none">
+            <div className="overflow-hidden shadow-2xl " style={{ backgroundColor: '#C8BAAA' }}>
+              <div className="relative">
+                <img
+                  src="/gaby/photo14.jpeg"
+                  alt="Gabriela Ortiz - Imagen e Identidad Digital"
+                  className="w-full h-[400px] sm:h-[500px] md:h-[650px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               </div>
             </div>
-
-            {/* Elementos decorativos vintage */}
-            {/* <div className="absolute -top-8 -right-8 w-32 h-32 opacity-20 animate-vintage-float vintage-border" style={{ backgroundColor: '#8B8D79', animationDelay: '1s' }} /> */}
-            {/* <div className="absolute -bottom-8 -left-8 w-40 h-40 opacity-15 animate-vintage-float vintage-border" style={{ backgroundColor: '#CBB186', animationDelay: '3s' }} /> */}
-            {/* <div className="absolute top-1/2 -left-4 w-8 h-8 opacity-30 vintage-border" style={{ backgroundColor: '#565021' }} /> */}
-            {/* <div className="absolute bottom-1/4 -right-6 w-12 h-12 opacity-25 vintage-border" style={{ backgroundColor: '#524354' }} /> */}
           </div>
         </div>
 
-        {/* Indicador de scroll vintage */}
-        {/* <div className="absolute left-1/2 transform -translate-x-1/2 animate-bounce">
+        {/* Flecha de scroll (visible solo en pantallas grandes) */}
+        {/* <div className="hidden md:block absolute left-1/2 bottom-10 transform -translate-x-1/2 animate-bounce">
           <button
             onClick={scrollToPromise}
-            className="p-4 opacity-50 hover:opacity-80 transition-all duration-300 vintage-shadow vintage-border"
+            className="p-4 opacity-60 hover:opacity-90 transition-all duration-300 rounded-full shadow-md"
             style={{ backgroundColor: 'rgba(251, 255, 211, 0.64)' }}
           >
             <ArrowDown className="w-6 h-6" style={{ color: '#403902ff' }} />
