@@ -1,16 +1,66 @@
-import React from 'react';
-import { Play, Clock, Tag, Instagram, Youtube, Video, BookOpen, Leaf, ShoppingBag, Users, Linkedin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import {
+  BookOpen, Leaf, ShoppingBag, Users, Tag, User, Calendar,
+  Play,
+  Clock,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from 'lucide-react';
 import { Section } from '../common/Section';
 import { Card } from '../common/Card';
-import { VLOG_VIDEOS } from '../../utils/constants';
+import { fetchBlogArticles, BlogArticle } from '../../data/blogData';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Link } from 'react-router-dom';
+import { VLOG_VIDEOS } from '../../utils/constants';
 
 export const Blog: React.FC = () => {
+  const [articles, setArticles] = useState<BlogArticle[]>([]);
+  const [visibleArticles, setVisibleArticles] = useState(3);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  // 🔹 Cargar artículos desde Google Sheets
+  useEffect(() => {
+    console.log('📚 Blog component montado, cargando artículos...');
+
+    const loadArticles = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const data = await fetchBlogArticles();
+
+        console.log('✅ Artículos cargados en Blog:', {
+          total: data.length,
+          articles: data.map(a => ({ id: a.id, title: a.title, thumbnail: !!a.thumbnail }))
+        });
+
+        // Validar que haya artículos
+        if (data.length === 0) {
+          console.warn('⚠️ No se cargaron artículos');
+          setError('No se encontraron artículos');
+        }
+
+        setArticles(data);
+      } catch (err) {
+        console.error('❌ Error cargando artículos en Blog:', err);
+        setError('Error al cargar los artículos. Revisa la consola.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadArticles();
+  }, []);
+
+  const loadMoreArticles = () => {
+    setVisibleArticles(prev => Math.min(prev + 3, articles.length));
+  };
+
+  const hasMoreArticles = visibleArticles < articles.length;
+
   const contentTypes = [
     {
       icon: Leaf,
@@ -38,14 +88,75 @@ export const Blog: React.FC = () => {
     }
   ];
 
-  return (
-    <Section id="blog" className="py-24 relative w-full overflow-x-hidden" >
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: '#EDDCC3' }}
-      />
+  // Componente para renderizar imagen con fallback
+  const ArticleImage: React.FC<{
+    article: BlogArticle;
+    className: string;
+    height: string;
+  }> = ({ article, className, height }) => {
+    if (article.thumbnail) {
+      return (
+        <img
+          src={article.thumbnail}
+          alt={article.title}
+          className={className}
+          onError={(e) => {
+            console.error(`❌ Error cargando imagen: ${article.thumbnail}`);
+            e.currentTarget.style.display = 'none';
+            e.currentTarget.parentElement?.classList.add('no-image');
+          }}
+        />
+      );
+    }
 
-      {/* Vintage paper texture */}
+    // Fallback: mostrar color de categoría
+    return (
+      <div
+        className={`w-full ${height} flex items-center justify-center`}
+        style={{ backgroundColor: article.color || '#8B8D79' }}
+      >
+        <div className="text-center">
+          <Tag className="w-16 h-16 mx-auto mb-2 opacity-20" style={{ color: '#EDDCC3' }} />
+          <p className="text-sm font-medium opacity-40" style={{ color: '#EDDCC3' }}>
+            {article.category}
+          </p>
+        </div>
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <Section id="blog" className="py-24 relative w-full overflow-x-hidden">
+        <div className="absolute inset-0" style={{ backgroundColor: '#EDDCC3' }} />
+        <div className="container relative z-10 text-center">
+          <p className="text-lg" style={{ color: '#291509' }}>Cargando reflexiones...</p>
+        </div>
+      </Section>
+    );
+  }
+
+  if (error) {
+    return (
+      <Section id="blog" className="py-24 relative w-full overflow-x-hidden">
+        <div className="absolute inset-0" style={{ backgroundColor: '#EDDCC3' }} />
+        <div className="container relative z-10 text-center">
+          <p className="text-lg mb-4" style={{ color: '#291509' }}>{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-3 text-sm font-medium"
+            style={{ backgroundColor: '#8B8D79', color: '#EDDCC3' }}
+          >
+            Recargar página
+          </button>
+        </div>
+      </Section>
+    );
+  }
+
+  return (
+    <Section id="blog" className="py-24 relative w-full overflow-x-hidden">
+      <div className="absolute inset-0" style={{ backgroundColor: '#EDDCC3' }} />
       <div className="absolute inset-0 vintage-texture-paper opacity-30" />
 
       <div className="container relative z-10">
@@ -91,7 +202,7 @@ export const Blog: React.FC = () => {
         </div>
 
         {/* Featured Videos */}
-        <div className="mb-20">
+        {/* <div className="mb-20">
           <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
             Videos Destacados
           </h3>
@@ -122,24 +233,24 @@ export const Blog: React.FC = () => {
                         alt={video.title}
                         className="w-100 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
 
-                      {/* Play button */}
-                      <a href={video.link} target="_blank" rel="">
+        {/* Play button */}
+        {/* <a href={video.link} target="_blank" rel="">
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="w-20 h-20 bg-white bg-opacity-90 flex items-center justify-center vintage-shadow">
                             <Play className="w-8 h-8 ml-1" style={{ color: "#565021" }} />
                           </div>
                         </div>
-                      </a>
-                      {/* Duration badge */}
-                      <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
+                      </a> */}
+        {/* Duration badge */}
+        {/* <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
                         <Clock className="w-4 h-4 mr-2" />
                         {video.duration}
-                      </div>
+                      </div> */}
 
-                      {/* Category badge */}
-                      <div className="absolute top-4 left-4">
+        {/* Category badge */}
+        {/* <div className="absolute top-4 left-4">
                         <span
                           className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
                           style={{
@@ -182,8 +293,218 @@ export const Blog: React.FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </div> */}
 
+
+        {/* Featured Articles */}
+        {articles.length >= 2 && (
+          <div className="mb-20">
+            <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
+              Reflexiones Destacadas
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-12 max-w-8xl mx-auto">
+              {articles.slice(0, 2).map((article: BlogArticle) => (
+                <Card
+                  key={article.id}
+                  hover
+                  className="group overflow-hidden transform transition-all duration-500 hover:scale-105 flex flex-col"
+                  style={{ backgroundColor: '#d6c1a9ff' }}
+                >
+                  <Link
+                    to={`/blog/${article.id}`}
+                    className="flex flex-col h-full justify-between"
+                    onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
+                  >
+                    <div className="relative overflow-hidden">
+                      <ArticleImage article={article} className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" height="h-64" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      {article.readTime && (
+                        <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
+                          <BookOpen className="w-4 h-4 mr-2" />
+                          {article.readTime}
+                        </div>
+                      )}
+
+                      {article.category && (
+                        <div className="absolute top-4 left-4">
+                          <span
+                            className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
+                            style={{
+                              backgroundColor: article.color || '#8B8D79',
+                              color: '#EDDCC3'
+                            }}
+                          >
+                            <Tag className="w-3 h-3 mr-1" />
+                            {article.category}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="p-8">
+                      <div>
+                        <h4 className="text-2xl font-medium mb-4 leading-tight" style={{ color: '#291509' }}>
+                          {article.title}
+                        </h4>
+
+                        {article.description && (
+                          <p className="text-md leading-relaxed opacity-70 mb-6" style={{ color: '#2b232cff' }}>
+                            {article.description}
+                          </p>
+                        )}
+
+                        <div className="flex items-center justify-between mb-6 text-xs opacity-60" style={{ color: '#524354' }}>
+                          {article.author && (
+                            <div className="flex items-center text-sm">
+                              <User className="w-3 h-3 mr-1" />
+                              {article.author}
+                            </div>
+                          )}
+                          {article.date && (
+                            <div className="flex items-center text-sm">
+                              <Calendar className="w-3 h-3 mr-1" />
+                              {article.date}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <Link
+                        to={`/blog/${article.id}`}
+                        className="text-md font-medium flex items-center transition-colors duration-300 hover:opacity-80"
+                        style={{ color: '#565021' }}
+                        onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
+                      >
+                        Leer reflexión
+                        <BookOpen className="w-4 h-4 ml-2" />
+                      </Link>
+                    </div>
+                  </Link>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* All Articles */}
+        {articles.length > 0 && (
+          <div className="mb-20">
+            <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
+              Todas las Reflexiones
+            </h3>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {articles.slice(0, visibleArticles).map((article: BlogArticle) => (
+                <Card
+                  key={article.id}
+                  hover
+                  className="group overflow-hidden transform transition-all duration-500 hover:scale-105 flex flex-col" // 👈 importante
+                  style={{ backgroundColor: '#d6c1a9ff' }}
+                >
+                  <div className="relative overflow-hidden">
+                    <ArticleImage
+                      article={article}
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      height="h-48"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {article.readTime && (
+                      <div className="absolute top-3 right-3 px-2 py-1 bg-black bg-opacity-70 text-white text-xs flex items-center vintage-shadow">
+                        <BookOpen className="w-3 h-3 mr-1" />
+                        {article.readTime}
+                      </div>
+                    )}
+
+                    {article.category && (
+                      <div className="absolute top-3 left-3">
+                        <span
+                          className="text-xs font-medium px-2 py-1 flex items-center vintage-shadow"
+                          style={{
+                            backgroundColor: article.color || '#8B8D79',
+                            color: '#EDDCC3'
+                          }}
+                        >
+                          <Tag className="w-2 h-2 mr-1" />
+                          {article.category}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 👇 Esto es el contenido textual de la tarjeta */}
+                  <div className="flex flex-col justify-between flex-1 p-6"> {/* 👈 agregado flex-1 */}
+                    <div>
+                      <h4
+                        className="text-xl font-medium mb-3"
+                        style={{ color: '#291509' }}
+                      >
+                        {article.title}
+                      </h4>
+
+                      {article.description && (
+                        <p
+                          className="text-sm leading-relaxed opacity-70 mb-4"
+                          style={{ color: '#2d252eff' }}
+                        >
+                          {article.description}
+                        </p>
+                      )}
+
+                      {article.date && (
+                        <div
+                          className="flex items-center justify-between mb-4 text-xs opacity-60"
+                          style={{ color: '#362c38ff' }}
+                        >
+                          <div className="flex items-center">
+                            <Calendar className="w-3 h-3 mr-1" />
+                            {article.date}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <Link
+                      to={`/blog/${article.id}`}
+                      className="text-md font-medium flex items-center transition-colors duration-300 hover:opacity-80 mt-4"
+                      style={{ color: '#565021' }}
+                      onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
+                    >
+                      Leer reflexión
+                      <BookOpen className="w-4 h-4 ml-2" />
+                    </Link>
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            {hasMoreArticles && (
+              <div className="text-center">
+                <button
+                  onClick={loadMoreArticles}
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 vintage-shadow"
+                  style={{
+                    backgroundColor: '#8B8D79',
+                    color: '#EDDCC3'
+                  }}
+                >
+                  Cargar más reflexiones
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* No articles message */}
+        {articles.length === 0 && !loading && !error && (
+          <div className="text-center py-12">
+            <p className="text-lg" style={{ color: '#291509' }}>
+              No hay reflexiones disponibles en este momento.
+            </p>
+          </div>
+        )}
         {/* Platforms Section */}
         <div className="mb-16">
           <Card className="p-12 vintage-shadow" style={{ backgroundColor: '#565021' }}>
@@ -259,25 +580,25 @@ export const Blog: React.FC = () => {
                 // className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
                 style={{ backgroundColor: '#1C2218' }}
               >
-              <Card
-                hover
-                className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
-                style={{ backgroundColor: '#EDDCC3' }}
-              >
-                <Linkedin
-                  className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: '#4D1A09' }}
-                />
-                <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
-                  LinkedIn
-                </h4>
-                <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
-                  Tips rápidos, tendencias conscientes y contenido educativo
-                </p>
-                <div className="text-xs opacity-70" style={{ color: '#524354' }}>
-                  Gabriela Ortiz
-                </div>
-              </Card>
+                <Card
+                  hover
+                  className="p-8 text-center group transform transition-all duration-500 hover:scale-105"
+                  style={{ backgroundColor: '#EDDCC3' }}
+                >
+                  <Linkedin
+                    className="w-16 h-16 mx-auto mb-6 transition-transform duration-300 group-hover:scale-110"
+                    style={{ color: '#4D1A09' }}
+                  />
+                  <h4 className="text-xl font-semibold mb-3" style={{ color: '#3b1407ff' }}>
+                    LinkedIn
+                  </h4>
+                  <p className="text-sm opacity-90 mb-4" style={{ color: '#524354' }}>
+                    Tips rápidos, tendencias conscientes y contenido educativo
+                  </p>
+                  <div className="text-xs opacity-70" style={{ color: '#524354' }}>
+                    Gabriela Ortiz
+                  </div>
+                </Card>
               </a>
             </div>
 

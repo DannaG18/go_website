@@ -11,6 +11,89 @@ export const COLORS = {
   pielSuave: '#EDDCC3',
 } as const;
 
+// export const BLOG_ARTICLES = [
+//   {
+//     id: 'moda-sostenible-colombia-2024',
+//     title: 'Reflexiones sobre la Moda Sostenible en Colombia',
+//     description: 'Mis observaciones y análisis personal sobre el panorama actual de la moda consciente en nuestro país, basado en mi experiencia trabajando con marcas locales.',
+//     thumbnail: 'https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=800',
+//     readTime: '8 min',
+//     category: 'Análisis Profundo',
+//     author: 'Gabriela Ortiz',
+//     date: '15 Enero 2024'
+//   },
+//   {
+//     id: 'fibras-textiles-impacto-ambiental',
+//     title: 'Mi Investigación Personal sobre Fibras Textiles',
+//     description: 'Lo que descubrí durante mi certificación en investigación de fibras textiles y cómo cambió mi perspectiva sobre los materiales.',
+//     thumbnail: 'https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=800',
+//     readTime: '12 min',
+//     category: 'Experiencia Técnica',
+//     author: 'Gabriela Ortiz',
+//     date: '8 Enero 2024'
+//   },
+//   {
+//     id: 'psicologia-color-vestimenta',
+//     title: 'Cómo el Color Transformó mi Práctica Profesional',
+//     description: 'Reflexiones sobre el poder del color en la consultoría de imagen y las lecciones aprendidas trabajando con mis clientes.',
+//     thumbnail: 'https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg?auto=compress&cs=tinysrgb&w=800',
+//     readTime: '6 min',
+//     category: 'Desarrollo Profesional',
+//     author: 'Gabriela Ortiz',
+//     date: '2 Enero 2024'
+//   },
+//   {
+//     id: 'economia-circular-moda',
+//     title: 'Mi Transición hacia la Economía Circular',
+//     description: 'Cómo cambié mi enfoque de negocio hacia modelos circulares y las lecciones aprendidas en el proceso.',
+//     thumbnail: 'https://images.pexels.com/photos/1020315/pexels-photo-1020315.jpeg?auto=compress&cs=tinysrgb&w=800',
+//     readTime: '10 min',
+//     category: 'Estrategias de Negocio',
+//     author: 'Gabriela Ortiz',
+//     date: '28 Diciembre 2023'
+//   },
+//   {
+//     id: 'algoritmo-closet-desarrollo',
+//     title: 'Cómo Desarrollé el Algoritmo de tu Closet',
+//     description: 'El proceso creativo y técnico detrás de mi metodología más exitosa, desde la idea inicial hasta la implementación.',
+//     thumbnail: 'https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&w=800',
+//     readTime: '15 min',
+//     category: 'Desarrollo Profesional',
+//     author: 'Gabriela Ortiz',
+//     date: '20 Diciembre 2023'
+//   },
+//   {
+//     id: 'clientes-transformacion-personal',
+//     title: 'Historias de Transformación: Mis Clientes',
+//     description: 'Reflexiones sobre los casos más impactantes en mi práctica y lo que me han enseñado sobre la imagen personal.',
+//     thumbnail: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=800',
+//     readTime: '9 min',
+//     category: 'Experiencias Personales',
+//     author: 'Gabriela Ortiz',
+//     date: '15 Diciembre 2023'
+//   },
+//   {
+//     id: 'industria-moda-colombia-realidades',
+//     title: 'Realidades de la Industria Textil Colombiana',
+//     description: 'Mis observaciones trabajando directamente con la industria local y los desafíos que enfrentamos.',
+//     thumbnail: 'https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=600',
+//     readTime: '11 min',
+//     category: 'Análisis Profundo',
+//     author: 'Gabriela Ortiz',
+//     date: '10 Diciembre 2023'
+//   },
+//   {
+//     id: 'marca-personal-evolucion',
+//     title: 'La Evolución de mi Propia Marca Personal',
+//     description: 'Un análisis honesto sobre cómo ha cambiado mi identidad profesional y las lecciones del camino.',
+//     thumbnail: 'https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=600',
+//     readTime: '7 min',
+//     category: 'Experiencias Personales',
+//     author: 'Gabriela Ortiz',
+//     date: '5 Diciembre 2023'
+//   }
+// ] as const;
+
 export const SERVICES = [
   {
     id: 'consultoria-imagen-personal',

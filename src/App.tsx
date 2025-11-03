@@ -19,6 +19,7 @@ import { ConsultoriaImagenPage } from './pages/ConsultoriaImagen';
 import { ConsultoriaMarcasPage } from './pages/ConsultoriaMarcas';
 import { CharlasCapacitacionesPage } from './pages/CharlasCapacitaciones';
 import { ColaboracionesPage } from './pages/Colaboraciones';
+import { ArticleDetailPage } from './pages/ArticleDetail';
 
 // Home page component
 const HomePage: React.FC = () => (
@@ -52,6 +53,7 @@ function App() {
           <Route path="/consultoria-marcas" element={<ConsultoriaMarcasPage />} />
           <Route path="/charlas-capacitaciones" element={<CharlasCapacitacionesPage />} />
           <Route path="/colaboraciones" element={<ColaboracionesPage />} />
+          <Route path="/blog/:id" element={<ArticleDetailPage />} />
         </Routes>
       </AnimatePresence>
     </>
