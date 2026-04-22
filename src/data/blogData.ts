@@ -167,6 +167,18 @@ function validateArrayData(data: unknown, context: string): data is Array<Record
   return true;
 }
 
+function convertDriveUrl(url: string): string {
+  // Detecta si es un link de Google Drive
+  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (driveMatch) {
+    const fileId = driveMatch[1];
+    const directUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+    console.log(`🔄 URL de Drive convertida: ${url} -> ${directUrl}`);
+    return directUrl;
+  }
+  return url;
+}
+
 function sanitizeImageUrl(url: string | undefined, articleTitle: string): string {
   if (!url || url.trim() === '') {
     console.log(`ℹ️ Sin imagen para: "${articleTitle}"`);
@@ -174,10 +186,11 @@ function sanitizeImageUrl(url: string | undefined, articleTitle: string): string
   }
 
   try {
-    new URL(url.trim());
-    return url.trim();
+    const cleanUrl = convertDriveUrl(url.trim());
+    new URL(cleanUrl);
+    return cleanUrl;
   } catch {
-    console.warn(`⚠️ URL de imagen inválida para "${articleTitle}": ${url} - Se usará sin imagen`);
+    console.warn(`⚠️ URL de imagen inválida para "${articleTitle}": ${url}`);
     return '';
   }
 }
