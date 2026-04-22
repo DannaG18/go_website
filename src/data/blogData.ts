@@ -6,6 +6,11 @@ const BLOG_ARTICLES_URL = `https://opensheet.elk.sh/${SHEET_ID}/BlogArticle`;
 const BLOG_CONTENT_URL = `https://opensheet.elk.sh/${SHEET_ID}/BlogContent`;
 
 // ====================
+// 🔹 Cache TTL
+// ====================
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutos
+
+// ====================
 // 🔹 Tipos
 // ====================
 export interface BlogArticle {
@@ -23,7 +28,7 @@ export interface BlogArticle {
 export interface ContentBlock {
   type: 'paragraph' | 'heading' | 'quote' | 'image' | 'list';
   text?: string;
-  items?: string[]; // Para listas
+  items?: string[];
 }
 
 export interface BlogContent {
@@ -56,7 +61,6 @@ function slugifyTitle(title: string, index?: number): string {
   }
 }
 
-// Generar ID único verificando duplicados
 function generateUniqueId(title: string, index: number, existingIds: Set<string>): string {
   let baseId = slugifyTitle(title, index);
   let uniqueId = baseId;
@@ -79,8 +83,13 @@ function saveToCache<T>(key: string, data: T): void {
       return;
     }
 
-    const jsonString = JSON.stringify(data);
-    console.log(`💾 Guardando en cache "${key}": ${jsonString.length} caracteres`);
+    const payload = {
+      data,
+      timestamp: Date.now(),
+    };
+
+    const jsonString = JSON.stringify(payload);
+    console.log(`💾 Guardando en cache "${key}": ${jsonString.length} caracteres (expira en ${CACHE_TTL_MS / 60000} min)`);
 
     sessionStorage.setItem(key, jsonString);
     console.log(`✅ Cache guardado exitosamente: ${key}`);
@@ -100,21 +109,31 @@ function getFromCache<T>(key: string): T | null {
     if (!key) return null;
 
     const cached = sessionStorage.getItem(key);
-    if (cached) {
-      console.log(`✅ Datos recuperados del cache: ${key} (${cached.length} caracteres)`);
-      const parsed = JSON.parse(cached) as T;
-
-      if (key === 'blog_content') {
-        const contentObj = parsed as unknown as BlogContent;
-        const keys = Object.keys(contentObj);
-        console.log(`📊 Contenido en cache: ${keys.length} artículos`, keys);
-      }
-
-      return parsed;
+    if (!cached) {
+      console.log(`ℹ️ No hay datos en cache para: ${key}`);
+      return null;
     }
 
-    console.log(`ℹ️ No hay datos en cache para: ${key}`);
-    return null;
+    const { data, timestamp } = JSON.parse(cached);
+    const ageMs = Date.now() - timestamp;
+    const isExpired = ageMs > CACHE_TTL_MS;
+
+    if (isExpired) {
+      console.log(`⏰ Cache expirado para "${key}" (tenía ${Math.round(ageMs / 60000)} min). Limpiando...`);
+      sessionStorage.removeItem(key);
+      return null;
+    }
+
+    const remainingMin = Math.round((CACHE_TTL_MS - ageMs) / 60000);
+    console.log(`✅ Datos recuperados del cache: "${key}" (expira en ~${remainingMin} min)`);
+
+    if (key === 'blog_content') {
+      const contentObj = data as unknown as BlogContent;
+      const keys = Object.keys(contentObj);
+      console.log(`📊 Contenido en cache: ${keys.length} artículos`, keys);
+    }
+
+    return data as T;
   } catch (error) {
     console.error(`❌ Error al leer cache (${key}):`, error);
     sessionStorage.removeItem(key);
@@ -217,10 +236,9 @@ export async function fetchBlogArticles(): Promise<BlogArticle[]> {
     const formatted: BlogArticle[] = data.map((item: Record<string, string>, index: number) => {
       try {
         const id = generateUniqueId(item.título || '', index, existingIds);
-
         const thumbnail = sanitizeImageUrl(item.imagen, item.título || `Artículo #${index + 1}`);
 
-        const article = {
+        return {
           id,
           title: item.título || '',
           description: item.descripción || '',
@@ -231,8 +249,6 @@ export async function fetchBlogArticles(): Promise<BlogArticle[]> {
           thumbnail,
           color: item.color_categoria || '#8B8D79',
         };
-
-        return article;
       } catch (error) {
         console.error(`❌ Error procesando artículo #${index + 1}:`, error, item);
         throw error;
@@ -323,7 +339,6 @@ export async function fetchBlogContent(): Promise<BlogContent> {
         }
 
         const id = generateUniqueId(titulo, index, existingIds);
-
         console.log(`📄 Procesando contenido #${index + 1}: "${titulo}" -> ID: "${id}"`);
 
         const contentArray: ContentBlock[] = [];
@@ -341,7 +356,6 @@ export async function fetchBlogContent(): Promise<BlogContent> {
             } else if (key.startsWith('image_')) {
               contentArray.push({ type: 'image', text: value });
             } else if (key.startsWith('list_')) {
-              // Convertir el texto en un array de items separados por salto de línea o punto y coma
               const items = value.split(/\n|;/).map(item => item.trim()).filter(item => item.length > 0);
               contentArray.push({ type: 'list', items });
             }
@@ -356,8 +370,8 @@ export async function fetchBlogContent(): Promise<BlogContent> {
         };
 
         console.log(`✅ Contenido "${id}" procesado: ${contentArray.length} bloques`);
-
         return acc;
+
       } catch (error) {
         console.error(`❌ Error procesando contenido #${index + 1}:`, error, row);
         return acc;
@@ -463,22 +477,3 @@ if (typeof window !== 'undefined') {
   (window as any).fetchBlogContent = fetchBlogContent;
   (window as any).fetchBlogArticles = fetchBlogArticles;
 }
-// ```
-
-// **Cambios principales:**
-
-// 1. ✅ **`ContentBlock` interface** - Agregado `items?` para listas
-// 2. ✅ **Procesamiento de `list_`** - Divide el texto en items usando saltos de línea o punto y coma
-// 3. ✅ **Procesamiento de `image_`** - Guarda la URL de la imagen
-// 4. ✅ **Corregidos errores de sintaxis** - Cerrados todos los bloques correctamente
-
-// **En tu Google Sheet, las listas deben estar así:**
-// ```
-// list_1: "Item 1
-// Item 2
-// Item 3"
-// ```
-
-// O también:
-// ```
-// list_1: "Item 1; Item 2; Item 3"

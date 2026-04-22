@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
   BookOpen, Leaf, ShoppingBag, Users, Tag, User, Calendar,
-  Play,
-  Clock,
+  // Play,
+  // Clock,
   Instagram,
   Linkedin,
   Youtube,
@@ -11,9 +11,9 @@ import { Section } from '../common/Section';
 import { Card } from '../common/Card';
 import { fetchBlogArticles, BlogArticle } from '../../data/blogData';
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import { VLOG_VIDEOS } from '../../utils/constants';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation, Pagination } from 'swiper/modules';
+// import { VLOG_VIDEOS } from '../../utils/constants';
 
 export const Blog: React.FC = () => {
   const [articles, setArticles] = useState<BlogArticle[]>([]);
