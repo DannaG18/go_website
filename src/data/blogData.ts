@@ -1,14 +1,8 @@
 import slugify from 'slugify';
 
-// 👉 Reemplaza con el ID de tu Google Sheet
 const SHEET_ID = '1mPG8MsE1HneHWeDgvVxin6TvS5TnJDfadC2zZcxa0LM';
 const BLOG_ARTICLES_URL = `https://opensheet.elk.sh/${SHEET_ID}/BlogArticle`;
 const BLOG_CONTENT_URL = `https://opensheet.elk.sh/${SHEET_ID}/BlogContent`;
-
-// ====================
-// 🔹 Cache TTL
-// ====================
-const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutos
 
 // ====================
 // 🔹 Tipos
@@ -76,68 +70,30 @@ function generateUniqueId(title: string, index: number, existingIds: Set<string>
   return uniqueId;
 }
 
-function saveToCache<T>(key: string, data: T): void {
-  try {
-    if (!key || !data) {
-      console.warn('⚠️ saveToCache: key o data inválidos');
-      return;
-    }
-
-    const payload = {
-      data,
-      timestamp: Date.now(),
-    };
-
-    const jsonString = JSON.stringify(payload);
-    console.log(`💾 Guardando en cache "${key}": ${jsonString.length} caracteres (expira en ${CACHE_TTL_MS / 60000} min)`);
-
-    sessionStorage.setItem(key, jsonString);
-    console.log(`✅ Cache guardado exitosamente: ${key}`);
-  } catch (error) {
-    console.error(`❌ Error al guardar en cache (${key}):`, error);
-
-    if (error instanceof DOMException && error.name === 'QuotaExceededError') {
-      alert(`❌ Error: Cuota de almacenamiento excedida para ${key}`);
-    } else {
-      alert(`Error al guardar datos en cache: ${key}`);
-    }
+function convertDriveUrl(url: string): string {
+  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+  if (driveMatch) {
+    const fileId = driveMatch[1];
+    const directUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
+    console.log(`🔄 URL de Drive convertida: ${url} -> ${directUrl}`);
+    return directUrl;
   }
+  return url;
 }
 
-function getFromCache<T>(key: string): T | null {
+function sanitizeImageUrl(url: string | undefined, articleTitle: string): string {
+  if (!url || url.trim() === '') {
+    console.log(`ℹ️ Sin imagen para: "${articleTitle}"`);
+    return '';
+  }
+
   try {
-    if (!key) return null;
-
-    const cached = sessionStorage.getItem(key);
-    if (!cached) {
-      console.log(`ℹ️ No hay datos en cache para: ${key}`);
-      return null;
-    }
-
-    const { data, timestamp } = JSON.parse(cached);
-    const ageMs = Date.now() - timestamp;
-    const isExpired = ageMs > CACHE_TTL_MS;
-
-    if (isExpired) {
-      console.log(`⏰ Cache expirado para "${key}" (tenía ${Math.round(ageMs / 60000)} min). Limpiando...`);
-      sessionStorage.removeItem(key);
-      return null;
-    }
-
-    const remainingMin = Math.round((CACHE_TTL_MS - ageMs) / 60000);
-    console.log(`✅ Datos recuperados del cache: "${key}" (expira en ~${remainingMin} min)`);
-
-    if (key === 'blog_content') {
-      const contentObj = data as unknown as BlogContent;
-      const keys = Object.keys(contentObj);
-      console.log(`📊 Contenido en cache: ${keys.length} artículos`, keys);
-    }
-
-    return data as T;
-  } catch (error) {
-    console.error(`❌ Error al leer cache (${key}):`, error);
-    sessionStorage.removeItem(key);
-    return null;
+    const cleanUrl = convertDriveUrl(url.trim());
+    new URL(cleanUrl);
+    return cleanUrl;
+  } catch {
+    console.warn(`⚠️ URL de imagen inválida para "${articleTitle}": ${url} - Se usará sin imagen`);
+    return '';
   }
 }
 
@@ -167,56 +123,11 @@ function validateArrayData(data: unknown, context: string): data is Array<Record
   return true;
 }
 
-function convertDriveUrl(url: string): string {
-  // Detecta si es un link de Google Drive
-  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
-  if (driveMatch) {
-    const fileId = driveMatch[1];
-    const directUrl = `https://drive.google.com/uc?export=view&id=${fileId}`;
-    console.log(`🔄 URL de Drive convertida: ${url} -> ${directUrl}`);
-    return directUrl;
-  }
-  return url;
-}
-
-function sanitizeImageUrl(url: string | undefined, articleTitle: string): string {
-  if (!url || url.trim() === '') {
-    console.log(`ℹ️ Sin imagen para: "${articleTitle}"`);
-    return '';
-  }
-
-  try {
-    const cleanUrl = convertDriveUrl(url.trim());
-    new URL(cleanUrl);
-    return cleanUrl;
-  } catch {
-    console.warn(`⚠️ URL de imagen inválida para "${articleTitle}": ${url}`);
-    return '';
-  }
-}
-
 // ====================
 // 🔹 Fetch de artículos (previews)
 // ====================
 export async function fetchBlogArticles(): Promise<BlogArticle[]> {
-  const cacheKey = 'blog_articles';
-
   try {
-    const cached = getFromCache<BlogArticle[]>(cacheKey);
-    if (cached && cached.length > 0) {
-      console.log(`📦 Usando ${cached.length} artículos del cache`);
-
-      const ids = cached.map(a => a.id);
-      const uniqueIds = new Set(ids);
-      if (ids.length !== uniqueIds.size) {
-        console.error('❌ IDs duplicados encontrados en cache. Limpiando...');
-        sessionStorage.removeItem(cacheKey);
-        return fetchBlogArticles();
-      }
-
-      return cached;
-    }
-
     console.log('🔄 Cargando artículos desde Google Sheets...');
     console.log(`📍 URL: ${BLOG_ARTICLES_URL}`);
 
@@ -275,7 +186,6 @@ export async function fetchBlogArticles(): Promise<BlogArticle[]> {
     const withoutImages = formatted.length - withImages;
     console.log(`📊 Estadísticas: ${withImages} con imagen, ${withoutImages} sin imagen`);
 
-    saveToCache(cacheKey, formatted);
     return formatted;
 
   } catch (error) {
@@ -296,19 +206,8 @@ export async function fetchBlogArticles(): Promise<BlogArticle[]> {
 // 🔹 Fetch de contenido completo
 // ====================
 export async function fetchBlogContent(): Promise<BlogContent> {
-  const cacheKey = 'blog_content';
-
   try {
     console.log('🚀 Iniciando fetchBlogContent...');
-
-    const cached = getFromCache<BlogContent>(cacheKey);
-    if (cached && Object.keys(cached).length > 0) {
-      const count = Object.keys(cached).length;
-      console.log(`📦 Usando ${count} contenidos del cache`);
-      console.log('📝 IDs de contenido en cache:', Object.keys(cached).map(id => `"${id}"`).join(', '));
-      return cached;
-    }
-
     console.log('🔄 Cargando contenido desde Google Sheets...');
     console.log(`📍 URL: ${BLOG_CONTENT_URL}`);
 
@@ -367,7 +266,7 @@ export async function fetchBlogContent(): Promise<BlogContent> {
             } else if (key.startsWith('quote_')) {
               contentArray.push({ type: 'quote', text: value });
             } else if (key.startsWith('image_')) {
-              contentArray.push({ type: 'image', text: value });
+              contentArray.push({ type: 'image', text: sanitizeImageUrl(value, titulo) });
             } else if (key.startsWith('list_')) {
               const items = value.split(/\n|;/).map(item => item.trim()).filter(item => item.length > 0);
               contentArray.push({ type: 'list', items });
@@ -400,9 +299,7 @@ export async function fetchBlogContent(): Promise<BlogContent> {
       return {};
     }
 
-    saveToCache(cacheKey, contentData);
-    console.log('💾 Contenido guardado en cache exitosamente');
-
+    console.log('✅ Contenido cargado exitosamente');
     return contentData;
 
   } catch (error) {
@@ -469,14 +366,14 @@ export async function getBlogContentById(id: string): Promise<BlogContent[string
 }
 
 // ====================
-// 🔹 Función de debug para limpiar cache
+// 🔹 Función de debug para limpiar cache (mantenida por compatibilidad)
 // ====================
 export function clearBlogCache(): void {
   try {
     sessionStorage.removeItem('blog_articles');
     sessionStorage.removeItem('blog_content');
     console.log('🗑️ Cache limpiado exitosamente');
-    alert('✅ Cache limpiado. Recarga la página para cargar datos frescos.');
+    alert('✅ Cache limpiado.');
   } catch (error) {
     console.error('❌ Error al limpiar cache:', error);
   }
