@@ -174,12 +174,12 @@ export const ArticleDetailPage: React.FC = () => {
           {/* Back */}
           <div className="mb-10">
             <Link
-              to="/blog"
+              to="/blog/#articles"
               className="inline-flex items-center text-lg font-medium transition-colors duration-300 hover:opacity-80"
               style={{ color: '#565021' }}
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
-              Volver a Reflexiones
+              Volver al Blog
             </Link>
           </div>
 
@@ -189,10 +189,18 @@ export const ArticleDetailPage: React.FC = () => {
               <Card className="overflow-hidden vintage-shadow" style={{ backgroundColor: '#C8BAAA' }}>
                 <div className="relative">
                   {meta.thumbnail ? (
-                    <>
-                      <img src={meta.thumbnail} alt={meta.title} className="w-full h-96 object-cover" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    </>
+<div className="relative w-full h-96 overflow-hidden bg-[#291509]/20">
+  {/* Imagen con desenfoque extremo para textura de fondo */}
+  <img 
+    src={meta.thumbnail} 
+    alt="" 
+  
+    className="absolute inset-0 w-full h-full object-cover blur-md scale-110 opacity-60" 
+  />
+  
+  {/* Gradiente más intenso para dar profundidad y contraste */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#16171B]/80 via-[#291509]/30 to-transparent" />
+</div>
                   ) : (
                     <div
                       className="w-full h-96 flex items-center justify-center"

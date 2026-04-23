@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   BookOpen, Leaf, ShoppingBag, Users, Tag, User, Calendar,
   // Play,
@@ -20,6 +21,21 @@ export const Blog: React.FC = () => {
   const [visibleArticles, setVisibleArticles] = useState(3);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      // Esperamos un momento breve para que el DOM se renderice completamente
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100); // 100ms es suficiente para que React monte las cards
+    }
+  }, [hash]); // Se ejecuta cada vez que el hash cambie
 
   // 🔹 Cargar artículos desde Google Sheets
   useEffect(() => {
@@ -296,189 +312,225 @@ export const Blog: React.FC = () => {
         </div> */}
 
 
-        {/* Featured Articles */}
-        {articles.length >= 2 && (
-          <div className="mb-20">
-            <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
-              Reflexiones Destacadas
-            </h3>
+{/* Featured Articles */}
+{articles.length >= 2 && (
+  <div className="mb-20">
+    <h3 className=" text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
+      Reflexiones Destacadas
+    </h3>
 
-            <div className="grid md:grid-cols-2 gap-12 max-w-8xl mx-auto">
-              {articles.slice(0, 2).map((article: BlogArticle) => (
-                <Card
-                  key={article.id}
-                  hover
-                  className="group overflow-hidden transform transition-all duration-500 hover:scale-105 flex flex-col"
-                  style={{ backgroundColor: '#d6c1a9ff' }}
-                >
-                  <Link
-                    to={`/blog/${article.id}`}
-                    className="flex flex-col h-full justify-between"
-                    onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
-                  >
-                    <div className="relative overflow-hidden">
-                      <ArticleImage article={article} className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" height="h-64" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="grid md:grid-cols-2 gap-12 max-w-8xl mx-auto items-stretch">
+      {articles.slice(0, 2).map((article: BlogArticle) => (
+        /* 1. Movimos el hover y transform aquí para evitar el parpadeo */
+        <div key={article.id} className="group transition-all duration-500 hover:scale-[1.02] active:scale-100">
+          <Link
+            to={`/blog/${article.id}`}
+            className="flex flex-col h-full"
+            onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
+          >
+            <Card
+              className="flex flex-col relative h-full overflow-hidden vintage-shadow"
+              style={{ backgroundColor: '#d6c1a9ff', minHeight: '560px' }}
+            >
+              {/* Imagen de fondo */}
+              <div className="absolute inset-0">
+                <ArticleImage
+                  article={article}
+                  /* 2. Ajustamos h-full y quitamos el h-[700px] fijo que puede causar desbordamientos */
+                  className="w-full h-[700px] object-cover transition-transform duration-700 group-hover:scale-110"
+                  height="h-full"
+                />
+              </div>
 
-                      {article.readTime && (
-                        <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
-                          <BookOpen className="w-4 h-4 mr-2" />
-                          {article.readTime}
-                        </div>
-                      )}
-
-                      {article.category && (
-                        <div className="absolute top-4 left-4">
-                          <span
-                            className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
-                            style={{
-                              backgroundColor: article.color || '#8B8D79',
-                              color: '#EDDCC3'
-                            }}
-                          >
-                            <Tag className="w-3 h-3 mr-1" />
-                            {article.category}
-                          </span>
-                        </div>
-                      )}
+              {/* Contenido con Z-index alto */}
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="relative p-4">
+                  {article.readTime && (
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-black bg-opacity-70 text-white text-sm flex items-center vintage-shadow">
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      {article.readTime}
                     </div>
+                  )}
 
-                    <div className="p-8">
-                      <div>
-                        <h4 className="text-2xl font-medium mb-4 leading-tight" style={{ color: '#291509' }}>
-                          {article.title}
-                        </h4>
-
-                        {article.description && (
-                          <p className="text-md leading-relaxed opacity-70 mb-6" style={{ color: '#2b232cff' }}>
-                            {article.description}
-                          </p>
-                        )}
-
-                        <div className="flex items-center justify-between mb-6 text-xs opacity-60" style={{ color: '#524354' }}>
-                          {article.author && (
-                            <div className="flex items-center text-sm">
-                              <User className="w-3 h-3 mr-1" />
-                              {article.author}
-                            </div>
-                          )}
-                          {article.date && (
-                            <div className="flex items-center text-sm">
-                              <Calendar className="w-3 h-3 mr-1" />
-                              {article.date}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      <Link
-                        to={`/blog/${article.id}`}
-                        className="text-md font-medium flex items-center transition-colors duration-300 hover:opacity-80"
-                        style={{ color: '#565021' }}
-                        onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
+                  {article.category && (
+                    <div className="absolute top-4 left-4">
+                      <span
+                        className="text-xs font-medium px-3 py-1 flex items-center vintage-shadow"
+                        style={{
+                          backgroundColor: article.color || '#8B8D79',
+                          color: '#EDDCC3'
+                        }}
                       >
-                        Leer reflexión
-                        <BookOpen className="w-4 h-4 ml-2" />
-                      </Link>
+                        <Tag className="w-3 h-3 mr-1" />
+                        {article.category}
+                      </span>
                     </div>
-                  </Link>
-                </Card>
-              ))}
-            </div>
-          </div>
-        )}
+                  )}
 
-        {/* All Articles */}
-        {articles.length > 0 && (
-          <div className="mb-20">
-            <h3 className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
-              Todas las Reflexiones
-            </h3>
+                  {/* Espaciador para dejar ver la imagen */}
+                  <div className="h-64" />
+                </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {articles.slice(0, visibleArticles).map((article: BlogArticle) => (
-                <Card
-                  key={article.id}
-                  hover
-                  className="group overflow-hidden transform transition-all duration-500 hover:scale-105 flex flex-col" // 👈 importante
-                  style={{ backgroundColor: '#d6c1a9ff' }}
+                {/* 3. flex-1 asegura que este bloque crezca y rellene la card */}
+                <div
+                  className="flex flex-col justify-between flex-1 p-8"
+                  style={{
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    backgroundColor: 'rgba(214, 193, 169, 0.85)',
+                  }}
                 >
-                  <div className="relative overflow-hidden">
-                    <ArticleImage
-                      article={article}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                      height="h-48"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div>
+                    {/* line-clamp para mantener títulos uniformes */}
+                    <h4 className="text-2xl font-medium mb-4 leading-tight line-clamp-2" style={{ color: '#291509' }}>
+                      {article.title}
+                    </h4>
 
-                    {article.readTime && (
-                      <div className="absolute top-3 right-3 px-2 py-1 bg-black bg-opacity-70 text-white text-xs flex items-center vintage-shadow">
-                        <BookOpen className="w-3 h-3 mr-1" />
-                        {article.readTime}
-                      </div>
-                    )}
-
-                    {article.category && (
-                      <div className="absolute top-3 left-3">
-                        <span
-                          className="text-xs font-medium px-2 py-1 flex items-center vintage-shadow"
-                          style={{
-                            backgroundColor: article.color || '#8B8D79',
-                            color: '#EDDCC3'
-                          }}
-                        >
-                          <Tag className="w-2 h-2 mr-1" />
-                          {article.category}
-                        </span>
-                      </div>
+                    {article.description && (
+                      <p className="text-md leading-relaxed opacity-70 mb-6 line-clamp-3" style={{ color: '#2b232cff' }}>
+                        {article.description}
+                      </p>
                     )}
                   </div>
 
-                  {/* 👇 Esto es el contenido textual de la tarjeta */}
-                  <div className="flex flex-col justify-between flex-1 p-6"> {/* 👈 agregado flex-1 */}
-                    <div>
-                      <h4
-                        className="text-xl font-medium mb-3"
-                        style={{ color: '#291509' }}
-                      >
-                        {article.title}
-                      </h4>
-
-                      {article.description && (
-                        <p
-                          className="text-sm leading-relaxed opacity-70 mb-4"
-                          style={{ color: '#2d252eff' }}
-                        >
-                          {article.description}
-                        </p>
+                  <div>
+                    <div className="flex items-center justify-between mb-6 text-xs opacity-60" style={{ color: '#524354' }}>
+                      {article.author && (
+                        <div className="flex items-center text-sm">
+                          <User className="w-3 h-3 mr-1" />
+                          {article.author}
+                        </div>
                       )}
-
                       {article.date && (
-                        <div
-                          className="flex items-center justify-between mb-4 text-xs opacity-60"
-                          style={{ color: '#362c38ff' }}
-                        >
-                          <div className="flex items-center">
-                            <Calendar className="w-3 h-3 mr-1" />
-                            {article.date}
-                          </div>
+                        <div className="flex items-center text-sm">
+                          <Calendar className="w-3 h-3 mr-1" />
+                          {article.date}
                         </div>
                       )}
                     </div>
 
-                    <Link
-                      to={`/blog/${article.id}`}
-                      className="text-md font-medium flex items-center transition-colors duration-300 hover:opacity-80 mt-4"
+                    <span
+                      className="text-md font-medium flex items-center transition-colors duration-300 group-hover:translate-x-2"
                       style={{ color: '#565021' }}
-                      onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
                     >
                       Leer reflexión
                       <BookOpen className="w-4 h-4 ml-2" />
-                    </Link>
+                    </span>
                   </div>
-                </Card>
-              ))}
+                </div>
+              </div>
+            </Card>
+          </Link>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
+
+{/* All Articles */}
+{articles.length > 0 && (
+  <div className="mb-20">
+    <h3 id="articles" className="text-3xl font-light text-center mb-12" style={{ color: '#291509' }}>
+      Todas las Reflexiones
+    </h3>
+
+    {/* Agregamos grid-rows-fr para que todas las filas tengan la misma altura */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-20 mb-12 items-stretch">
+      {articles.slice(0, visibleArticles).map((article: BlogArticle) => (
+        <Link
+          key={article.id}
+          to={`/blog/${article.id}`}
+      
+          className="group block h-full transition-all duration-500 hover:scale-105"
+          onClick={() => console.log(`🔗 Navegando a: /blog/${article.id}`)}
+        >
+          <Card
+            className="flex flex-col relative h-full"
+            style={{ backgroundColor: '#d6c1a9ff' }}
+          >
+            {/* Imagen de fondo */}
+            <div className="absolute inset-0">
+              <ArticleImage
+                article={article}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                height="h-full"
+              />
             </div>
+
+            {/* Contenido */}
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="relative p-3">
+                {article.readTime && (
+                  <div className="absolute top-3 right-3 px-2 py-1 bg-black bg-opacity-70 text-white text-xs flex items-center vintage-shadow">
+                    <BookOpen className="w-3 h-3 mr-1" />
+                    {article.readTime}
+                  </div>
+                )}
+
+                {article.category && (
+                  <div className="absolute top-3 left-3">
+                    <span
+                      className="text-xs font-medium px-2 py-1 flex items-center vintage-shadow"
+                      style={{
+                        backgroundColor: article.color || '#8B8D79',
+                        color: '#EDDCC3'
+                      }}
+                    >
+                      <Tag className="w-2 h-2 mr-1" />
+                      {article.category}
+                    </span>
+                  </div>
+                )}
+
+                {/* Espaciador para la imagen superior */}
+                <div className="h-56" />
+              </div>
+
+              {/* Contenedor de texto: flex-1 asegura que crezca para llenar el espacio */}
+              <div
+                className="flex flex-col justify-between flex-1 p-6"
+                style={{
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  backgroundColor: 'rgba(214, 193, 169, 0.75)',
+                }}
+              >
+                <div>
+                  <h4 className="text-xl font-medium mb-3 line-clamp-2" style={{ color: '#291509' }}>
+                    {article.title}
+                  </h4>
+
+                  {article.description && (
+                    <p className="text-sm leading-relaxed opacity-70 mb-4 line-clamp-3" style={{ color: '#2d252eff' }}>
+                      {article.description}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  {article.date && (
+                    <div className="flex items-center justify-between mb-4 text-xs opacity-60" style={{ color: '#362c38ff' }}>
+                      <div className="flex items-center">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {article.date}
+                      </div>
+                    </div>
+                  )}
+
+                  <span
+                    className="text-md font-medium flex items-center transition-colors duration-300 group-hover:opacity-80"
+                    style={{ color: '#565021' }}
+                  >
+                    Leer reflexión
+                    <BookOpen className="w-4 h-4 ml-2" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </Link>
+      ))}
+    </div>
 
             {hasMoreArticles && (
               <div className="text-center">
